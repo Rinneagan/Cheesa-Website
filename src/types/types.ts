@@ -1,10 +1,10 @@
-export type ThemeMode = {
+export type ThemeTypes =  {
     background: string,
-    foreground: string
-    mode: string
+    foreground: string,
+    cheesaBlue: string,
+    mode: ThemeMode
 }
 
-export type Theme = {
-    light:ThemeMode,
-    dark: ThemeMode
-}
+export type ThemeMode = 'light' | 'dark';
+
+export type Theme = Record<ThemeMode, ThemeTypes>;
