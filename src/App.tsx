@@ -1,27 +1,34 @@
-import styled, { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "styled-components";
 import { ToggleTheme } from "./components/ThemeWrapper";
 import { useContext } from "react";
-import { MainHeading, Paragraph, Button } from "./utils/ReusableStyles";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./Pages/Home/Home";
+import About from "./Pages/About/About";
+import ExecutivesIndex from "./Pages/Executives/ExecutivesIndex";
+import ExecutivesLayout from "./Pages/Executives/ExecutivesLayout";
+import Lecturers from "./Pages/Lecturers/Lecturers";
+import Navbar from "./components/Navbar";
+import Gallery from "./Pages/Gallery/Gallery";
+
 function App() {
-  const { theme, handleTheme } = useContext(ToggleTheme);
+  const { theme } = useContext(ToggleTheme);
 
   return (
-    <ThemeProvider theme={theme}>
-      <Wrapper>
-        <MainHeading>Hello World</MainHeading>
-        <Paragraph>
-          Smile, for even in death you have become children of Thanos.
-        </Paragraph>
-        <Button onClick={() => handleTheme()}>Change Theme</Button>
-      </Wrapper>
-    </ThemeProvider>
+    <Router>
+      <ThemeProvider theme={theme}>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/lecturers" element={<Lecturers />} />
+          <Route path="/executives" element={<ExecutivesLayout />}>
+            <Route path=":year" index element={<ExecutivesIndex />} />
+          </Route>
+        </Routes>
+      </ThemeProvider>
+    </Router>
   );
 }
 
-const Wrapper = styled.div`
-  width: 100vw;
-  height: 100vh;
-  background-color: ${({ theme }) => theme.background};
-  color: ${({ theme }) => theme.foreground};
-`;
 export default App;
