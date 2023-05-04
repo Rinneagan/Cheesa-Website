@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const BREAKPOINTS = {
+export const BREAKPOINTS = {
   MOBILE: "30em",
   TABLET: "40em",
   LAPTOP: "50em",
@@ -41,6 +41,7 @@ export const MainHeading = styled.h1`
 export const Button = styled.button`
   font-family: inherit;
   padding: 0.8rem 1rem;
+  min-width: fit-content;
   border-radius: 2rem;
   color: ${({ theme }) => theme.foreground};
   border: 1px solid ${({ theme }) => theme.foreground};
