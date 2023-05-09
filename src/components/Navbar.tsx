@@ -1,18 +1,45 @@
+import { HeaderStyles } from "../utils/constants";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 import { RiSunLine, RiMoonLine } from "react-icons/ri";
 import CheesaLogo from "../assets/cheesa-logo.png";
 import { Button } from "../utils/ReusableStyles";
 import { ToggleTheme } from "./ThemeWrapper";
 import { BREAKPOINTS } from "../utils/ReusableStyles";
 
+type StyleProps = Partial<Record<"backgroundColor" | "color", string>>;
+
 function Navbar() {
   const [navIsOpen, setNavIsOpen] = useState(false);
   const { theme, handleTheme } = useContext(ToggleTheme);
+  const [hasScrolled, setHasScrolled] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
   const isLight = theme.mode === "light";
+
+  const currentStyle = hasScrolled
+    ? { backgroundColor: theme.background, color: theme.foreground }
+    : HeaderStyles.hero;
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      const { top } = document.documentElement.getBoundingClientRect();
+      const height = window.innerHeight;
+      Math.abs(top) >= height ? setHasScrolled(true) : setHasScrolled(false);
+    });
+
+    return window.removeEventListener("scroll", () => {
+      setHasScrolled(true);
+    });
+  });
+
   return (
-    <HeaderWrapper>
+    <HeaderWrapper
+      backgroundColor={currentStyle.backgroundColor}
+      color={currentStyle.color}
+      ref={headerRef}
+      className={hasScrolled ? "header" : "null"}
+    >
       <MenuWrapper>
         <Logo>
           <Link to="/">
@@ -24,6 +51,8 @@ function Navbar() {
         </section>
       </MenuWrapper>
       <NavBar
+        backgroundColor={currentStyle.backgroundColor}
+        color={currentStyle.color}
         style={{ transform: navIsOpen ? "translateX(0)" : "translateX(-100%)" }}
       >
         <ul>
@@ -48,41 +77,57 @@ function Navbar() {
               <RiSunLine size={24} color="inherit" />
             )}
           </ThemeMode>
-          <Button>E-Library</Button>
+          <EButton color={currentStyle.color}>E-Library</EButton>
         </ButtonWrapper>
       </NavBar>
     </HeaderWrapper>
   );
 }
 
-const HeaderWrapper = styled.header`
+const HeaderWrapper = styled.header<StyleProps>`
   width: 100vw;
   display: flex;
   flex-direction: column;
-  background-color: ${({ theme }) => theme.background};
-  color: ${({ theme }) => theme.foreground};
+  background-color: transparent;
+  color: ${({ color }) => color};
+  height: 5rem;
+  position: fixed;
+  z-index: 100;
 
   @media (min-width: ${BREAKPOINTS.LAPTOP}) {
+    height: fit-content;
+    width: 100vw;
     flex-direction: row;
     gap: 1rem;
+    padding-inline: 2rem;
+    background-color: ${({ backgroundColor }) => backgroundColor};
   }
 `;
 
-const NavBar = styled.nav`
+const NavBar = styled.nav<StyleProps>`
   max-width: 100vw;
   height: 100vh;
   padding: 1rem;
-  color: ${({ theme }) => theme.foreground};
-  background-color: ${({ theme }) => theme.background};
   display: flex;
   flex-direction: column;
+  background-color: ${({ theme }) => theme.background};
+  color: ${({ theme }) => theme.foreground};
+  height: 100vh;
+  position: absolute;
+  top: 5rem;
+  width: 100vw;
 
   @media (min-width: ${BREAKPOINTS.LAPTOP}) {
+    position: relative;
+    top: 0;
+    max-width: 100vw;
     width: 100%;
     flex-direction: row;
     justify-content: space-between;
     height: fit-content;
     transform: translateX(0) !important;
+    color: ${({ color }) => color};
+    background-color: ${({ backgroundColor }) => backgroundColor};
   }
 
   ul {
@@ -123,6 +168,7 @@ const MenuWrapper = styled.section`
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  background-color: transparent;
 
   @media (min-width: ${BREAKPOINTS.LAPTOP}) {
     width: fit-content;
@@ -164,6 +210,14 @@ const ThemeMode = styled.button`
   background-color: ${({ theme }) => theme.foreground};
 
   @media (min-width: ${BREAKPOINTS.LAPTOP}) {
+  }
+`;
+
+const EButton = styled(Button)<StyleProps>`
+  color: ${({ theme }) => theme.foreground};
+  @media (min-width: ${BREAKPOINTS.LAPTOP}) {
+    color: ${({ color }) => color};
+    border: 1px solid ${({ color }) => color};
   }
 `;
 
