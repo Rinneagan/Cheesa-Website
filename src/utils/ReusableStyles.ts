@@ -9,10 +9,10 @@ export const BREAKPOINTS = {
 };
 
 export const Paragraph = styled.p`
-  font-family: "Jost";
+  font-family: "Inter";
   font-size: 1rem;
-  font-weight: 300;
-  padding-block: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
   color: ${({ theme }) => theme.foreground};
 
   @media (min-width: ${BREAKPOINTS.MOBILE}) {
@@ -36,6 +36,11 @@ export const MainHeading = styled.h1`
     font-size: 4rem;
     padding-block: 2rem;
   }
+`;
+
+export const Tag = styled.h3`
+  font-size: 1.3rem;
+  color: ${({ theme }) => theme.accent};
 `;
 
 export const Button = styled.button`

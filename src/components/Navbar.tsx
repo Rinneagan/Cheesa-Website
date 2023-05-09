@@ -24,7 +24,7 @@ function Navbar() {
   useEffect(() => {
     window.addEventListener("scroll", () => {
       const { top } = document.documentElement.getBoundingClientRect();
-      const height = window.innerHeight;
+      const height = window.innerHeight - 18 * 5;
       Math.abs(top) >= height ? setHasScrolled(true) : setHasScrolled(false);
     });
 

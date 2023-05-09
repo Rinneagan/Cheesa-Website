@@ -60,10 +60,15 @@ nav {
 
 * {
   /* outline: 1px solid limegreen; */
-  transition: background-color 150ms ease-in;
 }
 
 .header {
-  border-bottom: 1px solid hsl(0, 0%, 85%);
+  border-bottom: 1px solid hsl(0, 0%, 65%);
   backdrop-filter: blur(20px);
+}
+
+.card-two {
+  position: absolute;
+  transform-origin: bottom left;
+  transform: rotate(30deg) translateY(-5%);
 }
