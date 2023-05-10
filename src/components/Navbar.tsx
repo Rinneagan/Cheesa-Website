@@ -217,7 +217,7 @@ const EButton = styled(Button)<StyleProps>`
   color: ${({ theme }) => theme.foreground};
   @media (min-width: ${BREAKPOINTS.LAPTOP}) {
     color: ${({ color }) => color};
-    border: 1px solid ${({ color }) => color};
+    border: 2px solid ${({ color }) => color};
   }
 `;
 

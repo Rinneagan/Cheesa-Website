@@ -9,6 +9,7 @@ import ExecutivesLayout from "./Pages/Executives/ExecutivesLayout";
 import Lecturers from "./Pages/Lecturers/Lecturers";
 import Navbar from "./components/Navbar";
 import Gallery from "./Pages/Gallery/Gallery";
+import GlobalStyle from "./components/GlobalStyles";
 
 function App() {
   const { theme } = useContext(ToggleTheme);
@@ -16,6 +17,7 @@ function App() {
   return (
     <Router>
       <ThemeProvider theme={theme}>
+        <GlobalStyle />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

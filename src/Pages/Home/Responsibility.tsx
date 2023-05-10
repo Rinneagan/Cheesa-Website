@@ -1,18 +1,17 @@
 import styled from "styled-components";
 import { Paragraph } from "../../utils/ReusableStyles";
-import { useEffect } from "react";
 import { MainHeading, Tag } from "../../utils/ReusableStyles";
-import "swiper/swiper.min.css";
+
 import { BREAKPOINTS } from "../../utils/ReusableStyles";
-import "swiper/css";
-import "swiper/css/effect-cards";
 
 function Responsibility() {
   return (
     <Wrapper>
       <TextBox>
         <Tag>WHAT WE DO?</Tag>
-        <MainHeading>Empowering our members.</MainHeading>
+        <MainHeading>
+          Empowering our <mark>members.</mark>
+        </MainHeading>
         <Paragraph>
           We organize engaging workshops, informative seminars that delve into
           various facets of chemical engineering, from process design and
@@ -29,12 +28,17 @@ function Responsibility() {
 
 const Wrapper = styled.div`
   width: 100vw;
-  height: calc(100vh - 5rem);
+  height: 100vh;
   background-color: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.foreground};
   display: grid;
   gap: 1rem;
   padding-inline: 1rem;
+
+  mark {
+    color: ${({ theme }) =>
+      theme.mode === "light" ? theme.cheesaBlue : "hsl(211, 100%, 65%)"};
+  }
 
   @media (min-width: ${BREAKPOINTS.LAPTOP}) {
     grid-template-columns: 50% auto;
@@ -46,7 +50,7 @@ const TextBox = styled.section`
   margin-block: auto;
 `;
 const SwiperContainer = styled.section`
-  border: 1px solid lime;
+  /* border: 1px solid lime; */
   padding-inline: 1rem;
   position: relative;
   display: flex;
@@ -58,7 +62,7 @@ const SwiperContainer = styled.section`
 const Card = styled.div`
   height: 25rem;
   width: 20rem;
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 `;
 
 export default Responsibility;

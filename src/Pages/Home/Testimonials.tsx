@@ -1,0 +1,168 @@
+import styled from "styled-components";
+import { BREAKPOINTS, MainHeading } from "../../utils/ReusableStyles";
+import Ezekiel from "../../assets/IMG_8853.jpg";
+import Student2 from "../../assets/Gggg.jpg";
+import Student3 from "../../assets/IMG_9763.jpg";
+
+function Testimonials() {
+  return (
+    <Wrapper>
+      <Container>
+        <MainHeading>
+          Reviews from <mark>students.</mark>{" "}
+        </MainHeading>
+        <p>
+          Here are testimonials from chemical engineering students about their
+          experience with the association.
+        </p>
+        <CardsContainer>
+          <Card>
+            <p className="article">
+              Joining the chemical engineering students association has been a
+              game-changer for me. The association has provided me with
+              invaluable opportunities for professional development, including
+              workshops on resume building, networking, and industry insights
+            </p>
+            <div className="student">
+              <div className="img_box">
+                <img src={Ezekiel} alt="Student" />
+              </div>
+              <div className="student_details">
+                <h3>Adu Gyamfi Sebastian</h3>
+                <p>Student, Year 3</p>
+              </div>
+            </div>
+          </Card>
+          <Card>
+            <p className="article">
+              Joining the chemical engineering students association has been a
+              game-changer for me. The association has provided me with
+              invaluable opportunities for
+            </p>
+            <div className="student">
+              <div className="img_box">
+                <img src={Student2} alt="Student" />
+              </div>
+              <div className="student_details">
+                <h3>Adu Gyamfi Sebastian</h3>
+                <p>Student, Year 3</p>
+              </div>
+            </div>
+          </Card>
+          <Card>
+            <p className="article">
+              Joining the chemical engineering students association has been a
+              game-changer for me. The association has provided me with
+              invaluable opportunities for professional development, including
+              workshops on resume building, networking, and industry insights
+            </p>
+            <div className="student">
+              <div className="img_box">
+                <img src={Student3} alt="Student" />
+              </div>
+              <div className="student_details">
+                <h3>Adu Gyamfi Sebastian</h3>
+                <p>Student, Year 3</p>
+              </div>
+            </div>
+          </Card>
+        </CardsContainer>
+      </Container>
+    </Wrapper>
+  );
+}
+
+const CardsContainer = styled.div`
+  width: 100%;
+  display: grid;
+  gap: 1rem;
+  padding-top: 5rem;
+
+  @media (min-width: ${BREAKPOINTS.LAPTOP}) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+`;
+
+const Card = styled.section`
+  padding: 1.5rem;
+  display: flex;
+  border-radius: 0.8rem;
+  background-color: ${({ theme }) =>
+    theme.mode === "light" ? theme.background : "#1E293B"};
+  flex-direction: column;
+  gap: 1rem;
+
+  .article {
+    text-align: center;
+    opacity: 0.8;
+    line-height: 1.5;
+  }
+
+  .student {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+
+    .img_box {
+      aspect-ratio: 1/1;
+      width: 5rem;
+      border-radius: 50%;
+      overflow: hidden;
+
+      img {
+        object-fit: cover;
+        object-position: top;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .student_details {
+      align-self: flex-start;
+      margin-block: auto;
+
+      h3 {
+        padding-bottom: 1rem;
+      }
+
+      p {
+        color: ${({ theme }) =>
+          theme.mode === "light" ? theme.cheesaBlue : "hsl(211, 100%, 65%)"};
+      }
+    }
+  }
+`;
+
+const Container = styled.div`
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+
+  mark {
+    color: ${({ theme }) =>
+      theme.mode === "light" ? theme.cheesaBlue : "hsl(211, 100%, 65%)"};
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  & > p {
+    text-align: center;
+    width: 25rem;
+    font-size: 1.2rem;
+    margin-inline: auto;
+    padding-block: 1rem;
+    line-height: 1.5;
+  }
+`;
+
+const Wrapper = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background-color: ${({ theme }) =>
+    theme.mode === "light" ? "rgb(250, 250, 250)" : theme.background};
+  color: ${({ theme }) => theme.foreground};
+`;
+
+export default Testimonials;
