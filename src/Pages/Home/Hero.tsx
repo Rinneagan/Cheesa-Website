@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import BackroundImage from "../../assets/crystal-kwok-XUEdfpPIhXg-unsplash.jpg";
-import { MainHeading } from "../../utils/ReusableStyles";
+import { BREAKPOINTS, MainHeading } from "../../utils/ReusableStyles";
 
 type HeroWrapperProps = {
   backgroundImage: string;
@@ -29,11 +29,18 @@ const TextBox = styled.section`
   margin-block: auto;
   height: 100%;
   display: grid;
-  place-items: center;
+  place-items: end;
 
   h1 {
-    text-align: center;
+    text-align: left;
     color: #fff;
+    font-size: 4rem;
+  }
+
+  @media (min-width: ${BREAKPOINTS.LAPTOP}) {
+    h1 {
+      font-size: 7rem;
+    }
   }
 `;
 

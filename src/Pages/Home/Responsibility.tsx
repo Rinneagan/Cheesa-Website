@@ -33,7 +33,6 @@ const Wrapper = styled.div`
   color: ${({ theme }) => theme.foreground};
   display: grid;
   gap: 1rem;
-  padding-inline: 1rem;
 
   mark {
     color: ${({ theme }) =>
@@ -41,6 +40,7 @@ const Wrapper = styled.div`
   }
 
   @media (min-width: ${BREAKPOINTS.LAPTOP}) {
+    padding-inline: 1rem;
     grid-template-columns: 50% auto;
   }
 `;
@@ -50,7 +50,6 @@ const TextBox = styled.section`
   margin-block: auto;
 `;
 const SwiperContainer = styled.section`
-  /* border: 1px solid lime; */
   padding-inline: 1rem;
   position: relative;
   display: flex;

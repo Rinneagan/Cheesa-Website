@@ -1,20 +1,27 @@
 import { HeaderStyles } from "../utils/constants";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { useContext, useState, useEffect, useRef } from "react";
+import { useContext, useState, useEffect } from "react";
 import { RiSunLine, RiMoonLine } from "react-icons/ri";
 import CheesaLogo from "../assets/cheesa-logo.png";
 import { Button } from "../utils/ReusableStyles";
 import { ToggleTheme } from "./ThemeWrapper";
 import { BREAKPOINTS } from "../utils/ReusableStyles";
+import { motion } from "framer-motion";
 
 type StyleProps = Partial<Record<"backgroundColor" | "color", string>>;
+const NavLinks = ["About", "Lecturers", "Gallery", "Executives"];
+
+const NavbarVariants = {
+  open: { x: 0 },
+  closed: { x: "-100%" },
+};
 
 function Navbar() {
   const [navIsOpen, setNavIsOpen] = useState(false);
   const { theme, handleTheme } = useContext(ToggleTheme);
   const [hasScrolled, setHasScrolled] = useState(false);
-  const headerRef = useRef<HTMLElement>(null);
+
   const isLight = theme.mode === "light";
 
   const currentStyle = hasScrolled
@@ -37,7 +44,6 @@ function Navbar() {
     <HeaderWrapper
       backgroundColor={currentStyle.backgroundColor}
       color={currentStyle.color}
-      ref={headerRef}
       className={hasScrolled ? "header" : "null"}
     >
       <MenuWrapper>
@@ -47,27 +53,24 @@ function Navbar() {
           </Link>
         </Logo>
         <section className="menu">
-          <button onClick={() => setNavIsOpen((prev) => !prev)}>Menu</button>
+          <button onClick={() => setNavIsOpen((prev) => !prev)}>
+            {navIsOpen ? "Close" : "Menu"}
+          </button>
         </section>
       </MenuWrapper>
       <NavBar
-        backgroundColor={currentStyle.backgroundColor}
+        animate={navIsOpen ? "open" : "closed"}
+        variants={NavbarVariants}
         color={currentStyle.color}
-        style={{ transform: navIsOpen ? "translateX(0)" : "translateX(-100%)" }}
       >
         <ul>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/gallery">Gallery</Link>
-          </li>
-          <li>
-            <Link to="/lecturers">Lecturers</Link>
-          </li>
-          <li>
-            <Link to="/executives">Exectives</Link>
-          </li>
+          {NavLinks.map((item) => {
+            return (
+              <motion.li key={item} whileTap={{ scale: 0.9 }}>
+                <Link to={`/${item.toLowerCase()}`}>{item}</Link>
+              </motion.li>
+            );
+          })}
         </ul>
         <ButtonWrapper>
           <ThemeMode onClick={handleTheme}>
@@ -100,11 +103,11 @@ const HeaderWrapper = styled.header<StyleProps>`
     flex-direction: row;
     gap: 1rem;
     padding-inline: 2rem;
-    background-color: ${({ backgroundColor }) => backgroundColor};
+    backdrop-filter: blur(20px);
   }
 `;
 
-const NavBar = styled.nav<StyleProps>`
+const NavBar = styled(motion.nav)<StyleProps>`
   max-width: 100vw;
   height: 100vh;
   padding: 1rem;
@@ -126,8 +129,8 @@ const NavBar = styled.nav<StyleProps>`
     justify-content: space-between;
     height: fit-content;
     transform: translateX(0) !important;
-    color: ${({ color }) => color};
-    background-color: ${({ backgroundColor }) => backgroundColor};
+    background-color: transparent;
+    backdrop-filter: blur(50px);
   }
 
   ul {
@@ -150,6 +153,7 @@ const NavBar = styled.nav<StyleProps>`
       @media (min-width: ${BREAKPOINTS.LAPTOP}) {
         border: none;
         padding-bottom: 0;
+        color: ${({ color }) => color};
       }
 
       a {

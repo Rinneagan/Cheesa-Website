@@ -93,7 +93,7 @@ const Card = styled.section`
   gap: 1rem;
 
   .article {
-    text-align: center;
+    text-align: left;
     opacity: 0.8;
     line-height: 1.5;
   }
@@ -101,7 +101,7 @@ const Card = styled.section`
   .student {
     display: flex;
     gap: 1rem;
-    justify-content: center;
+    justify-content: flex-start;
 
     .img_box {
       aspect-ratio: 1/1;
@@ -131,12 +131,23 @@ const Card = styled.section`
       }
     }
   }
+
+  @media (min-width: ${BREAKPOINTS.LAPTOP}) {
+    .article {
+      text-align: center;
+    }
+
+    .student {
+      justify-content: center;
+    }
+  }
 `;
 
 const Container = styled.div`
   width: 100%;
   height: 100%;
   padding: 1rem;
+  padding-bottom: 4rem;
 
   mark {
     color: ${({ theme }) =>
@@ -149,17 +160,21 @@ const Container = styled.div`
 
   & > p {
     text-align: center;
-    width: 25rem;
+    width: 100%;
     font-size: 1.2rem;
     margin-inline: auto;
     padding-block: 1rem;
     line-height: 1.5;
+
+    @media (min-width: ${BREAKPOINTS.LAPTOP}) {
+      width: 25rem;
+    }
   }
 `;
 
 const Wrapper = styled.div`
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   background-color: ${({ theme }) =>
     theme.mode === "light" ? "rgb(250, 250, 250)" : theme.background};
   color: ${({ theme }) => theme.foreground};

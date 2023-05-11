@@ -1,11 +1,6 @@
 import styled from "styled-components";
 import ValuesImage from "../../assets/becca-tapert-GnY_mW1Q6Xc-unsplash.jpg";
-import {
-  BREAKPOINTS,
-  Paragraph,
-  Subheading,
-  Tag,
-} from "../../utils/ReusableStyles";
+import { BREAKPOINTS, Tag } from "../../utils/ReusableStyles";
 function Values() {
   return (
     <Wrapper>
@@ -54,17 +49,19 @@ const Container = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  backdrop-filter: blur(200px);
+  backdrop-filter: blur(150px);
   background-color: ${({ theme }) =>
     theme.mode === "light"
-      ? "hsla(0, 0%, 100%, .6)"
-      : "hsla(212, 89%, 5%, .5)"};
+      ? "hsla(0, 0%, 100%, .8)"
+      : "hsla(212, 89%, 5%, .7)"};
   display: grid;
   gap: 1rem;
-  padding-right: 2rem;
-  place-items: center;
+  padding: 0.6rem;
   @media (min-width: ${BREAKPOINTS.LAPTOP}) {
+    place-items: center;
+    padding-right: 2rem;
     grid-template-columns: repeat(2, 1fr);
+    backdrop-filter: blur(180px);
   }
 `;
 
@@ -78,8 +75,8 @@ const TextBox = styled.div`
 `;
 
 const ImageBox = styled.div`
-  width: 80%;
-  height: 80%;
+  width: 100%;
+  height: 30vh;
   border-radius: 1rem;
   overflow: hidden;
 
@@ -88,6 +85,11 @@ const ImageBox = styled.div`
     width: 100%;
     object-fit: cover;
     object-position: center;
+  }
+
+  @media (min-width: ${BREAKPOINTS.LAPTOP}) {
+    width: 80%;
+    height: 80%;
   }
 `;
 
@@ -100,17 +102,27 @@ const CardsContainer = styled.div`
 `;
 
 const Card = styled.section`
-  width: 90%;
+  width: 100%;
   color: ${({ theme }) => theme.foreground};
   h2 {
-    font-size: 2.5rem;
-    padding-block: 1rem;
+    font-size: 1.8rem;
+    padding-block: 0.8rem;
     font-weight: 700;
   }
 
   p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     line-height: 1.5;
+  }
+
+  @media (min-width: ${BREAKPOINTS.LAPTOP}) {
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
   }
 `;
 
