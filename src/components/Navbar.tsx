@@ -13,8 +13,12 @@ type StyleProps = Partial<Record<"backgroundColor" | "color", string>>;
 const NavLinks = ["About", "Lecturers", "Gallery", "Executives"];
 
 const NavbarVariants = {
-  open: { x: 0 },
-  closed: { x: "-100%" },
+  open: {
+    x: 0,
+  },
+  closed: {
+    x: "-100%",
+  },
 };
 
 function Navbar() {

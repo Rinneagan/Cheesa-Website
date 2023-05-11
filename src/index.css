@@ -69,12 +69,6 @@ nav {
   backdrop-filter: blur(20px);
 }
 
-.card-two {
-  position: absolute;
-  transform-origin: bottom left;
-  /* transform: rotate(30deg) translateY(-5%); */
-}
-
 .blob {
   aspect-ratio: 4/3;
   width: 20rem;

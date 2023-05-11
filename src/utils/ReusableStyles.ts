@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const BREAKPOINTS = {
   MOBILE: "30em",
@@ -8,7 +9,7 @@ export const BREAKPOINTS = {
   LARGE_SCREENS: "70em",
 };
 
-export const Paragraph = styled.p`
+export const Paragraph = styled(motion.p)`
   font-family: "Raleway";
   font-size: 1rem;
   font-weight: 400;
@@ -21,7 +22,7 @@ export const Paragraph = styled.p`
   }
 `;
 
-export const MainHeading = styled.h1`
+export const MainHeading = styled(motion.h1)`
   font-family: "Inter Tight";
   font-size: 2rem;
   font-weight: 700;
@@ -38,7 +39,7 @@ export const MainHeading = styled.h1`
   }
 `;
 
-export const Tag = styled.h3`
+export const Tag = styled(motion.h3)`
   font-size: 1.3rem;
   color: ${({ theme }) => theme.accent};
 `;

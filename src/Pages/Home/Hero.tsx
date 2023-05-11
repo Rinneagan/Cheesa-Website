@@ -1,15 +1,32 @@
 import styled from "styled-components";
-import BackroundImage from "../../assets/crystal-kwok-XUEdfpPIhXg-unsplash.jpg";
-import { BREAKPOINTS, MainHeading } from "../../utils/ReusableStyles";
-
+import BackroundImage from "../../assets/crystal-kwok-XUEdfpPIhXg-unsplash.webp";
+import { BREAKPOINTS } from "../../utils/ReusableStyles";
+import { motion } from "framer-motion";
 type HeroWrapperProps = {
   backgroundImage: string;
 };
+
+const HeadingVariants = {
+  hidden: {
+    opacity: 0,
+    y: "-100%",
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+    },
+  },
+};
+
 function Home() {
   return (
     <HeroWrapper backgroundImage={BackroundImage}>
       <TextBox>
-        <MainHeading>Chemical Engineering Students' Association</MainHeading>
+        <motion.h1 variants={HeadingVariants} initial="hidden" animate="show">
+          Chemical Engineering Students' Association
+        </motion.h1>
       </TextBox>
     </HeroWrapper>
   );

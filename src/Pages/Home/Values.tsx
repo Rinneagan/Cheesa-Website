@@ -1,13 +1,21 @@
 import styled from "styled-components";
 import ValuesImage from "../../assets/becca-tapert-GnY_mW1Q6Xc-unsplash.jpg";
 import { BREAKPOINTS, Tag } from "../../utils/ReusableStyles";
+import { useScroll, motion, useTransform, useSpring } from "framer-motion";
+
 function Values() {
+  const { scrollY } = useScroll();
+  const baseY = useSpring(scrollY);
+  const scale = useTransform(baseY, [1, 1000], [1, 2], {
+    clamp: false,
+  });
+
   return (
     <Wrapper>
       <section className="blob"></section>
       <Container>
         <ImageBox>
-          <img src={ValuesImage} alt="image" />
+          <motion.img style={{ scale }} src={ValuesImage} alt="image" />
         </ImageBox>
         <TextBox>
           <Tag>OUR VALUES</Tag>
@@ -74,7 +82,7 @@ const TextBox = styled.div`
   gap: 1rem;
 `;
 
-const ImageBox = styled.div`
+const ImageBox = styled(motion.div)`
   width: 100%;
   height: 30vh;
   border-radius: 1rem;
