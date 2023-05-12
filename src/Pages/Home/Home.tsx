@@ -19,6 +19,8 @@ function Home() {
 
 const Wrapper = styled.div`
   width: 100vw;
+  max-width: 1400px;
+  margin-inline: auto;
   height: fit-content;
   position: absolute;
   top: 0;

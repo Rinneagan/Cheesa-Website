@@ -100,6 +100,8 @@ const HeaderWrapper = styled.header<StyleProps>`
   height: 5rem;
   position: fixed;
   z-index: 100;
+  max-width: 1400px;
+  margin-inline: auto;
 
   @media (min-width: ${BREAKPOINTS.LAPTOP}) {
     height: fit-content;
@@ -176,7 +178,8 @@ const MenuWrapper = styled.section`
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: transparent;
+  backdrop-filter: blur(50px);
+  /* background-color: ; */
 
   @media (min-width: ${BREAKPOINTS.LAPTOP}) {
     width: fit-content;

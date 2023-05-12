@@ -6,9 +6,18 @@ import { useScroll, motion, useTransform, useSpring } from "framer-motion";
 function Values() {
   const { scrollY } = useScroll();
   const baseY = useSpring(scrollY);
-  const scale = useTransform(baseY, [1, 1000], [1, 2], {
+  const scale = useTransform(baseY, [1, 1000], [1, 1.5], {
     clamp: false,
   });
+
+  const TextListVariants = {
+    hidden: {
+      scale: 0.5,
+    },
+    show: {
+      scale: 1,
+    },
+  };
 
   return (
     <Wrapper>
@@ -18,7 +27,14 @@ function Values() {
           <motion.img style={{ scale }} src={ValuesImage} alt="image" />
         </ImageBox>
         <TextBox>
-          <Tag>OUR VALUES</Tag>
+          <Tag
+            variants={TextListVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+          >
+            OUR VALUES
+          </Tag>
           <CardsContainer>
             <Card>
               <h2>Academic Excellence</h2>
@@ -46,15 +62,18 @@ function Values() {
 
 const Wrapper = styled.div`
   width: 100vw;
-  height: 100vh;
+  max-width: 1400px;
+  min-height: 100vh;
+  margin-inline: auto;
   position: relative;
   background-color: ${({ theme }) => theme.background};
+
+  @media (width > ${BREAKPOINTS.LAPTOP}) {
+    height: 100vh;
+  }
 `;
 
 const Container = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   backdrop-filter: blur(150px);
@@ -82,11 +101,12 @@ const TextBox = styled.div`
   gap: 1rem;
 `;
 
-const ImageBox = styled(motion.div)`
+const ImageBox = styled.div`
   width: 100%;
-  height: 30vh;
+  height: 100%;
   border-radius: 1rem;
   overflow: hidden;
+  position: relative;
 
   img {
     height: 100%;
@@ -96,6 +116,7 @@ const ImageBox = styled(motion.div)`
   }
 
   @media (min-width: ${BREAKPOINTS.LAPTOP}) {
+    height: 30vh;
     width: 80%;
     height: 80%;
   }

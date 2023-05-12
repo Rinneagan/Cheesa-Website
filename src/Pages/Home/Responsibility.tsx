@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import { Paragraph } from "../../utils/ReusableStyles";
 import { MainHeading, Tag } from "../../utils/ReusableStyles";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import FirstImage from "../../assets/viktor-kiryanov-lAcYPEiau0U-unsplash.jpg";
 import SecondImage from "../../assets/ivo-lukacovic-IJTX8aDDMa0-unsplash.jpg";
 import ThirdImage from "../../assets/victor-2PJMDIgK9EA-unsplash.jpg";
+import { useRef } from "react";
 
 import { BREAKPOINTS } from "../../utils/ReusableStyles";
 
@@ -26,6 +27,8 @@ const TextItemsVariants = {
 };
 
 function Responsibility() {
+  const constraintRef = useRef<HTMLDivElement>(null);
+
   return (
     <Wrapper>
       <TextBox
@@ -44,8 +47,8 @@ function Responsibility() {
           optimization to sustainable practices.
         </Paragraph>
       </TextBox>
-      <SwiperContainer>
-        <SliderWrapper drag="x" dragConstraints={{ left: -400, right: 0 }}>
+      <SwiperContainer ref={constraintRef}>
+        <SliderWrapper drag="x" dragConstraints={constraintRef}>
           <Card>
             <div className="img__container">
               <img src={FirstImage} alt="First Image" />
@@ -59,7 +62,7 @@ function Responsibility() {
             <h3>Online Bootcamps</h3>
           </Card>
           <Card>
-            <div className="img__container">
+            <div>
               <img src={ThirdImage} alt="First Image" />
             </div>
             <h3>Extra-curricular activities</h3>
@@ -72,7 +75,9 @@ function Responsibility() {
 
 const Wrapper = styled.div`
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  max-width: 1400px;
+  margin-inline: auto;
   background-color: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.foreground};
   display: grid;
@@ -107,6 +112,11 @@ const SliderWrapper = styled(motion.div)`
 const SwiperContainer = styled.section`
   overflow: hidden;
   height: 100%;
+  width: 100vw;
+
+  @media (min-width: ${BREAKPOINTS.LAPTOP}) {
+    width: 100%;
+  }
 `;
 
 const Card = styled.div`
