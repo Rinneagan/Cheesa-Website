@@ -88,7 +88,7 @@ const Container = styled.div`
     place-items: center;
     padding-right: 2rem;
     grid-template-columns: repeat(2, 1fr);
-    backdrop-filter: blur(180px);
+    backdrop-filter: blur(120px);
   }
 `;
 
