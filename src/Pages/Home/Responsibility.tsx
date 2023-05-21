@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Paragraph } from "../../utils/ReusableStyles";
 import { MainHeading, Tag } from "../../utils/ReusableStyles";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import FirstImage from "../../assets/viktor-kiryanov-lAcYPEiau0U-unsplash.jpg";
 import SecondImage from "../../assets/ivo-lukacovic-IJTX8aDDMa0-unsplash.jpg";
 import ThirdImage from "../../assets/victor-2PJMDIgK9EA-unsplash.jpg";

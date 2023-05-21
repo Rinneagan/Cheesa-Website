@@ -2,10 +2,10 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { BREAKPOINTS } from "../../utils/ReusableStyles";
 import {
-  RiFacebookBoxLine,
   RiInstagramLine,
   RiLinkedinBoxFill,
   RiYoutubeLine,
+  RiTwitterLine,
 } from "react-icons/ri";
 import { motion } from "framer-motion";
 
@@ -39,7 +39,9 @@ function Footer() {
             <h3>Contacts & Address</h3>
             <ul>
               <li>
-                <a href="mailto:email.com">chemicalengineering.sa@gmail.com</a>
+                <a href="mailto:chemicalengineering.sa@gmail.com">
+                  chemicalengineering.sa@gmail.com
+                </a>
               </li>
               <li>
                 <a href="tel: +233 445 543 5546">+233 445 543 5546</a>
@@ -57,7 +59,7 @@ function Footer() {
           </UsefulLinks>
           <SocialsLinks>
             <motion.a whileHover={{ y: -6 }} href="" className="fb">
-              <RiFacebookBoxLine color="inherit" size={24} />
+              <RiTwitterLine color="inherit" size={24} />
             </motion.a>
             <motion.a whileHover={{ y: -6 }} href="" className="ins">
               <RiInstagramLine color="inherit" size={24} />
@@ -81,7 +83,7 @@ function Footer() {
 const Copyright = styled.div`
   width: 100%;
   padding-block: 1.5rem;
-  color: ${({ theme }) => theme.foreground};
+  color: #fff;
   border-top: 1px solid
     ${({ theme }) => (theme.mode === "light" ? "#bbbbbb" : "#808080")};
 
@@ -100,7 +102,7 @@ const SocialsLinks = styled.section`
   gap: 1rem;
 
   a {
-    color: ${({ theme }) => theme.foreground};
+    color: #fff;
   }
   .yt:hover {
     color: #ff2020;
@@ -123,18 +125,16 @@ const UsefulLinks = styled.section`
   padding-block: 1rem;
 
   h3 {
-    color: ${({ theme }) => theme.foreground};
+    color: #fff;
   }
 
   ul {
     width: fit-content;
     li {
       padding-block: 0.8rem;
-      color: ${({ theme }) => theme.foreground};
+      color: #fff;
 
       &:hover {
-        color: ${({ theme }) =>
-          theme.mode === "light" ? theme.cheesaBlue : "#9092ff"};
         transform: translateX(5px);
       }
       a,
@@ -167,7 +167,7 @@ const Wrapper = styled.footer`
   max-width: 1400px;
   margin-inline: auto;
   background-color: ${({ theme }) =>
-    theme.mode === "light" ? "#rgb(244, 246, 247)" : "#1E293B"};
+    theme.mode === "light" ? theme.cheesaBlue : "#1E293B"};
 `;
 
 export default Footer;
