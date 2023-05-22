@@ -99,7 +99,7 @@ const HeaderWrapper = styled.header<StyleProps>`
   color: ${({ color }) => color};
   height: 5rem;
   position: fixed;
-  z-index: 100;
+  z-index: 9999;
   max-width: 1400px;
   margin-inline: auto;
 
