@@ -95,8 +95,7 @@ const CardWrapper = styled.div`
   border-radius: 1rem;
   max-width: 30vw;
   width: 100%;
-  box-shadow: 0px 10px 20px 0px rgba(80, 79, 79, 0.185);
-  outline: 1px solid whitesmoke;
+  outline: 1px solid #ccc;
   transition: 0.2s ease;
   cursor: pointer;
   &:hover {
@@ -120,7 +119,6 @@ const InfoContainer = styled.div`
     object-fit: cover;
     object-position: center;
     border-radius: 100%;
-    box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.185);
     @media (max-width: ${BREAKPOINTS.MOBILE}) {
       width: 70px;
       height: 70px;
