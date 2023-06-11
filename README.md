@@ -33,10 +33,11 @@ The Chemical Engineering Student Association website is designed to provide chem
 
 To run the Chemical Engineering Student Association website locally, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/chemical-engineering-association.git`
-2. Navigate to the project directory: `cd chemical-engineering-association`
+
+1. Clone the repository: `git clone https://github.com/diabeney/dbn-jro.git`
+2. Navigate to the project directory: `cd dbn-jro`
 3. Install the dependencies: `npm install`
-4. Start the development server: `npm start`
+4. Start the development server: `npm run dev`
 5. Open your browser and visit: `http://localhost:3000`
 
 Note: Make sure you have Node.js and npm installed on your machine.
@@ -72,8 +73,8 @@ We would like to express our gratitude to the following individuals and organiza
 
 Stay connected with us on social media for the latest updates, news, and announcements:
 
-- Twitter: [@chessaknust](https://twitter.com/chessaknust)
-- Instagram: [@chessaknust](https://www.instagram.com/chessaknust)
+- Twitter: [@cheesaknust](https://twitter.com/cheesaknust)
+- Instagram: [@cheesaknust](https://www.instagram.com/cheesaknust)
 - Facebook: [Chemical Engineering Student Association](https://www.facebook.com/ChemicalEngineeringStudentAssociation)
 
 ## Contact
