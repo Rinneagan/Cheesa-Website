@@ -62,10 +62,10 @@ const Card = () => {
       name: "Dr. John Doe",
       email: "testmail@knust.edu.gh",
       image: testImage,
-      desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea minima optio molestiae est harum soluta repudiandae maxime fugit eaque earum.",
+      desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea minima optio molestiae est harum soluta repudiandae maxime fugit eaque earum. et consectetur adipisicing elit. Ea minima optio molestiae est harum soluta repudiandae maxime fugit eaque earum.et consectetur adipisicing elit. Ea minima optio molestiae est harum soluta repudiandae maxime fugit eaque earum.et consectetur adipisicing elit. Ea minima optio molestiae est harum soluta repudiandae maxime fugit eaque earum.et consectetur adipisicing elit. Ea minima optio molestiae est harum soluta repudiandae maxime fugit eaque earum.et consectetur adipisicing elit. Ea minima optio molestiae est harum soluta repudiandae maxime fugit eaque earum.et consectetur adipisicing elit. Ea minima optio molestiae est harum soluta repudiandae maxime fugit eaque earum.et consectetur adipisicing elit. Ea minima optio molestiae est harum soluta repudiandae maxime fugit eaque earum.et consectetur adipisicing elit. Ea minima optio molestiae est harum soluta repudiandae maxime fugit eaque earum.",
     },
     {
-      id: 7,
+      id: 9,
       name: "Dr. John Doe",
       email: "testmail@knust.edu.gh",
       image: testImage,
@@ -95,7 +95,10 @@ const CardWrapper = styled.div`
   border-radius: 1rem;
   max-width: 30vw;
   width: 100%;
-  outline: 1px solid #ccc;
+  background-color: ${({ theme }) =>
+    theme.mode === "light" ? theme.background : "#1E293B"};
+  outline: 1px solid
+    ${({ theme }) => (theme.mode === "light" ? "#bbbbbb" : "#808080")};
   transition: 0.2s ease;
   cursor: pointer;
   &:hover {
@@ -119,6 +122,7 @@ const InfoContainer = styled.div`
     object-fit: cover;
     object-position: center;
     border-radius: 100%;
+    box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.185);
     @media (max-width: ${BREAKPOINTS.MOBILE}) {
       width: 70px;
       height: 70px;

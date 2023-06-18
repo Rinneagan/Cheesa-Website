@@ -3,13 +3,14 @@ import { Paragraph } from "../../utils/ReusableStyles";
 import { MainHeading, Tag } from "../../utils/ReusableStyles";
 import { motion } from "framer-motion";
 import FirstImage from "../../assets/viktor-kiryanov-lAcYPEiau0U-unsplash.jpg";
-import SecondImage from "../../assets/ivo-lukacovic-IJTX8aDDMa0-unsplash.jpg";
-import ThirdImage from "../../assets/victor-2PJMDIgK9EA-unsplash.jpg";
+import ThirdImage from "../../assets/ivo-lukacovic-IJTX8aDDMa0-unsplash.jpg";
+import SecondImage from "../../assets/bootcamp.jpg";
+import opportunityhub from "../../assets/OPPORTUNITY HUB.jpg";
 import { useRef } from "react";
 
 import { BREAKPOINTS } from "../../utils/ReusableStyles";
 
-const TextBoxVariants = {
+export const TextBoxVariants = {
   hidden: {
     opacity: 1,
   },
@@ -21,7 +22,7 @@ const TextBoxVariants = {
   },
 };
 
-const TextItemsVariants = {
+export const TextItemsVariants = {
   hidden: { opacity: 0, y: 50 },
   show: { opacity: 1, y: 0 },
 };
@@ -51,9 +52,9 @@ function Responsibility() {
         <SliderWrapper drag="x" dragConstraints={constraintRef}>
           <Card>
             <div className="img__container">
-              <img src={FirstImage} alt="First Image" />
+              <img src={opportunityhub} alt="First Image" />
             </div>
-            <h3>Soft skills training</h3>
+            <h3>Opportunity Hub</h3>
           </Card>
           <Card>
             <div className="img__container">

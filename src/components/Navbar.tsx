@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { useContext, useState, useEffect } from "react";
 import { RiSunLine, RiMoonLine } from "react-icons/ri";
 import CheesaLogo from "../assets/cheesa-logo.png";
+import CheesaLogoDark from "../assets/CHEESA WHITE.png";
 import { Button } from "../utils/ReusableStyles";
 import { ToggleTheme } from "./ThemeWrapper";
 import { BREAKPOINTS } from "../utils/ReusableStyles";
@@ -53,7 +54,10 @@ function Navbar() {
       <MenuWrapper>
         <Logo>
           <Link to="/">
-            <img src={CheesaLogo} alt="Cheesa Logo" />
+            <img
+              src={isLight ? CheesaLogo : CheesaLogoDark}
+              alt="Cheesa Logo"
+            />
           </Link>
         </Logo>
         <section className="menu">
@@ -102,6 +106,7 @@ const HeaderWrapper = styled.header<StyleProps>`
   z-index: 9999;
   max-width: 1400px;
   margin-inline: auto;
+  background-color: ${({ theme }) => theme.background};
 
   @media (min-width: ${BREAKPOINTS.LAPTOP}) {
     height: fit-content;
@@ -109,7 +114,6 @@ const HeaderWrapper = styled.header<StyleProps>`
     flex-direction: row;
     gap: 1rem;
     padding-inline: 2rem;
-    backdrop-filter: blur(20px);
   }
 `;
 
@@ -136,7 +140,7 @@ const NavBar = styled(motion.nav)<StyleProps>`
     height: fit-content;
     transform: translateX(0) !important;
     background-color: transparent;
-    backdrop-filter: blur(50px);
+    /* backdrop-filter: blur(50px); */
   }
 
   ul {
@@ -178,8 +182,8 @@ const MenuWrapper = styled.section`
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  backdrop-filter: blur(50px);
-  /* background-color: ; */
+  /* backdrop-filter: blur(50px); */
+  background-color: ${({ theme }) => theme.background};
 
   @media (min-width: ${BREAKPOINTS.LAPTOP}) {
     width: fit-content;

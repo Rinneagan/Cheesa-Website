@@ -1,8 +1,7 @@
 import { useOutletContext } from "react-router-dom";
 
 function ExecutivesIndex() {
-  const year = useOutletContext<string>();
-  return <div>{year}</div>;
+  return <h4>Hello World</h4>;
 }
 
 export default ExecutivesIndex;
