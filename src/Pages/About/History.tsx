@@ -72,7 +72,8 @@ const TextBox = styled.section`
     font-size: 2rem;
     padding-bottom: 1rem;
     font-weight: 400;
-    color: ${({ theme }) => theme.accent};
+    color: ${({ theme }) =>
+      theme.mode === "light" ? theme.cheesaBlue : theme.accent};
   }
 
   p {

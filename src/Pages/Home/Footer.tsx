@@ -7,6 +7,8 @@ import {
   RiYoutubeLine,
   RiTwitterLine,
 } from "react-icons/ri";
+import { FaTiktok } from "react-icons/fa";
+
 import { motion } from "framer-motion";
 
 function Footer() {
@@ -58,17 +60,45 @@ function Footer() {
             </ul>
           </UsefulLinks>
           <SocialsLinks>
-            <motion.a whileHover={{ y: -6 }} href="" className="fb">
+            <motion.a
+              whileHover={{ y: -6 }}
+              target="_blank"
+              href="https://twitter.com/Cheesa_knust19"
+              className="fb"
+            >
               <RiTwitterLine color="inherit" size={24} />
             </motion.a>
-            <motion.a whileHover={{ y: -6 }} href="" className="ins">
+            <motion.a
+              whileHover={{ y: -6 }}
+              href="https://instagram.com/cheesaknust?igshid=ZGUzMzM3NWJiOQ=="
+              target="_blank"
+              className="ins"
+            >
               <RiInstagramLine color="inherit" size={24} />
             </motion.a>
-            <motion.a whileHover={{ y: -6 }} href="" className="lkd">
+            <motion.a
+              whileHover={{ y: -6 }}
+              href="https://www.linkedin.com/company/chemical-engineering-students-association/"
+              target="_blank"
+              className="lkd"
+            >
               <RiLinkedinBoxFill color="inherit" size={24} />
             </motion.a>
-            <motion.a whileHover={{ y: -6 }} href="" className="yt">
+            <motion.a
+              whileHover={{ y: -6 }}
+              href="https://www.youtube.com/@CHEESA-KNUST"
+              target="_blank"
+              className="yt"
+            >
               <RiYoutubeLine color="inherit" size={24} />
+            </motion.a>
+            <motion.a
+              whileHover={{ y: -6 }}
+              href="https://www.tiktok.com/@cheesaknust23?_t=8Zcnn7qOR54&_r=1"
+              target="_blank"
+              className="yt"
+            >
+              <FaTiktok color="inherit" size={24} />
             </motion.a>
           </SocialsLinks>
         </LinksWrapper>

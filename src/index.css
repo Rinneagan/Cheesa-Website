@@ -62,7 +62,7 @@ nav {
 
 .header {
   border-bottom: 1px solid hsl(0, 0%, 65%);
-  backdrop-filter: blur(20px);
+  /* backdrop-filter: blur(20px); */
 }
 
 .blob {

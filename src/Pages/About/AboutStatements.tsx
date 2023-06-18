@@ -1,11 +1,18 @@
 import styled from "styled-components";
 import { BREAKPOINTS } from "../../utils/ReusableStyles";
+import { motion } from "framer-motion";
+import { TextBoxVariants, TextItemsVariants } from "../Home/Responsibility";
 
 function AboutStatements() {
   return (
     <StatementWrapper>
-      <TextWrapper>
-        <TextBox>
+      <TextWrapper
+        variants={TextBoxVariants}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: "some" }}
+      >
+        <TextBox variants={TextItemsVariants}>
           <h2>Vision</h2>
           <p>
             The vision of the Department of Chemical Engineering at KNUST is to
@@ -16,7 +23,7 @@ function AboutStatements() {
             of Ghana in particular and Africa as a whole.
           </p>
         </TextBox>
-        <TextBox>
+        <TextBox variants={TextItemsVariants}>
           <h2>Mission</h2>
           <p>
             Our mission is to produce an environment for teaching and research
@@ -52,25 +59,31 @@ const StatementWrapper = styled.div`
   }
 `;
 
-const TextWrapper = styled.div`
+const TextWrapper = styled(motion.div)`
   width: 100%;
   margin: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-items: center;
-  @media (max-width: ${BREAKPOINTS.MOBILE}) {
-    margin: 0;
+  display: grid;
+  @media (min-width: ${BREAKPOINTS.MOBILE}) {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
   }
 `;
-const TextBox = styled.section`
+const TextBox = styled(motion.section)`
   width: 100%;
   margin-top: 2rem;
+  outline: 1px solid
+    ${({ theme }) => (theme.mode === "light" ? "#bbbbbb" : "#808080")};
+  background-color: ${({ theme }) =>
+    theme.mode === "light" ? theme.background : "#1E293B"};
+  border-radius: 0.8rem;
+  padding: 1rem;
 
   h2 {
     font-size: 2.5rem;
     padding-bottom: 2rem;
     font-weight: 400;
+    color: ${({ theme }) =>
+      theme.mode === "light" ? theme.cheesaBlue : theme.accent};
   }
 
   p {
