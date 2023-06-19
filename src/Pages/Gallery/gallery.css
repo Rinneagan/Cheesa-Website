@@ -1,0 +1,15 @@
+.modal {
+  transition: opacity 0.5s, visibility 0.5s, overflow 0.5s;
+  opacity: 0;
+  visibility: hidden;
+  overflow: auto;
+}
+.modal img {
+  width: auto;
+  max-width: 90%;
+}
+.modal.open {
+  visibility: visible;
+  opacity: 1;
+  overflow: hidden;
+}
