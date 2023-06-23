@@ -34,11 +34,12 @@ The Chemical Engineering Student Association website is designed to provide chem
 To run the Chemical Engineering Student Association website locally, follow these steps:
 
 
-1. Clone the repository: `git clone https://github.com/diabeney/dbn-jro.git`
-2. Navigate to the project directory: `cd dbn-jro`
-3. Install the dependencies: `npm install`
-4. Start the development server: `npm run dev`
-5. Open your browser and visit: `http://localhost:3000`
+1. Fork the repository: `git clone https://github.com/diabeney/dbn-jro.git`
+2. Clone the repository and then setup a new branch
+3. Navigate to the project directory: `cd dbn-jro`
+4. Install the dependencies: `npm install`
+5. Start the development server: `npm run dev`
+6. Open your browser and visit:`http://localhost:5173`
 
 Note: Make sure you have Node.js and npm installed on your machine.
 
@@ -67,7 +68,7 @@ We would like to express our gratitude to the following individuals and organiza
 
 - Diabene
 - JRO
-- Concept
+-0xConcept
 
 ## Social Media
 
