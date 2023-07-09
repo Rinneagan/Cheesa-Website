@@ -5,7 +5,11 @@ import {
   gallery_query,
   lecturer_query,
 } from "../constants/page";
-import { ExecutiveResponse } from "../types/types";
+import {
+  ExecutiveResponse,
+  LecturersResponse,
+  GalleryResponse,
+} from "../types/types";
 
 export type FetchStatus = "Fetching" | "Error" | "Success" | null;
 
@@ -33,13 +37,13 @@ function useFetchExecutives() {
 }
 
 function useFetchGallery() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<GalleryResponse>([]);
   const [status, setStatus] = useState<FetchStatus>(null);
   useEffect(() => {
     const fetchData = async () => {
       setStatus("Fetching");
       try {
-        const response = await client.fetch(gallery_query);
+        const response = await client.fetch<GalleryResponse>(gallery_query);
         setData(response);
         setStatus("Success");
       } catch (err) {
@@ -54,13 +58,13 @@ function useFetchGallery() {
 }
 
 function useFetchLecturers() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<LecturersResponse>([]);
   const [status, setStatus] = useState<FetchStatus>(null);
   useEffect(() => {
     const fetchData = async () => {
       setStatus("Fetching");
       try {
-        const response = await client.fetch(lecturer_query);
+        const response = await client.fetch<LecturersResponse>(lecturer_query);
         setData(response);
         setStatus("Success");
       } catch (err) {

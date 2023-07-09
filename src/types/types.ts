@@ -35,7 +35,19 @@ export type ExecutiveResponse = {
   [K in ExecutiveResponseFields]: ExecutiveDetail[];
 };
 
-// export type ExecutivesData = {
-//   year: string;
-//   executives: ExecutiveDetail[];
-// }[];
+export type LecturersResponse = {
+  fullName: string;
+  email: string;
+  lecturerImage: { asset: { url: string } };
+  description: string;
+}[];
+
+export type ExecutivesData = {
+  year: string;
+  executives: ExecutiveDetail[];
+}[];
+
+export type GalleryResponse = {
+  image_url: { asset: { url: string } };
+  image_alt: string;
+}[];

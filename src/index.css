@@ -81,3 +81,7 @@ mark {
 footer ul li {
   transition: transform 300ms ease-in-out;
 }
+
+a {
+  color: inherit;
+}
