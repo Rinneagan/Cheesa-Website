@@ -40,7 +40,7 @@ function GalleryComponent() {
         <GalleryWrapper>
           {data &&
             data.map((item) => (
-              <GalleryCard key={item._id}>
+              <GalleryCard key={item.image_alt}>
                 <img
                   src={item.image_url.asset.url}
                   alt={item.image_alt}

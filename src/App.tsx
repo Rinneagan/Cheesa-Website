@@ -8,7 +8,6 @@ import ExecutivesLayout from "./Pages/Executives/ExecutivesLayout";
 import Lecturers from "./Pages/Lecturers/Lecturers";
 import Navbar from "./components/Navbar";
 import Gallery from "./Pages/Gallery/Gallery";
-import GlobalStyle from "./components/GlobalStyles";
 import ExecutiveDetail from "./Pages/Executives/ExecutiveDetail";
 import ExecutivesIndex from "./Pages/Executives/ExecutivesIndex";
 
@@ -18,7 +17,6 @@ function App() {
   return (
     <Router>
       <ThemeProvider theme={theme}>
-        <GlobalStyle />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
