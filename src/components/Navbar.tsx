@@ -1,7 +1,6 @@
-import { HeaderStyles } from "../utils/constants";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import { RiSunLine, RiMoonLine } from "react-icons/ri";
 import CheesaLogo from "../assets/cheesa-logo.png";
 import CheesaLogoDark from "../assets/CHEESA WHITE.png";

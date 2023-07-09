@@ -1,81 +1,11 @@
 import styled from "styled-components";
-import testImage from "../../assets/IMG_0874.jpg";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { BREAKPOINTS } from "../../utils/ReusableStyles";
 import { useFetchLecturers } from "../../hooks/useFetch";
 import { Oval } from "react-loader-spinner";
 import { ToggleTheme } from "../../components/ThemeWrapper";
 
 const Card = () => {
-  const [lecturers, setLecturers] = useState([
-    {
-      id: 1,
-      name: "Dr. John Doe",
-      email: "testmail@knust.edu.gh",
-      image: testImage,
-      desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea minima optio molestiae est harum soluta repudiandae maxime fugit eaque earum.",
-    },
-    {
-      id: 2,
-      name: "Dr. John Doe",
-      email: "testmail@knust.edu.gh",
-      image: testImage,
-      desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea minima optio molestiae est harum soluta repudiandae maxime fugit eaque earum.",
-    },
-    {
-      id: 3,
-      name: "Dr. John Doe",
-      email: "testmail@knust.edu.gh",
-      image: testImage,
-      desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea minima optio molestiae est harum soluta repudiandae maxime fugit eaque earum.",
-    },
-    {
-      id: 4,
-      name: "Dr. John Doe",
-      email: "testmail@knust.edu.gh",
-      image: testImage,
-      desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea minima optio molestiae est harum soluta repudiandae maxime fugit eaque earum.",
-    },
-
-    {
-      id: 5,
-      name: "Dr. John Doe",
-      email: "testmail@knust.edu.gh",
-      image: testImage,
-      desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea minima optio molestiae est harum soluta repudiandae maxime fugit eaque earum.",
-    },
-
-    {
-      id: 6,
-      name: "Dr. John Doe",
-      email: "testmail@knust.edu.gh",
-      image: testImage,
-      desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea minima optio molestiae est harum soluta repudiandae maxime fugit eaque earum.",
-    },
-
-    {
-      id: 7,
-      name: "Dr. John Doe",
-      email: "testmail@knust.edu.gh",
-      image: testImage,
-      desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea minima optio molestiae est harum soluta repudiandae maxime fugit eaque earum.",
-    },
-    {
-      id: 8,
-      name: "Dr. John Doe",
-      email: "testmail@knust.edu.gh",
-      image: testImage,
-      desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea minima optio molestiae est harum soluta repudiandae maxime fugit eaque earum. et consectetur adipisicing elit. Ea minima optio molestiae est harum soluta repudiandae maxime fugit eaque earum.et consectetur adipisicing elit. Ea minima optio molestiae est harum soluta repudiandae maxime fugit eaque earum.et consectetur adipisicing elit. Ea minima optio molestiae est harum soluta repudiandae maxime fugit eaque earum.et consectetur adipisicing elit. Ea minima optio molestiae est harum soluta repudiandae maxime fugit eaque earum.et consectetur adipisicing elit. Ea minima optio molestiae est harum soluta repudiandae maxime fugit eaque earum.et consectetur adipisicing elit. Ea minima optio molestiae est harum soluta repudiandae maxime fugit eaque earum.et consectetur adipisicing elit. Ea minima optio molestiae est harum soluta repudiandae maxime fugit eaque earum.et consectetur adipisicing elit. Ea minima optio molestiae est harum soluta repudiandae maxime fugit eaque earum.",
-    },
-    {
-      id: 9,
-      name: "Dr. John Doe",
-      email: "testmail@knust.edu.gh",
-      image: testImage,
-      desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea minima optio molestiae est harum soluta repudiandae maxime fugit eaque earum.",
-    },
-  ]);
-
   const { theme } = useContext(ToggleTheme);
 
   const { data, status } = useFetchLecturers();
