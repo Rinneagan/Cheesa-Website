@@ -119,3 +119,24 @@ export const executives_query = `
           }
 }
 `;
+
+export const gallery_query = `*[_type == "gallery"]{
+              image_url{
+                asset ->{
+                  url
+                }
+              },
+              image_alt
+            }
+            `;
+
+export const lecturer_query = `*[_type == "lecturers"]{
+              fullName,
+                email,
+              lecturerImage{
+                asset -> {
+                  url
+                },
+              },
+              description
+            }`;
