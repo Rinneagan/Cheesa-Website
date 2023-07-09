@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import BackroundImage from "../../assets/crystal-kwok-XUEdfpPIhXg-unsplash.webp";
+import BackroundImage from "../../assets/_MG_0356.jpg";
 import { BREAKPOINTS } from "../../utils/ReusableStyles";
 import { motion } from "framer-motion";
 type HeroWrapperProps = {
@@ -35,10 +35,11 @@ function Home() {
 const HeroWrapper = styled.div<HeroWrapperProps>`
   width: 100%;
   height: 100vh;
-  background-image: linear-gradient(to bottom, #000000b3, #000000dc),
+  background-image: linear-gradient(to bottom, #00000057, #000000dc),
     url(${({ backgroundImage }) => backgroundImage});
   background-size: cover;
   background-attachment: fixed;
+  background-position: center;
 `;
 
 const TextBox = styled.section`

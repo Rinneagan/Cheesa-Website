@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ValuesImage from "../../assets/becca-tapert-GnY_mW1Q6Xc-unsplash.jpg";
+import ValuesImage from "../../assets/_MG_0439.jpg";
 import { BREAKPOINTS, Tag } from "../../utils/ReusableStyles";
 import { useScroll, motion, useTransform, useSpring } from "framer-motion";
 
@@ -87,6 +87,7 @@ const Container = styled.div`
   @media (min-width: ${BREAKPOINTS.LAPTOP}) {
     place-items: center;
     padding-right: 2rem;
+    height: 100%;
     grid-template-columns: repeat(2, 1fr);
     backdrop-filter: blur(120px);
   }
@@ -103,7 +104,7 @@ const TextBox = styled.div`
 
 const ImageBox = styled.div`
   width: 100%;
-  height: 100%;
+  height: 80%;
   border-radius: 1rem;
   overflow: hidden;
   position: relative;
@@ -112,7 +113,7 @@ const ImageBox = styled.div`
     height: 100%;
     width: 100%;
     object-fit: cover;
-    object-position: center;
+    object-position: top;
   }
 
   @media (min-width: ${BREAKPOINTS.LAPTOP}) {

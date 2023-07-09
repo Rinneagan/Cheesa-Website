@@ -7,64 +7,60 @@ import closeIcon from "../../assets/close.png";
  * transition in a class
  */
 import "./gallery.css";
+//   DUMMY_DATA
+const data = [
+  {
+    id: 1,
+    image: "https://images.unsplash.com/photo-1621905252472-943afaa20e20",
+  },
+  {
+    id: 2,
+    image: "https://images.unsplash.com/photo-1573164713712-03790a178651",
+  },
+  {
+    id: 3,
+    image: "https://images.unsplash.com/photo-1607706009771-de8808640bcf",
+  },
+  {
+    id: 4,
+    image: "https://images.unsplash.com/photo-1649451844835-7f9d1dc6b0bf",
+  },
+  {
+    id: 5,
+    image: "https://images.unsplash.com/photo-1573166613605-3b4dfcbf1268",
+  },
+  {
+    id: 6,
+    image: "https://images.unsplash.com/photo-1573167659694-342d570ce45a",
+  },
+  {
+    id: 7,
+    image: "https://images.unsplash.com/photo-1581089778245-3ce67677f718",
+  },
+  {
+    id: 8,
+    image: "https://images.unsplash.com/photo-1565227748061-b5935bb64665",
+  },
+  {
+    id: 9,
+    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998",
+  },
+  {
+    id: 10,
+    image: "https://plus.unsplash.com/premium_photo-1661664754689-ac15147a2300",
+  },
+  {
+    id: 11,
+    image: "https://images.unsplash.com/photo-1573166953836-06864dc70a21",
+  },
+];
 
 function GalleryComponent() {
-  // All set state
   const [modal, setModal] = useState(false);
-  // Single clicked image state
   const [single, setSingle] = useState("");
-  //   DUMMY_DATA
-  const data = [
-    {
-      id: 1,
-      image: "https://images.unsplash.com/photo-1621905252472-943afaa20e20",
-    },
-    {
-      id: 2,
-      image: "https://images.unsplash.com/photo-1573164713712-03790a178651",
-    },
-    {
-      id: 3,
-      image: "https://images.unsplash.com/photo-1607706009771-de8808640bcf",
-    },
-    {
-      id: 4,
-      image: "https://images.unsplash.com/photo-1649451844835-7f9d1dc6b0bf",
-    },
-    {
-      id: 5,
-      image: "https://images.unsplash.com/photo-1573166613605-3b4dfcbf1268",
-    },
-    {
-      id: 6,
-      image: "https://images.unsplash.com/photo-1573167659694-342d570ce45a",
-    },
-    {
-      id: 7,
-      image: "https://images.unsplash.com/photo-1581089778245-3ce67677f718",
-    },
-    {
-      id: 8,
-      image: "https://images.unsplash.com/photo-1565227748061-b5935bb64665",
-    },
-    {
-      id: 9,
-      image: "https://images.unsplash.com/photo-1531482615713-2afd69097998",
-    },
-    {
-      id: 10,
-      image:
-        "https://plus.unsplash.com/premium_photo-1661664754689-ac15147a2300",
-    },
-    {
-      id: 11,
-      image: "https://images.unsplash.com/photo-1573166953836-06864dc70a21",
-    },
-  ];
 
   //   Display Clicked Image
   function handleImage(imageSrc: string) {
-    console.log(imageSrc);
     setModal(true);
     setSingle(imageSrc);
   }
@@ -160,7 +156,7 @@ const Close = styled.div`
 
 const Modal = styled.div`
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -169,10 +165,9 @@ const Modal = styled.div`
   left: 0;
   top: 0;
   background: rgba(0, 0, 0, 0.8);
-  z-index: 999;
+  z-index: 99999;
 
   img {
-    margin-top: 5.5rem;
     height: 85%;
     object-fit: cover;
 

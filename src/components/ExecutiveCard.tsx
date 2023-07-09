@@ -1,81 +1,56 @@
 import styled from "styled-components";
-import CardImage from "../assets/Gggg.jpg";
 
 type DataProps = {
   name: string;
   portfolio: string;
-  img_url?: string;
+  img_url?: { asset: { url: string } };
 };
 
 function ExecutiveCard({ name, portfolio, img_url }: DataProps) {
   return (
     <CardWrapper>
       <div>
-        <img src={CardImage} alt="Executive" />
+        <img src={img_url ? img_url.asset.url : ""} alt="Executive" />
       </div>
-      <section>
+      <CardData>
         <h2>{name}</h2>
         <p>{portfolio}</p>
-      </section>
+      </CardData>
     </CardWrapper>
   );
 }
 
-const CardWrapper = styled.div`
-  height: 20rem;
-  width: 15rem;
-  flex-shrink: 0;
-  padding: 1rem;
-  position: relative;
-  background-color: ${({ theme }) =>
-    theme.mode === "light" ? "#e7e7e7" : "#1E293B"};
-  border-radius: 1rem;
-
-  div {
-    height: 85%;
-    border-radius: 0.4rem;
-    overflow: hidden;
-    margin-bottom: auto;
-
-    img {
-      object-fit: cover;
-      object-position: top;
-      width: 100%;
-      height: 100%;
-      transform: scale(1);
-      transition: transform 300ms ease-in;
-      &:hover {
-        object-position: top;
-        transform: scale(1.2);
-      }
-    }
-  }
-
+const CardData = styled.section`
+  margin-top: 1rem;
   h2 {
-    /* font-size: 1.4rem; */
-    font-weight: 300;
-    color: ${({ theme }) => theme.foreground};
-    margin-top: 0;
-    position: absolute;
-    bottom: 1rem;
-  }
-
-  p {
+    padding-block: 0.6rem;
   }
 `;
 
-// const CardWrapper = styled.div`
-//   aspect-ratio: 4/3;
-//   width: 15rem;
-//   padding: 1rem;
-//   border-radius: 0.8rem;
-//   background-color: ${({ theme }) =>
-//     theme.mode === "light" ? theme.background : "#1E293B"};
-//   outline: 1px solid
-//     ${({ theme }) => (theme.mode === "light" ? "#bbbbbb" : "#808080")};
-//   h2 {
-//     font-size: 1.2rem;
-//   }
-// `;
+const CardWrapper = styled.div`
+  width: 15rem;
+  height: 20rem;
+  padding: 1rem;
+  border-radius: 0.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: ${({ theme }) =>
+    theme.mode === "light" ? theme.background : "#1E293B"};
+  outline: 1px solid
+    ${({ theme }) => (theme.mode === "light" ? "#bbbbbb" : "#808080")};
+
+  div {
+    width: 100%;
+    height: 75%;
+    border-radius: 0.6rem;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+`;
 
 export default ExecutiveCard;

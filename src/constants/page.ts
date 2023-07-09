@@ -1,5 +1,4 @@
-// Executives Query
-
+export const executives_query = `
 *[_type == "year" && year == "2023"][0]{
     academic_board[]{
           img_url{
@@ -11,7 +10,7 @@
             portfolio,
         },
       executive_committee[]{
-        executive_image{
+        img_url{
             asset -> {
               url
             }
@@ -117,20 +116,6 @@
         },
         name,
           portfolio,
-          }`
+          }
 }
-
-
-
-// Lecturers Query
-
-*[_type == "lecturers"]{
-  fullName,
-    email,
-  lecturerImage{
-    asset -> {
-      url
-    },
-  },
-}
-
+`;
