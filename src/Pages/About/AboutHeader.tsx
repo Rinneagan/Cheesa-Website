@@ -17,7 +17,7 @@ function AboutHeader() {
 }
 
 const AboutWrapper = styled.div<AboutWrapperProps>`
-  height: 100vh;
+  height: 85vh;
   width: 100vw;
   max-width: 1400px;
   background-image: linear-gradient(to bottom, #000000b3, #000000dc),

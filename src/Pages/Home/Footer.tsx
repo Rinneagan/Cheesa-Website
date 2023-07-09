@@ -24,16 +24,15 @@ function Footer() {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/">About</Link>
+                <Link to="/about">About</Link>
               </li>
               <li>
-                <Link to="/">Executives</Link>
+                <Link to="/executives">Executives</Link>
               </li>
               <li>
-                <Link to="/">E-Library</Link>
-              </li>
-              <li>
-                <Link to="/">FAQs</Link>
+                <a href="https://cheesa.netlify.app/" target="_blank">
+                  E-Library
+                </a>
               </li>
             </ul>
           </UsefulLinks>

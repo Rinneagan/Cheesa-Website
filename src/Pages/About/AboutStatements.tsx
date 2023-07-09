@@ -61,9 +61,10 @@ const StatementWrapper = styled.div`
 
 const TextWrapper = styled(motion.div)`
   width: 100%;
-  margin: 2rem;
+  padding: 1rem;
   display: grid;
-  @media (min-width: ${BREAKPOINTS.MOBILE}) {
+  gap: 1rem;
+  @media (min-width: ${BREAKPOINTS.LAPTOP}) {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
   }

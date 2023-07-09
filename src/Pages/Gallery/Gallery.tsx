@@ -17,7 +17,7 @@ function Gallery() {
 const MainWrapper = styled.div`
   background-color: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.foreground};
-  padding: 8rem 2rem;
+  padding: 8rem 0.8rem;
   h1 {
     text-align: center;
     font-size: 2rem;

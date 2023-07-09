@@ -62,7 +62,12 @@ function Navbar() {
           {NavLinks.map((item) => {
             return (
               <motion.li key={item} whileTap={{ scale: 0.9 }}>
-                <Link to={`/${item.toLowerCase()}`}>{item}</Link>
+                <Link
+                  to={`/${item.toLowerCase()}`}
+                  onClick={() => setNavIsOpen(false)}
+                >
+                  {item}
+                </Link>
               </motion.li>
             );
           })}

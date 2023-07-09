@@ -35,11 +35,7 @@ function ExecutiveDetail() {
     const actualData = data[committee];
     return (
       <>
-        <h1
-          style={{ fontSize: "2rem", paddingTop: "1rem", fontWeight: "bold" }}
-        >
-          {CommitteeTitle}
-        </h1>
+        <Heading>{CommitteeTitle}</Heading>
         <ExecutivesContainer>
           {actualData &&
             actualData.map((item) => {
@@ -52,6 +48,12 @@ function ExecutiveDetail() {
 
   return null;
 }
+
+const Heading = styled.h1`
+  font-size: 2rem;
+  font-weight: bold;
+  padding-block: 2rem;
+`;
 
 const ExecutivesContainer = styled.div`
   display: flex;

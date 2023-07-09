@@ -101,7 +101,7 @@ const TextBox = styled.div`
 `;
 const LectuerDesc = styled.p`
   font-size: 1rem;
-  font-weight: 500;
+  line-height: 1.5;
   color: ${({ theme }) => theme.foreground};
 `;
 
