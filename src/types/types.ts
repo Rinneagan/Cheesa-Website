@@ -24,7 +24,6 @@ export type ExecutiveResponseFields =
   | "organizing_committee"
   | "sports_committee"
   | "electoral_committee"
-  | "electoral_committee"
   | "prayer_board"
   | "mentorship_board"
   | "welfare_board"

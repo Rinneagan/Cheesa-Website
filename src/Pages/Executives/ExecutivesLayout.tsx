@@ -1,4 +1,4 @@
-import { useState, createContext, useEffect } from "react";
+import { useState, createContext } from "react";
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 import { motion } from "framer-motion";

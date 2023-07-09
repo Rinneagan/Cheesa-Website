@@ -1,11 +1,11 @@
-import { ReactNode, useContext, useEffect } from "react";
+import { ReactNode, useContext } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-// import { SidebarHandlerContext } from "../Pages/Resources/Resources";
 import { motion } from "framer-motion";
 import { SidebarHandlerContext } from "../Pages/Executives/ExecutivesLayout";
 
 type ListProps = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   data: any;
   renderEmpty?: ReactNode;
   year: string;
@@ -22,7 +22,7 @@ function RenderSidebarList({
 
   return (
     <AccordionItem style={{ paddingInline: "0" }}>
-      {data.map((item: any) => (
+      {data.map((item: typeof data) => (
         <ListItem key={item}>
           <Link
             to={`${year}-${item.replace(/\s/gi, "-").toLowerCase()}`}

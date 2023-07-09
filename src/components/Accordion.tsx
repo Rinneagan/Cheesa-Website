@@ -3,7 +3,7 @@ import RenderSidebarList from "./RenderSidebarList";
 import { RiArrowRightSLine } from "react-icons/ri";
 // import { COURSES, CoursesProps } from "../constants/style-constants";
 import { motion } from "framer-motion";
-import { committees } from "../data/data";
+import { Committees } from "../data/data";
 
 type AccordionProps = {
   item: string;
@@ -25,7 +25,7 @@ function Accordion({ item, isActive, handleOpenAccordion }: AccordionProps) {
           <RiArrowRightSLine />
         </span>
       </AccordionButton>
-      {isActive && <RenderSidebarList data={committees} year={item} />}
+      {isActive && <RenderSidebarList data={Committees} year={item} />}
     </>
   );
 }

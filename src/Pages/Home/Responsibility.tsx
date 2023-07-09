@@ -2,9 +2,11 @@ import styled from "styled-components";
 import { Paragraph } from "../../utils/ReusableStyles";
 import { MainHeading, Tag } from "../../utils/ReusableStyles";
 import { motion } from "framer-motion";
-import ThirdImage from "../../assets/_MG_0439.jpg";
-import SecondImage from "../../assets/bootcamp.jpg";
+import ExtraCurr from "../../assets/extrculrr.jpg";
+import FieldTripImg from "../../assets/field trip.jpg";
+import SecondImage from "../../assets/onlineee.jpg";
 import opportunityhub from "../../assets/OPPORTUNITY HUB.jpg";
+import SportsImg from "../../assets/team.jpg";
 import { useRef } from "react";
 
 import { BREAKPOINTS } from "../../utils/ReusableStyles";
@@ -51,21 +53,33 @@ function Responsibility() {
         <SliderWrapper drag="x" dragConstraints={constraintRef}>
           <Card>
             <div className="img__container">
-              <img src={opportunityhub} alt="First Image" />
+              <img src={opportunityhub} alt="Lab Sessions" />
             </div>
-            <h3>Opportunity Hub</h3>
+            <h3>Lab Sessions</h3>
           </Card>
           <Card>
             <div className="img__container">
-              <img src={SecondImage} alt="First Image" />
+              <img src={SecondImage} alt="Online Bootcamps" />
             </div>
             <h3>Online Bootcamps</h3>
           </Card>
           <Card>
             <div>
-              <img src={ThirdImage} alt="First Image" />
+              <img src={ExtraCurr} alt="Extra Curricular Activities" />
             </div>
             <h3>Extra-curricular activities</h3>
+          </Card>
+          <Card>
+            <div>
+              <img src={FieldTripImg} alt="Field Trips" />
+            </div>
+            <h3>Field Trips</h3>
+          </Card>
+          <Card>
+            <div>
+              <img src={SportsImg} alt="Sports" />
+            </div>
+            <h3>Sports</h3>
           </Card>
         </SliderWrapper>
       </SwiperContainer>

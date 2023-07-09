@@ -4,9 +4,10 @@ import styled from "styled-components";
 import { useOutletContext } from "react-router";
 import { FetchStatus } from "../../hooks/useFetch";
 import { ExecutiveResponse } from "../../types/types";
-import { Puff } from "react-loader-spinner";
+import { Oval } from "react-loader-spinner";
 import { ToggleTheme } from "../../components/ThemeWrapper";
 import { useContext } from "react";
+import { Committees } from "../../data/data";
 
 type OutletContext = {
   data: ExecutiveResponse;
@@ -18,22 +19,34 @@ function ExecutiveDetail() {
   const { data, status } = useOutletContext<OutletContext>();
   const { theme } = useContext(ToggleTheme);
 
+  const CommitteeTitle = Committees.find(
+    (item) => item.toLocaleLowerCase().replaceAll(" ", "_") === committee
+  );
+
   if (status === "Fetching")
     return (
       <Spinner>
-        <Puff color={theme.foreground} />
+        <Oval color={theme.foreground} secondaryColor={theme.cheesaBlue} />
       </Spinner>
     );
-  if (status === "Error") return <h1>There is an error wai</h1>;
+  if (status === "Error")
+    return <h1>There is an error fetching the executives wai</h1>;
   if (status === "Success") {
     const actualData = data[committee];
     return (
-      <ExecutivesContainer>
-        {actualData &&
-          actualData.map((item) => {
-            return <ExecutiveCard {...item} key={item.name} />;
-          })}
-      </ExecutivesContainer>
+      <>
+        <h1
+          style={{ fontSize: "2rem", paddingTop: "1rem", fontWeight: "bold" }}
+        >
+          {CommitteeTitle}
+        </h1>
+        <ExecutivesContainer>
+          {actualData &&
+            actualData.map((item) => {
+              return <ExecutiveCard {...item} key={item.name} />;
+            })}
+        </ExecutivesContainer>
+      </>
     );
   }
 
