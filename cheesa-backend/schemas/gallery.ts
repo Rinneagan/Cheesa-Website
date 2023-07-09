@@ -2,7 +2,7 @@ export default {
   name: 'gallery',
   title: 'Gallery',
   type: 'document',
-  field: [
+  fields: [
     {
       name: 'image_url',
       title: 'Gallery Image',
