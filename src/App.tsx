@@ -27,7 +27,7 @@ function App() {
           <Route path="/lecturers" element={<Lecturers />} />
           <Route path="/executives" element={<ExecutivesLayout />}>
             <Route path=":year" element={<ExecutiveDetail />} />
-            {/* <Route path=":year" index element={<ExecutivesIndex />} /> */}
+            <Route index element={<ExecutivesIndex />} />
           </Route>
         </Routes>
       </ThemeProvider>

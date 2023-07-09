@@ -16,6 +16,7 @@ function useFetchExecutives() {
           const response = await client.fetch<ExecutiveResponse>(
             executives_query
           );
+          console.log(response);
           setData(response);
           setStatus("Success");
         }, 5000);
