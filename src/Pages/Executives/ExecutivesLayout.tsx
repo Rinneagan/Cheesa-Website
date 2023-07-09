@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { RiCloseLine, RiMenuUnfoldLine } from "react-icons/ri";
 import SideBar from "./Sidebar";
 import { useFetchExecutives } from "../../hooks/useFetch";
+import { BREAKPOINTS } from "../../utils/ReusableStyles";
 
 type sideBarContextProps = {
   toggleSideBar: () => void;
@@ -84,8 +85,7 @@ const OutletContainer = styled.div`
   padding: 1em;
   width: 100%;
   margin-inline: auto;
-  display: grid;
-  @media (min-width: 50em) {
+  @media (min-width: ${BREAKPOINTS.LAPTOP}) {
     margin-top: 5em;
     width: 90%;
   }

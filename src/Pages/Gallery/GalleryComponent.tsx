@@ -60,7 +60,7 @@ const GalleryWrapper = styled.div`
   -webkit-column-width: 33%;
   -moz-column-width: 33%;
   column-width: 33%;
-  padding: 0 24px;
+  padding: 0 0.6rem;
 
   @media (max-width: ${BREAKPOINTS.MOBILE}) {
     -webkit-column-count: 1;
@@ -103,7 +103,7 @@ const Close = styled.div`
   width: 2%;
 
   @media (max-width: ${BREAKPOINTS.MOBILE}) {
-    top: 0px;
+    top: 5%;
     right: 20px;
     width: 7%;
   }
@@ -137,7 +137,7 @@ const Modal = styled.div`
   z-index: 99999;
   img {
     height: 85%;
-    object-fit: cover;
+    object-fit: contain;
 
     @media (max-width: ${BREAKPOINTS.MOBILE}) {
       max-height: 70%;

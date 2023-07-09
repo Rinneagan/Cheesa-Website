@@ -30,7 +30,7 @@ function History() {
 const HistoryWrapper = styled.div`
   width: 100vw;
   max-width: 1400px;
-  height: 100vh;
+  min-height: 100vh;
   padding: 10rem 5rem;
   display: flex;
   align-items: start;
