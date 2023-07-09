@@ -2,7 +2,7 @@ export const committees = ["Executive Committee", "Academic Board"];
 
 export type commData = "executive_committee" | "academic_board";
 
-type executive = Record<"name" | "portfolio", string>;
+type executive = Partial<Record<"name" | "portfolio" | "img_url", string>>;
 
 export type years = "2023" | "2022";
 
@@ -48,6 +48,7 @@ export const Data: ExecutivesData = {
       {
         name: "Sabbah Daniel",
         portfolio: "President",
+        img_url: "hello",
       },
       {
         name: "Susana Taibobo",

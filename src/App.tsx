@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar";
 import Gallery from "./Pages/Gallery/Gallery";
 import GlobalStyle from "./components/GlobalStyles";
 import ExecutiveDetail from "./Pages/Executives/ExecutiveDetail";
+import ExecutivesIndex from "./Pages/Executives/ExecutivesIndex";
 
 function App() {
   const { theme } = useContext(ToggleTheme);
@@ -26,6 +27,7 @@ function App() {
           <Route path="/lecturers" element={<Lecturers />} />
           <Route path="/executives" element={<ExecutivesLayout />}>
             <Route path=":year" element={<ExecutiveDetail />} />
+            {/* <Route path=":year" index element={<ExecutivesIndex />} /> */}
           </Route>
         </Routes>
       </ThemeProvider>

@@ -1,9 +1,10 @@
-import { useState, createContext } from "react";
+import { useState, createContext, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { RiCloseLine, RiMenuUnfoldLine } from "react-icons/ri";
 import SideBar from "./Sidebar";
+import useFetch from "../../hooks/useFetch";
 
 type sideBarContextProps = {
   toggleSideBar: () => void;
@@ -14,7 +15,7 @@ const YEARS = ["2023", "2022"];
 
 function ExecutivesLayout() {
   const [openSidebar, setOpenSidebar] = useState(false);
-
+  const { data, status } = useFetch();
   const toggleSideBar = () => {
     setOpenSidebar((isOpen) => !isOpen);
   };
@@ -22,6 +23,7 @@ function ExecutivesLayout() {
   const menuStyles = {
     justifyContent: openSidebar ? "flex-end" : "flex-start",
   };
+
   return (
     <SidebarHandlerContext.Provider value={{ toggleSideBar, YEARS }}>
       <Wrapper>
@@ -35,7 +37,7 @@ function ExecutivesLayout() {
           </MenuWrapper>
           <SideBar isActive={openSidebar} />
           <OutletContainer>
-            <Outlet />
+            <Outlet context={{ data, status }} />
           </OutletContainer>
         </ResourcesWrapper>
       </Wrapper>

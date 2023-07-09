@@ -8,11 +8,6 @@ import closeIcon from "../../assets/close.png";
  */
 import "./gallery.css";
 
-function GalleryComponent() {
-  // All set state
-  const [modal, setModal] = useState(false);
-  // Single clicked image state
-  const [single, setSingle] = useState("");
   //   DUMMY_DATA
   const data = [
     {
@@ -62,9 +57,14 @@ function GalleryComponent() {
     },
   ];
 
+  
+function GalleryComponent() {
+  const [modal, setModal] = useState(false);
+  const [single, setSingle] = useState("");
+
   //   Display Clicked Image
   function handleImage(imageSrc: string) {
-    console.log(imageSrc);
+
     setModal(true);
     setSingle(imageSrc);
   }
@@ -160,7 +160,8 @@ const Close = styled.div`
 
 const Modal = styled.div`
   width: 100%;
-  height: 100%;
+
+  height: 100vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -169,10 +170,8 @@ const Modal = styled.div`
   left: 0;
   top: 0;
   background: rgba(0, 0, 0, 0.8);
-  z-index: 999;
-
+  z-index: 99999;
   img {
-    margin-top: 5.5rem;
     height: 85%;
     object-fit: cover;
 
