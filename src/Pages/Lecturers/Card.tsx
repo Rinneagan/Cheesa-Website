@@ -1,7 +1,10 @@
 import styled from "styled-components";
 import testImage from "../../assets/IMG_0874.jpg";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { BREAKPOINTS } from "../../utils/ReusableStyles";
+import { useFetchLecturers } from "../../hooks/useFetch";
+import { Oval } from "react-loader-spinner";
+import { ToggleTheme } from "../../components/ThemeWrapper";
 
 const Card = () => {
   const [lecturers, setLecturers] = useState([
@@ -72,20 +75,33 @@ const Card = () => {
       desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea minima optio molestiae est harum soluta repudiandae maxime fugit eaque earum.",
     },
   ]);
+
+  const { theme } = useContext(ToggleTheme);
+
+  const { data, status } = useFetchLecturers();
   return (
     <>
-      {lecturers.map((lecturer) => (
-        <CardWrapper key={lecturer.id}>
-          <InfoContainer>
-            <img src={lecturer.image} alt="" />
-            <TextBox>
-              <h5>{lecturer.name}</h5>
-              <p>{lecturer.email}</p>
-            </TextBox>
-          </InfoContainer>
-          <LectuerDesc>{lecturer.desc}</LectuerDesc>
-        </CardWrapper>
-      ))}
+      {status === "Fetching" ? (
+        <Spinner>
+          <Oval color={theme.foreground} />
+        </Spinner>
+      ) : (
+        <>
+          {data &&
+            data.map((lecturer) => (
+              <CardWrapper key={lecturer.fullName}>
+                <InfoContainer>
+                  <img src={lecturer.lecturerImage.asset.url} alt="" />
+                  <TextBox>
+                    <h5>{lecturer.fullName}</h5>
+                    <a href={`mailto:${lecturer.email}`}>{lecturer.email}</a>
+                  </TextBox>
+                </InfoContainer>
+                <LectuerDesc>{lecturer.description}</LectuerDesc>
+              </CardWrapper>
+            ))}
+        </>
+      )}
     </>
   );
 };
@@ -156,6 +172,14 @@ const TextBox = styled.div`
 const LectuerDesc = styled.p`
   font-size: 1rem;
   font-weight: 500;
+  color: ${({ theme }) => theme.foreground};
+`;
+
+const Spinner = styled.div`
+  width: 100vw;
+  height: 100%;
+  display: grid;
+  place-content: center;
   color: ${({ theme }) => theme.foreground};
 `;
 

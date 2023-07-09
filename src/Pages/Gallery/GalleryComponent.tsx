@@ -1,93 +1,56 @@
 import styled from "styled-components";
 import { BREAKPOINTS } from "../../utils/ReusableStyles";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import closeIcon from "../../assets/close.png";
+import { useFetchGallery } from "../../hooks/useFetch";
 /**
  * External CSS to allow smooth
  * transition in a class
  */
 import "./gallery.css";
+import { Oval } from "react-loader-spinner";
+import { ToggleTheme } from "../../components/ThemeWrapper";
 
-  //   DUMMY_DATA
-  const data = [
-    {
-      id: 1,
-      image: "https://images.unsplash.com/photo-1621905252472-943afaa20e20",
-    },
-    {
-      id: 2,
-      image: "https://images.unsplash.com/photo-1573164713712-03790a178651",
-    },
-    {
-      id: 3,
-      image: "https://images.unsplash.com/photo-1607706009771-de8808640bcf",
-    },
-    {
-      id: 4,
-      image: "https://images.unsplash.com/photo-1649451844835-7f9d1dc6b0bf",
-    },
-    {
-      id: 5,
-      image: "https://images.unsplash.com/photo-1573166613605-3b4dfcbf1268",
-    },
-    {
-      id: 6,
-      image: "https://images.unsplash.com/photo-1573167659694-342d570ce45a",
-    },
-    {
-      id: 7,
-      image: "https://images.unsplash.com/photo-1581089778245-3ce67677f718",
-    },
-    {
-      id: 8,
-      image: "https://images.unsplash.com/photo-1565227748061-b5935bb64665",
-    },
-    {
-      id: 9,
-      image: "https://images.unsplash.com/photo-1531482615713-2afd69097998",
-    },
-    {
-      id: 10,
-      image:
-        "https://plus.unsplash.com/premium_photo-1661664754689-ac15147a2300",
-    },
-    {
-      id: 11,
-      image: "https://images.unsplash.com/photo-1573166953836-06864dc70a21",
-    },
-  ];
-
-  
 function GalleryComponent() {
   const [modal, setModal] = useState(false);
   const [single, setSingle] = useState("");
+  const { data, status } = useFetchGallery();
 
   //   Display Clicked Image
   function handleImage(imageSrc: string) {
-
     setModal(true);
     setSingle(imageSrc);
   }
+
+  const { theme } = useContext(ToggleTheme);
+
   return (
     <>
       <Modal className={modal ? "modal open" : "modal"}>
         <img src={single} alt="Cheesa-Gallery" />
         <Close onClick={() => setModal(!true)}>
-          <img src={closeIcon} alt="" />
+          <img src={closeIcon} alt="close-icon" />
         </Close>
       </Modal>
-      <GalleryWrapper>
-        {data.map((item) => (
-          <GalleryCard key={item.id}>
-            <img
-              src={item.image}
-              alt={item.image}
-              style={{ width: "100%" }}
-              onClick={() => handleImage(item.image)}
-            />
-          </GalleryCard>
-        ))}
-      </GalleryWrapper>
+      {status === "Fetching" ? (
+        <Spinner>
+          <Oval color={theme.foreground} />
+        </Spinner>
+      ) : (
+        <GalleryWrapper>
+          {data &&
+            data.map((item) => (
+              <GalleryCard key={item._id}>
+                <img
+                  src={item.image_url.asset.url}
+                  alt={item.image_alt}
+                  style={{ width: "100%" }}
+                  onClick={() => handleImage(item.image_url.asset.url)}
+                />
+              </GalleryCard>
+            ))}
+        </GalleryWrapper>
+      )}
     </>
   );
 }
@@ -148,6 +111,7 @@ const Close = styled.div`
   img {
     background-color: #fff;
     padding: 0.4rem;
+    border-radius: 50px;
     cursor: pointer;
     transition: all 0.4s ease;
 
@@ -179,6 +143,14 @@ const Modal = styled.div`
       max-height: 70%;
     }
   }
+`;
+const Spinner = styled.div`
+  width: 100%;
+  height: 100%;
+  margin: 5rem auto;
+  display: grid;
+  place-content: center;
+  color: ${({ theme }) => theme.foreground};
 `;
 
 export default GalleryComponent;

@@ -25,31 +25,19 @@ const NavbarVariants = {
 function Navbar() {
   const [navIsOpen, setNavIsOpen] = useState(false);
   const { theme, handleTheme } = useContext(ToggleTheme);
-  const [hasScrolled, setHasScrolled] = useState(false);
 
   const isLight = theme.mode === "light";
 
-  const currentStyle = hasScrolled
-    ? { backgroundColor: theme.background, color: theme.foreground }
-    : HeaderStyles.hero;
-
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      const { top } = document.documentElement.getBoundingClientRect();
-      const height = window.innerHeight - 18 * 5;
-      Math.abs(top) >= height ? setHasScrolled(true) : setHasScrolled(false);
-    });
-
-    return window.removeEventListener("scroll", () => {
-      setHasScrolled(true);
-    });
-  });
+  const currentStyle = {
+    backgroundColor: theme.background,
+    color: theme.foreground,
+  };
 
   return (
     <HeaderWrapper
       backgroundColor={currentStyle.backgroundColor}
       color={currentStyle.color}
-      className={hasScrolled ? "header" : "null"}
+      className="header"
     >
       <MenuWrapper>
         <Logo>
