@@ -76,7 +76,11 @@ function Navbar() {
               <RiSunLine size={24} color="inherit" />
             )}
           </ThemeMode>
-          <EButton color={currentStyle.color}>E-Library</EButton>
+          <EButton color={currentStyle.color}>
+            <a href="https://cheesa.netlify.app/" target="_blank">
+              E-Library
+            </a>
+          </EButton>
         </ButtonWrapper>
       </NavBar>
     </HeaderWrapper>
