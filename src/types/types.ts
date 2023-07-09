@@ -10,7 +10,11 @@ export type ThemeMode = "light" | "dark";
 
 export type Theme = Record<ThemeMode, ThemeTypes>;
 
-export type ExecutiveDetail = Record<"name" | "portfolio" | "img_url", string>;
+export type ExecutiveDetail = {
+  name: string;
+  portfolio: string;
+  img_url: { asset: { url: string } };
+};
 
 export type ExecutiveResponseFields =
   | "peer_counseling_board"

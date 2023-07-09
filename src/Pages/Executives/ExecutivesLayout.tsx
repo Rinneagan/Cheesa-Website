@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { RiCloseLine, RiMenuUnfoldLine } from "react-icons/ri";
 import SideBar from "./Sidebar";
-import useFetch from "../../hooks/useFetch";
+import { useFetchExecutives } from "../../hooks/useFetch";
 
 type sideBarContextProps = {
   toggleSideBar: () => void;
@@ -15,7 +15,7 @@ const YEARS = ["2023", "2022"];
 
 function ExecutivesLayout() {
   const [openSidebar, setOpenSidebar] = useState(false);
-  const { data, status } = useFetch();
+  const { data, status } = useFetchExecutives();
   const toggleSideBar = () => {
     setOpenSidebar((isOpen) => !isOpen);
   };

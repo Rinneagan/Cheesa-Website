@@ -4,6 +4,9 @@ import styled from "styled-components";
 import { useOutletContext } from "react-router";
 import { FetchStatus } from "../../hooks/useFetch";
 import { ExecutiveResponse } from "../../types/types";
+import { Puff } from "react-loader-spinner";
+import { ToggleTheme } from "../../components/ThemeWrapper";
+import { useContext } from "react";
 
 type OutletContext = {
   data: ExecutiveResponse;
@@ -13,28 +16,42 @@ type OutletContext = {
 function ExecutiveDetail() {
   const { committee } = useFormatParams();
   const { data, status } = useOutletContext<OutletContext>();
-  let actualData;
-  if (data) {
-    actualData = data[committee];
-    console.log(actualData);
-  } else {
-    console.log("Loading...");
+  const { theme } = useContext(ToggleTheme);
+
+  if (status === "Fetching")
+    return (
+      <Spinner>
+        <Puff color={theme.foreground} />
+      </Spinner>
+    );
+  if (status === "Error") return <h1>There is an error wai</h1>;
+  if (status === "Success") {
+    const actualData = data[committee];
+    return (
+      <ExecutivesContainer>
+        {actualData &&
+          actualData.map((item) => {
+            return <ExecutiveCard {...item} key={item.name} />;
+          })}
+      </ExecutivesContainer>
+    );
   }
 
-  return (
-    <ExecutivesContainer>
-      {actualData &&
-        actualData.map((item) => {
-          return <ExecutiveCard {...item} key={item.name} />;
-        })}
-    </ExecutivesContainer>
-  );
+  return null;
 }
 
 const ExecutivesContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+`;
+
+const Spinner = styled.div`
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-content: center;
+  color: ${({ theme }) => theme.foreground};
 `;
 
 export default ExecutiveDetail;
