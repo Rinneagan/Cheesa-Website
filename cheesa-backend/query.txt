@@ -134,3 +134,29 @@
   },
 }
 
+//Gallery
+
+*[_type == "gallery"]
+{
+  image_url
+  {
+    ...,
+    asset ->{
+      url
+    }
+  },
+  image_alt
+}
+
+//Events
+*[_type == 'events']{
+  eventName,
+    eventImage{
+    asset ->{
+      url
+    }
+    },
+  eventDescription,
+    eventCategory
+}
+
