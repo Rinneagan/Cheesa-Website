@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import ExtraCurr from "../../assets/extrculrr.jpg";
 import FieldTripImg from "../../assets/field trip.jpg";
 import SecondImage from "../../assets/onlineee.jpg";
-import opportunityhub from "../../assets/OPPORTUNITY HUB.jpg";
+import Labsession from "../../assets/lab.jpg";
 import SportsImg from "../../assets/team.jpg";
 import { useRef } from "react";
 
@@ -53,7 +53,7 @@ function Responsibility() {
         <SliderWrapper drag="x" dragConstraints={constraintRef}>
           <Card>
             <div className="img__container">
-              <img src={opportunityhub} alt="Lab Sessions" />
+              <img src={Labsession} alt="Lab Sessions" />
             </div>
             <h3>Lab Sessions</h3>
           </Card>
