@@ -111,6 +111,9 @@ const Spinner = styled.div`
   display: grid;
   place-content: center;
   color: ${({ theme }) => theme.foreground};
+  @media (max-width: ${BREAKPOINTS.MOBILE}) {
+    width: 100%;
+  }
 `;
 
 export default Card;
