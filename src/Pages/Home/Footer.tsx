@@ -41,20 +41,20 @@ function Footer() {
             <ul>
               <li>
                 <a href="mailto:chemicalengineering.sa@gmail.com">
-                  chemicalengineering.sa@gmail.com
+                  chemeng@knust.edu.gh
                 </a>
               </li>
               <li>
-                <a href="tel: +233 445 543 5546">+233 445 543 5546</a>
-              </li>
-              <li>
-                <p>Department of Chemical Engineering</p>
+                <a href="tel: +233 445 543 5546">+233 3220 60234</a>
               </li>
               <li>
                 <p>College of Engineering</p>
               </li>
               <li>
-                <p>KNUST, Kumasi - Ghana</p>
+                <p>Department of Chemical Engineering</p>
+              </li>
+              <li>
+                <p>P.O. Box 320 KNUST PMB, Kumasi - Ghana</p>
               </li>
             </ul>
           </UsefulLinks>

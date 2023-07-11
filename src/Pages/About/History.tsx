@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { BREAKPOINTS } from "../../utils/ReusableStyles";
-import HODImage from "../../assets/becca-tapert-GnY_mW1Q6Xc-unsplash.jpg";
+import HODImage from "../../assets/_MG_0338.jpg";
 
 function History() {
   return (
