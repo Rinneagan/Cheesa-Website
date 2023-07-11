@@ -47,7 +47,7 @@ const StatementWrapper = styled.div`
   width: 100vw;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 2rem 5rem;
+  padding: 3rem;
   display: flex;
   justify-items: center;
   align-items: center;
@@ -55,7 +55,7 @@ const StatementWrapper = styled.div`
   color: ${({ theme }) => theme.foreground};
   @media (max-width: ${BREAKPOINTS.MOBILE}) {
     width: 100%;
-    padding: 0 1rem 5rem 1rem;
+    padding: 1rem;
   }
 `;
 

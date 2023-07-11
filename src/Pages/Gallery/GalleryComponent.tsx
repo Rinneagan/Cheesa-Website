@@ -25,7 +25,7 @@ function GalleryComponent() {
   const { theme } = useContext(ToggleTheme);
 
   return (
-    <>
+    <Wrapper>
       <Modal className={modal ? "modal open" : "modal"}>
         <img src={single} alt="Cheesa-Gallery" />
         <Close onClick={() => setModal(!true)}>
@@ -51,45 +51,37 @@ function GalleryComponent() {
             ))}
         </GalleryWrapper>
       )}
-    </>
+    </Wrapper>
   );
 }
 
-const GalleryWrapper = styled.div`
-  margin-top: 1rem;
-  -webkit-column-width: 33%;
-  -moz-column-width: 33%;
-  column-width: 33%;
-  padding: 0 0.6rem;
+const Wrapper = styled.div`
+  /* padding: 1rem; */
+`;
 
-  @media (max-width: ${BREAKPOINTS.MOBILE}) {
-    -webkit-column-count: 1;
-    -moz-column-count: 1;
-    column-count: 1;
-  }
-  img {
-    height: 70%;
-    object-fit: cover;
-  }
+const GalleryWrapper = styled.div`
+  width: 100%;
+  display: grid;
+  gap: 1rem;
 
   @media (min-width: ${BREAKPOINTS.TABLET}) {
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
-    column-count: 2;
+    grid-template-columns: repeat(2, 1fr);
   }
   @media (min-width: ${BREAKPOINTS.LAPTOP}) {
-    -webkit-column-count: 3;
-    -moz-column-count: 3;
-    column-count: 3;
+    grid-template-columns: repeat(3, 1fr);
   }
 `;
 
 const GalleryCard = styled.div`
+  width: 100%;
+  height: 25rem;
+
   img {
-    -webkit-transition: all 350ms ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     transition: 350ms ease;
     cursor: pointer;
-    margin-bottom: 12px;
   }
   img:hover {
     filter: opacity(0.7);
@@ -124,7 +116,6 @@ const Close = styled.div`
 
 const Modal = styled.div`
   width: 100%;
-
   height: 100vh;
   display: flex;
   justify-content: center;

@@ -37,7 +37,7 @@ function Responsibility() {
         variants={TextBoxVariants}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: "all" }}
+        viewport={{ once: true, amount: "some" }}
       >
         <Tag variants={TextItemsVariants}>WHAT WE DO?</Tag>
         <MainHeading variants={TextItemsVariants}>
@@ -133,7 +133,7 @@ const SwiperContainer = styled.section`
   }
 `;
 
-const Card = styled.div`
+const Card = styled(motion.div)`
   height: 25rem;
   width: 20rem;
   flex-shrink: 0;

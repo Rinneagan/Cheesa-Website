@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { BREAKPOINTS } from "../../utils/ReusableStyles";
-import HODImage from "../../assets/becca-tapert-GnY_mW1Q6Xc-unsplash.jpg";
+import HODImage from "../../assets/_MG_0338.jpg";
 
 function History() {
   return (
@@ -30,8 +30,8 @@ function History() {
 const HistoryWrapper = styled.div`
   width: 100vw;
   max-width: 1400px;
-  min-height: 100vh;
-  padding: 10rem 5rem;
+  height: fit-content;
+  padding: 3rem;
   display: flex;
   align-items: start;
   justify-items: center;

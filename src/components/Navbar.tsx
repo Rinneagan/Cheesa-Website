@@ -98,7 +98,8 @@ const HeaderWrapper = styled.header<StyleProps>`
   background-color: transparent;
   color: ${({ color }) => color};
   height: 5rem;
-  position: fixed;
+  position: sticky;
+  top: 0;
   z-index: 9999;
   max-width: 1400px;
   margin-inline: auto;
