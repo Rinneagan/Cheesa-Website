@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { BREAKPOINTS } from "../../utils/ReusableStyles";
+import { Paragraph } from "../../utils/ReusableStyles";
 type LecturerCard = {
   fullName: string;
   email: string;
@@ -16,7 +17,7 @@ const Card = ({ lecturer }: { lecturer: LecturerCard }) => {
           <a href={`mailto:${lecturer.email}`}>{lecturer.email}</a>
         </TextBox>
       </InfoContainer>
-      <LectuerDesc>{lecturer.description}</LectuerDesc>
+      <Paragraph>{lecturer.description}</Paragraph>
     </CardWrapper>
   );
 };
@@ -33,8 +34,7 @@ const CardWrapper = styled.div`
   transition: 0.2s ease;
   cursor: pointer;
   &:hover {
-    background-color: #66869b29;
-    outline: none;
+    background-color: #c2c2c229;
   }
 
   @media (max-width: ${BREAKPOINTS.MOBILE}) {
@@ -53,7 +53,6 @@ const InfoContainer = styled.div`
     object-fit: cover;
     object-position: center;
     border-radius: 100%;
-    box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.185);
     @media (max-width: ${BREAKPOINTS.MOBILE}) {
       width: 70px;
       height: 70px;
@@ -84,11 +83,5 @@ const TextBox = styled.div`
     color: #3019c5;
   }
 `;
-const LectuerDesc = styled.p`
-  font-size: 1rem;
-  line-height: 1.5;
-  color: ${({ theme }) => theme.foreground};
-`;
-
 
 export default Card;

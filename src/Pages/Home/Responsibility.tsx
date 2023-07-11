@@ -2,11 +2,6 @@ import styled from "styled-components";
 import { Paragraph } from "../../utils/ReusableStyles";
 import { MainHeading, Tag } from "../../utils/ReusableStyles";
 import { motion } from "framer-motion";
-import ExtraCurr from "../../assets/extrculrr.jpg";
-import FieldTripImg from "../../assets/field trip.jpg";
-import SecondImage from "../../assets/onlineee.jpg";
-import Labsession from "../../assets/lab.jpg";
-import SportsImg from "../../assets/team.jpg";
 import { useRef } from "react";
 
 import { BREAKPOINTS } from "../../utils/ReusableStyles";
@@ -53,31 +48,46 @@ function Responsibility() {
         <SliderWrapper drag="x" dragConstraints={constraintRef}>
           <Card>
             <div className="img__container">
-              <img src={Labsession} alt="Lab Sessions" />
+              <img
+                src="https://ik.imagekit.io/i7gyrkpch/lab_ONSjAgjtV.jpg?updatedAt=1689078137499"
+                alt="Lab Sessions"
+              />
             </div>
             <h3>Lab Sessions</h3>
           </Card>
           <Card>
             <div className="img__container">
-              <img src={SecondImage} alt="Online Bootcamps" />
+              <img
+                src="https://ik.imagekit.io/i7gyrkpch/onlineee_Fl7QYU2ER.jpg?updatedAt=1689078137829"
+                alt="Online Bootcamps"
+              />
             </div>
             <h3>Online Bootcamps</h3>
           </Card>
           <Card>
             <div>
-              <img src={ExtraCurr} alt="Extra Curricular Activities" />
+              <img
+                src="https://ik.imagekit.io/i7gyrkpch/extrculrr_RB-DasN8G.jpg?updatedAt=1689078176332"
+                alt="Extra Curricular Activities"
+              />
             </div>
             <h3>Extra-curricular activities</h3>
           </Card>
           <Card>
             <div>
-              <img src={FieldTripImg} alt="Field Trips" />
+              <img
+                src="https://ik.imagekit.io/i7gyrkpch/field_trip_4qTj0YLx4.jpg?updatedAt=1689078138348"
+                alt="Field Trips"
+              />
             </div>
             <h3>Field Trips</h3>
           </Card>
           <Card>
             <div>
-              <img src={SportsImg} alt="Sports" />
+              <img
+                src="https://ik.imagekit.io/i7gyrkpch/team_EKeWTPaa7.jpg?updatedAt=1689078138895"
+                alt="Sports"
+              />
             </div>
             <h3>Sports</h3>
           </Card>

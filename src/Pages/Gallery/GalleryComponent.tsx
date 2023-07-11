@@ -34,7 +34,7 @@ function GalleryComponent() {
       </Modal>
       {status === "Fetching" ? (
         <Spinner>
-          <Oval color={theme.foreground} />
+          <Oval color={theme.foreground} secondaryColor={theme.cheesaBlue} />
         </Spinner>
       ) : (
         <GalleryWrapper>

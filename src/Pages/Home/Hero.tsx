@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import BackroundImage from "../../assets/_MG_0356.jpg";
 import { BREAKPOINTS } from "../../utils/ReusableStyles";
 import { motion } from "framer-motion";
 type HeroWrapperProps = {
@@ -22,7 +21,7 @@ const HeadingVariants = {
 
 function Home() {
   return (
-    <HeroWrapper backgroundImage={BackroundImage}>
+    <HeroWrapper backgroundImage="https://ik.imagekit.io/i7gyrkpch/_MG_0356_eCxDKul6b.jpg?updatedAt=1689078157904">
       <TextBox>
         <motion.h1 variants={HeadingVariants} initial="hidden" animate="show">
           Chemical Engineering Students' Association

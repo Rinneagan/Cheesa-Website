@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import ValuesImage from "../../assets/_MG_0439.jpg";
 import { BREAKPOINTS, Tag } from "../../utils/ReusableStyles";
 import { useScroll, motion, useTransform, useSpring } from "framer-motion";
 
@@ -24,7 +23,11 @@ function Values() {
       <section className="blob"></section>
       <Container>
         <ImageBox>
-          <motion.img style={{ scale }} src={ValuesImage} alt="image" />
+          <motion.img
+            style={{ scale }}
+            src="https://ik.imagekit.io/i7gyrkpch/_MG_0439_HbWQexqJt.jpg?updatedAt=1689078155677"
+            alt="image"
+          />
         </ImageBox>
         <TextBox>
           <Tag
