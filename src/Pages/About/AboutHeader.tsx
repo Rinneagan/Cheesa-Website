@@ -17,26 +17,19 @@ function AboutHeader() {
 }
 
 const AboutWrapper = styled.div<AboutWrapperProps>`
-  height: 85vh;
-  width: 100vw;
+  width: 100%;
   max-width: 1400px;
+  height: fit-content;
+  padding-block: 3rem;
   background-image: linear-gradient(to bottom, #000000b3, #000000dc),
     url(${({ backgroundImage }) => backgroundImage});
   background-position: top;
   background-size: cover;
-  position: relative;
-
-  @media (max-width: ${BREAKPOINTS.MOBILE}) {
-    height: 70vh;
-  }
 `;
 
 const TextBox = styled.section`
   width: 100%;
   color: white;
-  margin: 10rem auto;
-  position: absolute;
-  top: 1px;
   z-index: 999;
   text-align: center;
 

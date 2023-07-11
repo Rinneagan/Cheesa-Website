@@ -1,4 +1,4 @@
-import { ThemeProvider } from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import { ToggleTheme } from "./components/ThemeWrapper";
 import { useContext } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -17,20 +17,30 @@ function App() {
   return (
     <Router>
       <ThemeProvider theme={theme}>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/lecturers" element={<Lecturers />} />
-          <Route path="/executives" element={<ExecutivesLayout />}>
-            <Route path=":year" element={<ExecutiveDetail />} />
-            <Route index element={<ExecutivesIndex />} />
-          </Route>
-        </Routes>
+        <Main>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/lecturers" element={<Lecturers />} />
+            <Route path="/executives" element={<ExecutivesLayout />}>
+              <Route path=":year" element={<ExecutiveDetail />} />
+              <Route index element={<ExecutivesIndex />} />
+            </Route>
+          </Routes>
+        </Main>
       </ThemeProvider>
     </Router>
   );
 }
+
+const Main = styled.main`
+  background-color: ${({ theme }) => theme.background};
+  color: ${({ theme }) => theme.foreground};
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+`;
 
 export default App;

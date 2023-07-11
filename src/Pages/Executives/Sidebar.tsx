@@ -43,14 +43,13 @@ const SideBarWrapper = styled(motion.section)`
   height: calc(100vh - 3em);
   padding: 1rem;
   overflow-y: scroll;
-  padding-top: 3em;
+  padding-top: 5em;
   position: fixed;
   top: 3em;
   border-bottom: 1px solid ${({ theme }) => theme.secondary};
   background-color: inherit;
   @media (min-width: 50em) {
     position: sticky;
-    margin-top: 5em;
     top: 5em;
     height: calc(100vh - 5em);
     padding-top: 0;

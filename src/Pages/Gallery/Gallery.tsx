@@ -6,7 +6,7 @@ function Gallery() {
   return (
     <>
       <MainWrapper>
-        <h1>Chessa Gallery</h1>
+        <h1>CHEESA GALLERY</h1>
         <GalleryComponent />
       </MainWrapper>
       <Footer />
@@ -17,12 +17,15 @@ function Gallery() {
 const MainWrapper = styled.div`
   background-color: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.foreground};
-  padding: 8rem 0.8rem;
+  padding: 2rem 0.8rem;
+  width: 100vw;
+  max-width: 1440px;
+  margin-inline: auto;
   h1 {
     text-align: center;
     font-size: 2rem;
-    text-transform: uppercase;
     font-weight: bold;
+    padding-block: 1rem;
   }
 `;
 

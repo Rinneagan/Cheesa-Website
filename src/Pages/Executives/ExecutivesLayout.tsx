@@ -66,7 +66,7 @@ const MenuWrapper = styled(motion.button)`
   position: sticky;
   width: 100vw;
   height: 3em;
-  top: 0em;
+  top: 5em;
   align-items: center;
   z-index: 10;
   margin-block: auto;
@@ -86,7 +86,6 @@ const OutletContainer = styled.div`
   width: 100%;
   margin-inline: auto;
   @media (min-width: ${BREAKPOINTS.LAPTOP}) {
-    margin-top: 5em;
     width: 90%;
   }
 `;

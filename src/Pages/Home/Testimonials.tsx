@@ -3,30 +3,20 @@ import { BREAKPOINTS, MainHeading } from "../../utils/ReusableStyles";
 import Ezekiel from "../../assets/IMG_8853.jpg";
 import Student2 from "../../assets/Gggg.jpg";
 import Student3 from "../../assets/IMG_9763.jpg";
-import {
-  motion,
-  useScroll,
-  easeOut,
-  useSpring,
-  useTransform,
-} from "framer-motion";
+import { motion, useScroll, easeOut, useTransform } from "framer-motion";
 
 function Testimonials() {
   const { scrollY } = useScroll();
-  const baseY = useSpring(scrollY);
-  const y = useTransform(baseY, [500, 1500], [-100, 0], {
-    clamp: false,
-  });
   const scale = useTransform(scrollY, [1500, 2000], [0.5, 1], {
     ease: easeOut,
   });
   return (
     <Wrapper>
       <Container>
-        <MainHeading style={{ y }}>
+        <MainHeading>
           Reviews from <mark>students.</mark>{" "}
         </MainHeading>
-        <motion.p style={{ y }}>
+        <motion.p>
           Here are testimonials from chemical engineering students about their
           experience with the association.
         </motion.p>

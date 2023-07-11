@@ -1,38 +1,23 @@
 import styled from "styled-components";
-import { useContext } from "react";
 import { BREAKPOINTS } from "../../utils/ReusableStyles";
-import { useFetchLecturers } from "../../hooks/useFetch";
-import { Oval } from "react-loader-spinner";
-import { ToggleTheme } from "../../components/ThemeWrapper";
-
-const Card = () => {
-  const { theme } = useContext(ToggleTheme);
-
-  const { data, status } = useFetchLecturers();
+type LecturerCard = {
+  fullName: string;
+  email: string;
+  lecturerImage: { asset: { url: string } };
+  description: string;
+};
+const Card = ({ lecturer }: { lecturer: LecturerCard }) => {
   return (
-    <>
-      {status === "Fetching" ? (
-        <Spinner>
-          <Oval color={theme.foreground} />
-        </Spinner>
-      ) : (
-        <>
-          {data &&
-            data.map((lecturer) => (
-              <CardWrapper key={lecturer.fullName}>
-                <InfoContainer>
-                  <img src={lecturer.lecturerImage.asset.url} alt="" />
-                  <TextBox>
-                    <h5>{lecturer.fullName}</h5>
-                    <a href={`mailto:${lecturer.email}`}>{lecturer.email}</a>
-                  </TextBox>
-                </InfoContainer>
-                <LectuerDesc>{lecturer.description}</LectuerDesc>
-              </CardWrapper>
-            ))}
-        </>
-      )}
-    </>
+    <CardWrapper key={lecturer.fullName}>
+      <InfoContainer>
+        <img src={lecturer.lecturerImage.asset.url} alt="" />
+        <TextBox>
+          <h5>{lecturer.fullName}</h5>
+          <a href={`mailto:${lecturer.email}`}>{lecturer.email}</a>
+        </TextBox>
+      </InfoContainer>
+      <LectuerDesc>{lecturer.description}</LectuerDesc>
+    </CardWrapper>
   );
 };
 
@@ -102,14 +87,6 @@ const TextBox = styled.div`
 const LectuerDesc = styled.p`
   font-size: 1rem;
   line-height: 1.5;
-  color: ${({ theme }) => theme.foreground};
-`;
-
-const Spinner = styled.div`
-  width: 100vw;
-  height: 100%;
-  display: grid;
-  place-content: center;
   color: ${({ theme }) => theme.foreground};
 `;
 
