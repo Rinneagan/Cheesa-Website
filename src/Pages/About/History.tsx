@@ -1,12 +1,16 @@
 import styled from "styled-components";
 import { BREAKPOINTS } from "../../utils/ReusableStyles";
-import HODImage from "../../assets/_MG_0338.jpg";
 
 function History() {
   return (
     <HistoryWrapper>
       <ImageWrapper>
-        <img src={HODImage} alt="" width={650} height={450} />
+        <img
+          src="https://ik.imagekit.io/i7gyrkpch/_MG_0338_7tCDZyoH8.jpg?updatedAt=1689078179478"
+          alt=""
+          width={650}
+          height={450}
+        />
       </ImageWrapper>
       <TextBox>
         <h2>12 YEARS AS AN INSTITUTION</h2>

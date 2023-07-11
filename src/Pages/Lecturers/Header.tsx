@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import BackroundImage from "../../assets/crystal-kwok-XUEdfpPIhXg-unsplash.webp";
 import { BREAKPOINTS } from "../../utils/ReusableStyles";
 type AboutWrapperProps = {
   backgroundImage: string;
@@ -7,7 +6,7 @@ type AboutWrapperProps = {
 
 function LecHeader() {
   return (
-    <HeaderWrapper backgroundImage={BackroundImage}>
+    <HeaderWrapper backgroundImage="https://ik.imagekit.io/i7gyrkpch/_MG_0012_s-FNpxoaZ.jpg?updatedAt=1689078175487">
       <TextBox>
         <h2>Our Noble Lecturers</h2>
       </TextBox>

@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar";
 import Gallery from "./Pages/Gallery/Gallery";
 import ExecutiveDetail from "./Pages/Executives/ExecutiveDetail";
 import ExecutivesIndex from "./Pages/Executives/ExecutivesIndex";
+import ScrollTotop from "./components/ScrollTotop";
 
 function App() {
   const { theme } = useContext(ToggleTheme);
@@ -18,6 +19,7 @@ function App() {
     <Router>
       <ThemeProvider theme={theme}>
         <Main>
+          <ScrollTotop />
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />

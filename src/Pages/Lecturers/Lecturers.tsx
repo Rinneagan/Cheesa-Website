@@ -15,12 +15,12 @@ function Lecturers() {
   return (
     <Wrapper>
       <LecHeader />
+      {status === "Fetching" && (
+        <Spinner>
+          <Oval color={theme.foreground} secondaryColor={theme.cheesaBlue} />
+        </Spinner>
+      )}
       <LecturerCard>
-        {status === "Fetching" && (
-          <Spinner>
-            <Oval color={theme.foreground} secondaryColor={theme.cheesaBlue} />
-          </Spinner>
-        )}
         {status === "Success" &&
           data.map((item) => {
             return <Card key={item.fullName} lecturer={item} />;
@@ -40,7 +40,7 @@ const Wrapper = styled.div`
 
 const LecturerCard = styled.div`
   display: grid;
-  padding: 2rem 0rem;
+  padding: 2rem 0.8rem;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 

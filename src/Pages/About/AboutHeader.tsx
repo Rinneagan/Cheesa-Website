@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import BackroundImage from "../../assets/crystal-kwok-XUEdfpPIhXg-unsplash.webp";
 import { BREAKPOINTS } from "../../utils/ReusableStyles";
 type AboutWrapperProps = {
   backgroundImage: string;
@@ -7,7 +6,11 @@ type AboutWrapperProps = {
 
 function AboutHeader() {
   return (
-    <AboutWrapper backgroundImage={BackroundImage}>
+    <AboutWrapper
+      backgroundImage={
+        "https://ik.imagekit.io/i7gyrkpch/_MG_0338_7tCDZyoH8.jpg?updatedAt=1689078179478"
+      }
+    >
       <TextBox>
         <h2>Welcome to the Chemical Engineering Students' Association</h2>
         <p>Kwame Nkrumah University of Science & Technology</p>

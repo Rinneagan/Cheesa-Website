@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { useContext, useState } from "react";
 import { RiSunLine, RiMoonLine } from "react-icons/ri";
-import CheesaLogo from "../assets/cheesa-logo.png";
+import CheesaLogo from "../assets/CHEESA BLUE.png";
 import CheesaLogoDark from "../assets/CHEESA WHITE.png";
 import { Button } from "../utils/ReusableStyles";
 import { ToggleTheme } from "./ThemeWrapper";
