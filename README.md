@@ -1,4 +1,4 @@
-# Chemical Engineering Student Association
+# Chemical Engineering Students' Association
 
 The Chemical Engineering Student Association is a website built with React.js, Sanity CMS, TypeScript, and Styled Components. It serves as an online platform for chemical engineering students to connect, share resources, and participate in various activities related to their field.
 
@@ -32,7 +32,6 @@ The Chemical Engineering Student Association website is designed to provide chem
 ## Installation
 
 To run the Chemical Engineering Student Association website locally, follow these steps:
-
 
 1. Fork the repository: `git clone https://github.com/diabeney/dbn-jro.git`
 2. Clone the repository and then setup a new branch
@@ -68,7 +67,7 @@ We would like to express our gratitude to the following individuals and organiza
 
 - Diabene
 - JRO
--0xConcept
+- 0xConcept
 
 ## Social Media
 

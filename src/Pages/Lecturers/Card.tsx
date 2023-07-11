@@ -90,4 +90,5 @@ const LectuerDesc = styled.p`
   color: ${({ theme }) => theme.foreground};
 `;
 
+
 export default Card;
