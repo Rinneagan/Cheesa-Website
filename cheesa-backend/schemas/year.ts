@@ -9,7 +9,6 @@ export default {
       type: 'string',
     },
     {
-
       name: 'executive_committee',
       title: 'Executive Committee',
       type: 'array',
@@ -28,7 +27,6 @@ export default {
               type: 'string',
             },
             {
-
               name: 'img_url',
               title: 'Executive Image',
               type: 'image',
@@ -41,7 +39,6 @@ export default {
       ],
     },
     {
-
       name: 'academic_board',
       title: 'Academic Board',
       type: 'array',
@@ -241,7 +238,6 @@ export default {
             },
             {
               name: 'img_url',
-              name: 'electoralImage',
               title: 'Electoral Image',
               type: 'image',
               options: {
