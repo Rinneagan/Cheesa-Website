@@ -120,7 +120,8 @@ export const executives_query = `
 }
 `;
 
-export const gallery_query = `*[_type == "gallery"]{
+export const gallery_query = `
+*[_type == "gallery"]{
               image_url{
                 asset ->{
                   url
@@ -140,3 +141,16 @@ export const lecturer_query = `*[_type == "lecturers"]{
               },
               description
             }`;
+
+export const events_query = `
+*[_type == 'events']{
+  eventName,
+    eventImage{
+    asset ->{
+      url
+    }
+    },
+  eventDescription,
+    eventCategory
+}
+`;
