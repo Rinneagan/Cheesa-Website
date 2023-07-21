@@ -37,7 +37,7 @@ export const executives_query = `
           portfolio,
       },
           judicial_committee[]{
-             judicial_image{
+             img_url{
             asset -> {
               url
             }
