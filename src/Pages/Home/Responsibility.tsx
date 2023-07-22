@@ -3,6 +3,7 @@ import { Paragraph } from "../../utils/ReusableStyles";
 import { MainHeading, Tag } from "../../utils/ReusableStyles";
 import { motion } from "framer-motion";
 import { useRef } from "react";
+import { Mark } from "../../utils/ReusableStyles";
 
 import { BREAKPOINTS } from "../../utils/ReusableStyles";
 
@@ -36,7 +37,7 @@ function Responsibility() {
       >
         <Tag variants={TextItemsVariants}>WHAT WE DO?</Tag>
         <MainHeading variants={TextItemsVariants}>
-          Empowering our <mark>members.</mark>
+          Empowering our <Mark>members.</Mark>
         </MainHeading>
         <Paragraph variants={TextItemsVariants}>
           We organize engaging workshops, informative seminars that delve into
@@ -106,11 +107,6 @@ const Wrapper = styled.div`
   color: ${({ theme }) => theme.foreground};
   display: grid;
   gap: 1rem;
-
-  mark {
-    color: ${({ theme }) =>
-      theme.mode === "light" ? theme.cheesaBlue : "hsl(211, 100%, 65%)"};
-  }
 
   @media (min-width: ${BREAKPOINTS.LAPTOP}) {
     padding-inline: 1rem;

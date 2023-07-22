@@ -1,21 +1,14 @@
-/* makes sizing simpler */
-
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* remove default spacing */
-/* force styling of type through styling, rather than elements */
-
 * {
   margin: 0;
   padding: 0;
   font: inherit;
 }
-
-/* min body height */
 
 body {
   font-family: "Raleway", system-ui, -apple-system, BlinkMacSystemFont,
@@ -62,13 +55,12 @@ nav {
 
 .header {
   border-bottom: 1px solid hsl(0, 0%, 65%);
-  /* backdrop-filter: blur(20px); */
 }
 
 .blob {
   aspect-ratio: 4/3;
   width: 20rem;
-  background-color: rgb(72, 121, 255);
+  background-color: rgb(111, 0, 255);
   position: absolute;
   right: 10%;
   border-radius: 50%;
@@ -84,4 +76,39 @@ footer ul li {
 
 a {
   color: inherit;
+}
+
+.hidden {
+  overflow: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 0.6rem;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.432);
+  border-radius: 2rem;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(190, 190, 190, 0.164);
+  border-radius: 2rem;
+  display: none;
+}
+
+.scrollbar:hover::-webkit-scrollbar-thumb {
+  display: block;
 }

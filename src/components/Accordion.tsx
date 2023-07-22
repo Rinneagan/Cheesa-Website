@@ -34,7 +34,6 @@ const AccordionButton = styled(motion.div)`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  /* padding-inline: 1em; */
   margin-block: 1.5em;
   cursor: pointer;
 `;

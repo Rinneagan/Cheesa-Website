@@ -4,9 +4,10 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { RiCloseLine, RiMenuUnfoldLine } from "react-icons/ri";
 import SideBar from "./Sidebar";
-import { useFetchExecutives } from "../../hooks/useFetch";
+import { useFetch } from "../../hooks/useFetch";
 import { BREAKPOINTS } from "../../utils/ReusableStyles";
-
+import { executives_query } from "../../constants/page";
+import { ExecutiveResponse } from "../../types/types";
 type sideBarContextProps = {
   toggleSideBar: () => void;
   YEARS: string[];
@@ -16,7 +17,7 @@ const YEARS = ["2023", "2022"];
 
 function ExecutivesLayout() {
   const [openSidebar, setOpenSidebar] = useState(false);
-  const { data, status } = useFetchExecutives();
+  const { data, status } = useFetch<ExecutiveResponse>(executives_query);
   const toggleSideBar = () => {
     setOpenSidebar((isOpen) => !isOpen);
   };

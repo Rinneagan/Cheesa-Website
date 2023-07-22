@@ -50,9 +50,18 @@ export const Button = styled.button`
   min-width: fit-content;
   border-radius: 2rem;
   color: ${({ theme }) => theme.foreground};
-  border: 1px solid ${({ theme }) => theme.foreground};
+  border: 1px solid ${({ theme }) => theme.secondary};
   cursor: pointer;
+  transition: all 300ms ease-in-out;
+  background-color: ${({ theme }) => theme.secondary};
   &:hover {
+    background-color: ${({ theme }) => theme.foreground};
+    color: ${({ theme }) => theme.background};
+  }
+
+  &:disabled {
+    background-color: transparent;
+    color: ${({ theme }) => theme.foreground};
   }
 `;
 
@@ -71,4 +80,9 @@ export const Subheading = styled.h3`
     font-size: 3rem;
     padding-block: 1rem;
   }
+`;
+
+export const Mark = styled.mark`
+  color: ${({ theme }) =>
+    theme.mode === "light" ? theme.cheesaBlue : "hsl(211, 100%, 65%)"};
 `;

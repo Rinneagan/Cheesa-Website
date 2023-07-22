@@ -4,6 +4,7 @@ export type ThemeTypes = {
   accent: string;
   cheesaBlue: string;
   mode: ThemeMode;
+  secondary: string;
 };
 
 export type ThemeMode = "light" | "dark";
@@ -35,10 +36,12 @@ export type ExecutiveResponse = {
   [K in ExecutiveResponseFields]: ExecutiveDetail[];
 };
 
+type SanityImageURL = { asset: { url: string } };
+
 export type LecturersResponse = {
   fullName: string;
   email: string;
-  lecturerImage: { asset: { url: string } };
+  lecturerImage: SanityImageURL;
   description: string;
 }[];
 
@@ -48,6 +51,15 @@ export type ExecutivesData = {
 }[];
 
 export type GalleryResponse = {
-  image_url: { asset: { url: string } };
+  image_url: SanityImageURL;
   image_alt: string;
 }[];
+
+export type EventsFields = {
+  eventName: string;
+  eventDescription: string;
+  eventImage: SanityImageURL;
+  eventCategory: "ongoing" | "upcoming" | "completed";
+};
+
+export type EventsResponse = EventsFields[];

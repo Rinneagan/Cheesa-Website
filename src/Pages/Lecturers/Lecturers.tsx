@@ -3,13 +3,16 @@ import Card from "./Card";
 import { BREAKPOINTS } from "../../utils/ReusableStyles";
 import Footer from "../Home/Footer";
 import LecHeader from "./Header";
-import { useFetchLecturers } from "../../hooks/useFetch";
+import { useFetch } from "../../hooks/useFetch";
 import { Oval } from "react-loader-spinner";
 import { useContext } from "react";
 import { ToggleTheme } from "../../components/ThemeWrapper";
+import { LecturersResponse } from "../../types/types";
+import { lecturer_query } from "../../constants/page";
 
 function Lecturers() {
-  const { data, status } = useFetchLecturers();
+  const { data: Lecturers, status } =
+    useFetch<LecturersResponse>(lecturer_query);
   const { theme } = useContext(ToggleTheme);
 
   return (
@@ -22,7 +25,8 @@ function Lecturers() {
       )}
       <LecturerCard>
         {status === "Success" &&
-          data.map((item) => {
+          Lecturers &&
+          Lecturers.map((item) => {
             return <Card key={item.fullName} lecturer={item} />;
           })}
       </LecturerCard>

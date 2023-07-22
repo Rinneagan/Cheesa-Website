@@ -33,17 +33,15 @@ function Home() {
 
 const HeroWrapper = styled.div<HeroWrapperProps>`
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 5rem);
   background-image: linear-gradient(to bottom, #00000057, #000000dc),
     url(${({ backgroundImage }) => backgroundImage});
   background-size: cover;
-  /* background-attachment: fixed; */
   background-position: center;
 `;
 
 const TextBox = styled.section`
   padding: 1rem;
-  /* margin-block: auto; */
   height: 100%;
   display: grid;
   place-items: end;

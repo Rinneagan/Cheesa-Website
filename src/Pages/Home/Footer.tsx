@@ -40,12 +40,10 @@ function Footer() {
             <h3>Contacts & Address</h3>
             <ul>
               <li>
-                <a href="mailto:chemicalengineering.sa@gmail.com">
-                  chemeng@knust.edu.gh
-                </a>
+                <a href="mailto:chemeng@knust.edu.gh">chemeng@knust.edu.gh</a>
               </li>
               <li>
-                <a href="tel: +233 445 543 5546">+233 3220 60234</a>
+                <a href="tel: +233 3220 60234">+233 3220 60234</a>
               </li>
               <li>
                 <p>College of Engineering</p>

@@ -8,6 +8,7 @@ import { Oval } from "react-loader-spinner";
 import { ToggleTheme } from "../../components/ThemeWrapper";
 import { useContext } from "react";
 import { Committees } from "../../data/data";
+import { Subheading } from "../../utils/ReusableStyles";
 
 type OutletContext = {
   data: ExecutiveResponse;
@@ -35,7 +36,7 @@ function ExecutiveDetail() {
     const actualData = data[committee];
     return (
       <>
-        <Heading>{CommitteeTitle}</Heading>
+        <Subheading>{CommitteeTitle}</Subheading>
         <ExecutivesContainer>
           {actualData &&
             actualData.map((item) => {
@@ -48,12 +49,6 @@ function ExecutiveDetail() {
 
   return null;
 }
-
-const Heading = styled.h1`
-  font-size: 2rem;
-  font-weight: bold;
-  padding-block: 2rem;
-`;
 
 const ExecutivesContainer = styled.div`
   display: flex;
