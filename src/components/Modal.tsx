@@ -67,7 +67,8 @@ const TextBox = styled.section`
 const ContentBox = styled.div`
   width: 90vw;
   height: 80vh;
-  background-color: ${({ theme }) => theme.background};
+  background-color: ${({ theme }) =>
+    theme.mode === "light" ? theme.background : theme.secondary};
   display: grid;
   border-radius: 1.8rem;
   @media (min-width: ${BREAKPOINTS.LAPTOP}) {
@@ -87,7 +88,9 @@ const ModalWrapper = styled.div`
   z-index: 10000;
   display: grid;
   place-content: center;
-  background-color: #000000a0;
+  background-color: ${({ theme }) =>
+    theme.mode === "light" ? "#000000b7" : "hsla(212, 89%, 5%, .5)"};
+  backdrop-filter: blur(8px);
 `;
 
 export default Modal;

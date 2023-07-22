@@ -20,7 +20,6 @@ function ExecutiveDetail() {
   const { data, status } = useOutletContext<OutletContext>();
   const { theme } = useContext(ToggleTheme);
 
-  console.log(data);
   const CommitteeTitle = Committees.find(
     (item) => item.toLocaleLowerCase().replaceAll(" ", "_") === committee
   );
