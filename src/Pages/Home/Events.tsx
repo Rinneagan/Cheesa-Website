@@ -19,6 +19,7 @@ import { ToggleTheme } from "../../components/ThemeWrapper";
 import { events_query } from "../../constants/page";
 import { EventsResponse, EventsFields } from "../../types/types";
 import Modal from "../../components/Modal";
+import { sortEventsByCategory } from "../../utils/utils";
 
 type EventTagProps = {
   category: "upcoming" | "completed" | "ongoing";
@@ -32,6 +33,8 @@ function Events() {
   const [currentElement, setCurrentElement] = useState<EventsFields | null>(
     null
   );
+
+  const sortedEvents = Events && sortEventsByCategory(Events);
 
   useEffect(() => {
     if (showModal) {
@@ -86,7 +89,7 @@ function Events() {
           }}
           onSlideChange={(swiper) => setRerender(swiper.activeIndex)} // weird hmm
         >
-          {Events?.map((event) => {
+          {sortedEvents?.map((event) => {
             return (
               <SwiperSlide
                 key={event.eventName}
