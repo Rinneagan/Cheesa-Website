@@ -1,26 +1,24 @@
+import Marquee from "react-fast-marquee";
 import styled from "styled-components";
-import { BREAKPOINTS, MainHeading } from "../../utils/ReusableStyles";
+import { BREAKPOINTS, MainHeading, Mark } from "../../utils/ReusableStyles";
 import Ezekiel from "../../assets/IMG_8853.jpg";
 import Student2 from "../../assets/Gggg.jpg";
 import Student3 from "../../assets/IMG_9763.jpg";
-import { motion, useScroll, easeOut, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 
 function Testimonials() {
-  const { scrollY } = useScroll();
-  const scale = useTransform(scrollY, [1500, 2000], [0.5, 1], {
-    ease: easeOut,
-  });
   return (
     <Wrapper>
       <Container>
         <MainHeading>
-          Reviews from <mark>students.</mark>{" "}
+          Reviews from <Mark>students.</Mark>{" "}
         </MainHeading>
         <motion.p>
           Here are testimonials from chemical engineering students about their
           experience with the association.
         </motion.p>
-        <CardsContainer style={{ scale }}>
+
+        <Marquee direction="right" speed={30} pauseOnHover>
           <Card>
             <p className="article">
               Joining the chemical engineering students association has been a
@@ -105,27 +103,105 @@ function Testimonials() {
               </div>
             </div>
           </Card>
-        </CardsContainer>
+        </Marquee>
+        <Marquee speed={30} pauseOnHover>
+          <Card>
+            <p className="article">
+              Joining the chemical engineering students association has been a
+              game-changer for me. The association has provided me with
+              invaluable opportunities for professional development, including
+              workshops on resume building, networking, and industry insights
+            </p>
+            <div className="student">
+              <div className="img_box">
+                <img src={Ezekiel} alt="Student" />
+              </div>
+              <div className="student_details">
+                <h3>Adu Gyamfi Sebastian</h3>
+                <p>Student, Year 3</p>
+              </div>
+            </div>
+          </Card>
+          <Card>
+            <p className="article">
+              Joining the chemical engineering students association has been a
+              game-changer for me. The association has provided me with
+              invaluable opportunities for
+            </p>
+            <div className="student">
+              <div className="img_box">
+                <img src={Student2} alt="Student" />
+              </div>
+              <div className="student_details">
+                <h3>Adu Gyamfi Sebastian</h3>
+                <p>Student, Year 3</p>
+              </div>
+            </div>
+          </Card>
+          <Card>
+            <p className="article">
+              Joining the chemical engineering students association has been a
+              game-changer for me. The association has provided me with
+              invaluable opportunities for professional development, including
+              workshops on resume building, networking, and industry insights
+            </p>
+            <div className="student">
+              <div className="img_box">
+                <img src={Student3} alt="Student" />
+              </div>
+              <div className="student_details">
+                <h3>Adu Gyamfi Sebastian</h3>
+                <p>Student, Year 3</p>
+              </div>
+            </div>
+          </Card>
+          <Card>
+            <p className="article">
+              Joining the chemical engineering students association has been a
+              game-changer for me. The association has provided me with
+              invaluable opportunities for professional development, including
+              workshops on resume building, networking, and industry insights
+            </p>
+            <div className="student">
+              <div className="img_box">
+                <img src={Student3} alt="Student" />
+              </div>
+              <div className="student_details">
+                <h3>Adu Gyamfi Sebastian</h3>
+                <p>Student, Year 3</p>
+              </div>
+            </div>
+          </Card>
+          <Card>
+            <p className="article">
+              Joining the chemical engineering students association has been a
+              game-changer for me. The association has provided me with
+              invaluable opportunities for professional development, including
+              workshops on resume building, networking, and industry insights
+            </p>
+            <div className="student">
+              <div className="img_box">
+                <img src={Student3} alt="Student" />
+              </div>
+              <div className="student_details">
+                <h3>Adu Gyamfi Sebastian</h3>
+                <p>Student, Year 3</p>
+              </div>
+            </div>
+          </Card>
+        </Marquee>
       </Container>
     </Wrapper>
   );
 }
 
-const CardsContainer = styled(motion.div)`
-  width: 100%;
-  display: grid;
-  gap: 1rem;
-  padding-top: 5rem;
-
-  @media (min-width: ${BREAKPOINTS.LAPTOP}) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-`;
-
 const Card = styled.section`
   padding: 1.5rem;
   display: flex;
   border-radius: 0.8rem;
+  aspect-ratio: 4/3;
+  width: 20rem;
+  margin: 1rem;
   background-color: ${({ theme }) =>
     theme.mode === "light" ? theme.background : "#1E293B"};
   flex-direction: column;
@@ -189,12 +265,6 @@ const Container = styled.div`
   height: 100%;
   padding: 1rem;
   padding-bottom: 4rem;
-
-  mark {
-    color: ${({ theme }) =>
-      theme.mode === "light" ? theme.cheesaBlue : "hsl(211, 100%, 65%)"};
-  }
-
   h1 {
     text-align: center;
   }

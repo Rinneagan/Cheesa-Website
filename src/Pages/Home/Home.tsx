@@ -4,6 +4,7 @@ import Responsibility from "./Responsibility";
 import Values from "./Values";
 import Testimonials from "./Testimonials";
 import Footer from "./Footer";
+import Events from "./Events";
 
 function Home() {
   return (
@@ -11,6 +12,7 @@ function Home() {
       <Hero />
       <Responsibility />
       <Values />
+      <Events />
       <Testimonials />
       <Footer />
     </Wrapper>
@@ -21,7 +23,6 @@ const Wrapper = styled.div`
   width: 100vw;
   max-width: 1400px;
   margin-inline: auto;
-  /* height: fit-content; */
 `;
 
 export default Home;

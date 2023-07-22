@@ -2,21 +2,19 @@ import styled from "styled-components";
 import { BREAKPOINTS } from "../../utils/ReusableStyles";
 import { useContext, useState } from "react";
 import closeIcon from "../../assets/close.png";
-import { useFetchGallery } from "../../hooks/useFetch";
-/**
- * External CSS to allow smooth
- * transition in a class
- */
+import { useFetch } from "../../hooks/useFetch";
 import "./gallery.css";
 import { Oval } from "react-loader-spinner";
 import { ToggleTheme } from "../../components/ThemeWrapper";
+import { useEffect } from "react";
+import { GalleryResponse } from "../../types/types";
+import { gallery_query } from "../../constants/page";
 
 function GalleryComponent() {
   const [modal, setModal] = useState(false);
   const [single, setSingle] = useState("");
-  const { data, status } = useFetchGallery();
+  const { data: Images, status } = useFetch<GalleryResponse>(gallery_query);
 
-  //   Display Clicked Image
   function handleImage(imageSrc: string) {
     setModal(true);
     setSingle(imageSrc);
@@ -24,11 +22,17 @@ function GalleryComponent() {
 
   const { theme } = useContext(ToggleTheme);
 
+  useEffect(() => {
+    modal
+      ? document.body.classList.add("hidden")
+      : document.body.classList.remove("hidden");
+  }, [modal]);
+
   return (
     <Wrapper>
       <Modal className={modal ? "modal open" : "modal"}>
         <img src={single} alt="Cheesa-Gallery" />
-        <Close onClick={() => setModal(!true)}>
+        <Close onClick={() => setModal(false)}>
           <img src={closeIcon} alt="close-icon" />
         </Close>
       </Modal>
@@ -38,8 +42,8 @@ function GalleryComponent() {
         </Spinner>
       ) : (
         <GalleryWrapper>
-          {data &&
-            data.map((item) => (
+          {Images &&
+            Images.map((item) => (
               <GalleryCard key={item.image_alt}>
                 <img
                   src={item.image_url.asset.url}
@@ -55,9 +59,7 @@ function GalleryComponent() {
   );
 }
 
-const Wrapper = styled.div`
-  /* padding: 1rem; */
-`;
+const Wrapper = styled.div``;
 
 const GalleryWrapper = styled.div`
   width: 100%;
