@@ -1,68 +1,74 @@
 import styled from "styled-components";
 import { BREAKPOINTS } from "../../utils/ReusableStyles";
-import { useContext, useState } from "react";
-import closeIcon from "../../assets/close.png";
+import { useContext } from "react";
 import { useFetch } from "../../hooks/useFetch";
 import "./gallery.css";
 import { Oval } from "react-loader-spinner";
 import { ToggleTheme } from "../../components/ThemeWrapper";
-import { useEffect } from "react";
 import { GalleryResponse } from "../../types/types";
 import { gallery_query } from "../../constants/page";
 
 function GalleryComponent() {
-  const [modal, setModal] = useState(false);
-  const [single, setSingle] = useState("");
   const { data: Images, status } = useFetch<GalleryResponse>(gallery_query);
-
-  function handleImage(imageSrc: string) {
-    setModal(true);
-    setSingle(imageSrc);
-  }
 
   const { theme } = useContext(ToggleTheme);
 
-  useEffect(() => {
-    modal
-      ? document.body.classList.add("hidden")
-      : document.body.classList.remove("hidden");
-  }, [modal]);
-
   return (
     <Wrapper>
-      <Modal className={modal ? "modal open" : "modal"}>
-        <img src={single} alt="Cheesa-Gallery" />
-        <Close onClick={() => setModal(false)}>
-          <img src={closeIcon} alt="close-icon" />
-        </Close>
-      </Modal>
       {status === "Fetching" ? (
         <Spinner>
           <Oval color={theme.foreground} secondaryColor={theme.cheesaBlue} />
         </Spinner>
       ) : (
         <GalleryWrapper>
-          {Images &&
-            Images.map((item) => (
-              <GalleryCard key={item.image_alt}>
-                <img
-                  src={item.image_url.asset.url}
-                  alt={item.image_alt}
-                  style={{ width: "100%" }}
-                  onClick={() => handleImage(item.image_url.asset.url)}
-                />
+          {Images?.map((image, index) => (
+            <a href={image.link} target="_blank" key={index}>
+              <GalleryCard>
+                <EventImageContainer>
+                  <img src={image.image_url.asset.url} alt={image.image_alt} />
+                </EventImageContainer>
+                <InfoContainer>
+                  <TextBox>
+                    <h5>{image.image_alt ? image.image_alt : "Not Set Yet"}</h5>
+                  </TextBox>
+                </InfoContainer>
               </GalleryCard>
-            ))}
+            </a>
+          ))}
         </GalleryWrapper>
       )}
     </Wrapper>
   );
 }
 
+const EventImageContainer = styled.div`
+  height: 100%;
+  width: 100%;
+  position: relative;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  overflow: hidden;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 300ms ease-in;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+`;
+
 const Wrapper = styled.div``;
 
 const GalleryWrapper = styled.div`
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
   display: grid;
   gap: 1rem;
 
@@ -76,8 +82,23 @@ const GalleryWrapper = styled.div`
 
 const GalleryCard = styled.div`
   width: 100%;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
   height: 25rem;
+  background-color: ${({ theme }) =>
+    theme.mode === "light" ? theme.background : "#1E293B"};
+  outline: 1px solid
+    ${({ theme }) => (theme.mode === "light" ? "#bbbbbb" : "#808080")};
+  transition: 0.2s ease;
+  cursor: pointer;
+  &:hover {
+    background-color: #c2c2c229;
+  }
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   img {
     width: 100%;
     height: 100%;
@@ -90,53 +111,6 @@ const GalleryCard = styled.div`
   }
 `;
 
-const Close = styled.div`
-  position: absolute;
-  top: 20px;
-  right: 40px;
-  width: 2%;
-
-  @media (max-width: ${BREAKPOINTS.MOBILE}) {
-    top: 5%;
-    right: 20px;
-    width: 7%;
-  }
-
-  img {
-    background-color: #fff;
-    padding: 0.4rem;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.4s ease;
-
-    &:hover {
-      transform: rotate(50deg);
-      color: white;
-    }
-  }
-`;
-
-const Modal = styled.div`
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  position: fixed;
-  left: 0;
-  top: 0;
-  background: rgba(0, 0, 0, 0.8);
-  z-index: 99999;
-  img {
-    height: 85%;
-    object-fit: contain;
-
-    @media (max-width: ${BREAKPOINTS.MOBILE}) {
-      max-height: 70%;
-    }
-  }
-`;
 const Spinner = styled.div`
   width: 100%;
   height: 100%;
@@ -144,6 +118,47 @@ const Spinner = styled.div`
   display: grid;
   place-content: center;
   color: ${({ theme }) => theme.foreground};
+`;
+const InfoContainer = styled.div`
+  display: flex;
+  align-items: start;
+  gap: 2rem;
+  margin-bottom: 1.2rem;
+  img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 100%;
+    @media (max-width: ${BREAKPOINTS.MOBILE}) {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+`;
+
+const TextBox = styled.div`
+  margin-top: 1rem;
+
+  h5 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: "Raleway";
+    color: ${({ theme }) => theme.foreground};
+  }
+  p {
+    color: ${({ theme }) => theme.foreground};
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+    cursor: pointer;
+  }
+  p:hover {
+    color: #3019c5;
+  }
 `;
 
 export default GalleryComponent;

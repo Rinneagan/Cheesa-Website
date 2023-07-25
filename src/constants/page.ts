@@ -127,7 +127,8 @@ export const gallery_query = `
                   url
                 }
               },
-              image_alt
+              image_alt,
+              link
             }
             `;
 

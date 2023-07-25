@@ -53,6 +53,7 @@ export type ExecutivesData = {
 export type GalleryResponse = {
   image_url: SanityImageURL;
   image_alt: string;
+  link: string;
 }[];
 
 export type EventsFields = {

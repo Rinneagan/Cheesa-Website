@@ -16,5 +16,10 @@ export default {
       title: 'Gallery Alt Text',
       type: 'string',
     },
+    {
+      name: 'link',
+      title: 'Gallery Link',
+      type: 'url',
+    },
   ],
 }
