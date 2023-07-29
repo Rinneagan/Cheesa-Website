@@ -89,7 +89,7 @@ const ModalWrapper = styled.div`
   display: grid;
   place-content: center;
   background-color: ${({ theme }) =>
-    theme.mode === "light" ? "#000000b7" : "hsla(212, 89%, 5%, .5)"};
+    theme.mode === "light" ? "#a1a1a17e" : "hsla(212, 89%, 5%, .5)"};
   backdrop-filter: blur(8px);
 `;
 

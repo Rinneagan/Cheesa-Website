@@ -225,7 +225,7 @@ const EventImageContainer = styled.div`
     height: 100%;
     object-fit: cover;
     object-position: center;
-    transition: transform 300ms ease-in;
+    transition: transform 300ms ease;
 
     &:hover {
       transform: scale(1.1);

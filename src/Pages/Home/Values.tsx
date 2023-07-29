@@ -25,7 +25,7 @@ function Values() {
         <ImageBox>
           <motion.img
             style={{ scale }}
-            src="https://ik.imagekit.io/i7gyrkpch/_MG_0439_HbWQexqJt.jpg?updatedAt=1689078155677"
+            src="https://ik.imagekit.io/i7gyrkpch/_MG_7888.jpg?updatedAt=1690669862150"
             alt="image"
           />
         </ImageBox>

@@ -18,7 +18,7 @@ function Testimonials() {
           experience with the association.
         </motion.p>
 
-        <Marquee direction="right" speed={30} pauseOnHover>
+        <Marquee direction="right" speed={50}>
           <Card>
             <p className="article">
               Joining the chemical engineering students association has been a
@@ -104,7 +104,7 @@ function Testimonials() {
             </div>
           </Card>
         </Marquee>
-        <Marquee speed={30} pauseOnHover>
+        <Marquee speed={80}>
           <Card>
             <p className="article">
               Joining the chemical engineering students association has been a

@@ -45,8 +45,6 @@ const EventImageContainer = styled.div`
   height: 100%;
   width: 100%;
   position: relative;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
   overflow: hidden;
   img {
     position: absolute;
@@ -82,8 +80,6 @@ const GalleryWrapper = styled.div`
 
 const GalleryCard = styled.div`
   width: 100%;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
   height: 25rem;
   background-color: ${({ theme }) =>
     theme.mode === "light" ? theme.background : "#1E293B"};
@@ -123,13 +119,12 @@ const InfoContainer = styled.div`
   display: flex;
   align-items: start;
   gap: 2rem;
-  margin-bottom: 1.2rem;
+  padding: 1rem;
   img {
     width: 100px;
     height: 100px;
     object-fit: cover;
     object-position: center;
-    border-radius: 100%;
     @media (max-width: ${BREAKPOINTS.MOBILE}) {
       width: 70px;
       height: 70px;
@@ -141,24 +136,6 @@ const InfoContainer = styled.div`
 
 const TextBox = styled.div`
   margin-top: 1rem;
-
-  h5 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    font-family: "Raleway";
-    color: ${({ theme }) => theme.foreground};
-  }
-  p {
-    color: ${({ theme }) => theme.foreground};
-    font-weight: 500;
-    line-height: 1.5;
-    letter-spacing: 1px;
-    transition: 0.3s ease;
-    cursor: pointer;
-  }
-  p:hover {
-    color: #3019c5;
-  }
 `;
 
 export default GalleryComponent;

@@ -6,7 +6,7 @@ type AboutWrapperProps = {
 
 function LecHeader() {
   return (
-    <HeaderWrapper backgroundImage="https://ik.imagekit.io/i7gyrkpch/_MG_0012_s-FNpxoaZ.jpg?updatedAt=1689078175487">
+    <HeaderWrapper backgroundImage="https://ik.imagekit.io/i7gyrkpch/_MG_8789.jpg?updatedAt=1690666790368">
       <TextBox>
         <h2>Our Noble Lecturers</h2>
       </TextBox>

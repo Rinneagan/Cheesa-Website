@@ -8,11 +8,11 @@ function AboutHeader() {
   return (
     <AboutWrapper
       backgroundImage={
-        "https://ik.imagekit.io/i7gyrkpch/_MG_0338_7tCDZyoH8.jpg?updatedAt=1689078179478"
+        "https://ik.imagekit.io/i7gyrkpch/traditionallllllll.jpg?updatedAt=1690667730115"
       }
     >
       <TextBox>
-        <h2>Welcome to the Chemical Engineering Students' Association</h2>
+        <h2>Chemical Engineering Students' Association</h2>
         <p>Kwame Nkrumah University of Science & Technology</p>
       </TextBox>
     </AboutWrapper>
@@ -35,6 +35,9 @@ const TextBox = styled.section`
   color: white;
   z-index: 999;
   text-align: center;
+  height: calc(100vh - 10rem);
+  display: grid;
+  place-content: center;
 
   h2 {
     font-size: 4.5rem;

@@ -6,7 +6,7 @@ function History() {
     <HistoryWrapper>
       <ImageWrapper>
         <img
-          src="https://ik.imagekit.io/i7gyrkpch/_MG_0338_7tCDZyoH8.jpg?updatedAt=1689078179478"
+          src="https://ik.imagekit.io/i7gyrkpch/cheeeeesa.jpg?updatedAt=1690667259344"
           alt=""
           width={650}
           height={450}

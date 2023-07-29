@@ -77,7 +77,7 @@ function Responsibility() {
           <Card>
             <div>
               <img
-                src="https://ik.imagekit.io/i7gyrkpch/field_trip_4qTj0YLx4.jpg?updatedAt=1689078138348"
+                src="https://ik.imagekit.io/i7gyrkpch/_MG_0012_s-FNpxoaZ.jpg?updatedAt=1689078175487"
                 alt="Field Trips"
               />
             </div>

@@ -7,10 +7,33 @@ import {
   Paragraph,
   Mark,
 } from "../../utils/ReusableStyles";
+import { RiArrowDownDoubleLine } from "react-icons/ri";
+
+type AboutWrapperProps = {
+  backgroundImage: string;
+};
 
 function Gallery() {
+  const scrollDown = () => {
+    window.scrollBy({
+      top: window.innerHeight,
+      behavior: "smooth",
+    });
+  };
   return (
     <>
+      <AboutWrapper
+        backgroundImage={
+          "https://ik.imagekit.io/i7gyrkpch/valsssss.jpg?updatedAt=1690668746543"
+        }
+      >
+        <TextBox>
+          <button onClick={scrollDown}>Scroll Down</button>
+          <section>
+            <RiArrowDownDoubleLine />
+          </section>
+        </TextBox>
+      </AboutWrapper>
       <MainWrapper className="scrollbar">
         <div>
           <MainHeading>
@@ -30,6 +53,45 @@ function Gallery() {
     </>
   );
 }
+
+const AboutWrapper = styled.div<AboutWrapperProps>`
+  width: 100%;
+  max-width: 1400px;
+  height: fit-content;
+  margin-inline: auto;
+  padding-block: 3rem;
+  background-image: linear-gradient(to bottom, #000000b3, #000000dc),
+    url(${({ backgroundImage }) => backgroundImage});
+  background-position: top;
+  background-size: cover;
+`;
+
+const TextBox = styled.section`
+  width: 100%;
+  color: white;
+  z-index: 999;
+  text-align: center;
+  height: calc(100vh - 10rem);
+  display: grid;
+  gap: 1rem;
+  place-content: center;
+
+  section {
+    width: fit-content;
+    margin-inline: auto;
+  }
+  button {
+    padding: 0.8rem 1.2rem;
+    border: 1px solid #fff;
+    cursor: pointer;
+    transition: all 300ms ease-in;
+
+    &:hover {
+      background-color: #fff;
+      color: #333;
+    }
+  }
+`;
 
 const MainWrapper = styled.div`
   background-color: ${({ theme }) => theme.background};
