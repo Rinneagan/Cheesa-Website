@@ -29,7 +29,7 @@ function Gallery() {
       >
         <TextBox>
           <button onClick={scrollDown}>Scroll Down</button>
-          <section>
+          <section className="alorngorspringi">
             <RiArrowDownDoubleLine />
           </section>
         </TextBox>
