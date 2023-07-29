@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import { BREAKPOINTS } from "../../utils/ReusableStyles";
-// import { BREAKPOINTS } from "../../utils/ReusableStyles";
-// import HODImage from "../../assets/viktor-kiryanov-lAcYPEiau0U-unsplash.jpg";
 
 function HODMessage() {
   return (
