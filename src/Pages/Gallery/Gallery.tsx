@@ -62,7 +62,7 @@ const AboutWrapper = styled.div<AboutWrapperProps>`
   padding-block: 3rem;
   background-image: linear-gradient(to bottom, #000000b3, #000000dc),
     url(${({ backgroundImage }) => backgroundImage});
-  background-position: top;
+  background-position: center;
   background-size: cover;
 `;
 
