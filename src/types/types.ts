@@ -30,11 +30,13 @@ export type ExecutiveResponseFields =
   | "welfare_board"
   | "editorial_board"
   | "judicial_committee"
-  | "women_commission";
+  | "women_commission"
+  | "trachtech_committee"
+  | "sponsorship_committee";
 
 export type ExecutiveResponse = {
   [K in ExecutiveResponseFields]: ExecutiveDetail[];
-};
+}[];
 
 type SanityImageURL = { asset: { url: string } };
 

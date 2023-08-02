@@ -1,5 +1,5 @@
 export const executives_query = `
-*[_type == "year" && year == "2023"][0]{
+*[_type == "year"]{
     academic_board[]{
           img_url{
               asset -> {
@@ -100,6 +100,15 @@ export const executives_query = `
           portfolio,
           },
           industrial_committee[]{
+              img_url{
+            asset -> {
+              url
+            }
+        },
+        name,
+          portfolio,
+          },
+          trachtech_committee[]{
               img_url{
             asset -> {
               url

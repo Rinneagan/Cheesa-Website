@@ -12,6 +12,8 @@ export const Committees = [
   "Editorial Board",
   "Judicial Committee",
   "Women Commission",
+  "Trachtech Committee",
+  "Sponsorship Committee",
 ];
 
 export type years = "2023" | "2022";

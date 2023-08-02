@@ -66,7 +66,7 @@ export const Button = styled.button`
 `;
 
 export const Subheading = styled.h3`
-  font-family: "Inter";
+  font-family: "Inter Tight";
   font-size: 1.4rem;
   font-weight: 700;
   padding-block: 1.5rem;

@@ -13,11 +13,12 @@ import { Subheading } from "../../utils/ReusableStyles";
 type OutletContext = {
   data: ExecutiveResponse;
   status: FetchStatus;
+  YEARS: string[];
 };
 
 function ExecutiveDetail() {
-  const { committee } = useFormatParams();
-  const { data, status } = useOutletContext<OutletContext>();
+  const { committee, activeYear } = useFormatParams();
+  const { data, status, YEARS } = useOutletContext<OutletContext>();
   const { theme } = useContext(ToggleTheme);
 
   const CommitteeTitle = Committees.find(
@@ -33,7 +34,7 @@ function ExecutiveDetail() {
   if (status === "Error")
     return <h1>There is an error fetching the executives wai</h1>;
   if (status === "Success") {
-    const actualData = data[committee];
+    const actualData = data[YEARS.indexOf(activeYear)][committee];
     return (
       <>
         <Subheading>{CommitteeTitle}</Subheading>

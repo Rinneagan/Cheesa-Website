@@ -18,20 +18,29 @@ function RenderSidebarList({
 }: ListProps) {
   const { toggleSideBar } = useContext(SidebarHandlerContext);
 
-  if (!data.length) renderEmpty;
+  if (!data.length) return renderEmpty;
 
   return (
     <AccordionItem style={{ paddingInline: "0" }}>
-      {data.map((item: typeof data) => (
-        <ListItem key={item}>
-          <Link
-            to={`${year}-${item.replace(/\s/gi, "-").toLowerCase()}`}
-            onClick={() => toggleSideBar()}
-          >
-            {item}
-          </Link>
-        </ListItem>
-      ))}
+      {year === "2022" ? (
+        <Link
+          to={`${year}-executive-committee`}
+          onClick={() => toggleSideBar()}
+        >
+          Executive Committee
+        </Link>
+      ) : (
+        data.map((item: typeof data) => (
+          <ListItem key={item}>
+            <Link
+              to={`${year}-${item.replace(/\s/gi, "-").toLowerCase()}`}
+              onClick={() => toggleSideBar()}
+            >
+              {item}
+            </Link>
+          </ListItem>
+        ))
+      )}
     </AccordionItem>
   );
 }
