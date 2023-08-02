@@ -1,12 +1,19 @@
 import Marquee from "react-fast-marquee";
 import styled from "styled-components";
 import { BREAKPOINTS, MainHeading, Mark } from "../../utils/ReusableStyles";
-import Ezekiel from "../../assets/IMG_8853.jpg";
-import Student2 from "../../assets/Gggg.jpg";
-import Student3 from "../../assets/IMG_9763.jpg";
 import { motion } from "framer-motion";
+import { useFetch } from "../../hooks/useFetch";
+import { TestimonialResponse } from "../../types/types";
+import { testimonial_query } from "../../constants/page";
+import { useContext } from "react";
+import { ToggleTheme } from "../../components/ThemeWrapper";
+import { Oval } from "react-loader-spinner";
 
 function Testimonials() {
+  const { data: testimonials, status } =
+    useFetch<TestimonialResponse>(testimonial_query);
+  const { theme } = useContext(ToggleTheme);
+
   return (
     <Wrapper>
       <Container>
@@ -17,8 +24,36 @@ function Testimonials() {
           Here are testimonials from chemical engineering students about their
           experience with the association.
         </motion.p>
+        {status === "Fetching" ? (
+          <Spinner>
+            <Oval color={theme.foreground} secondaryColor={theme.cheesaBlue} />
+          </Spinner>
+        ) : (
+          <Marquee direction="right" speed={20}>
+            {testimonials &&
+              testimonials.map((testimonial) => (
+                <Card key={testimonial.name}>
+                  <p className="article">{testimonial.testimony}</p>
+                  <div className="student">
+                    <div className="img_box">
+                      <img
+                        src={testimonial.img_url.asset.url}
+                        alt={testimonial.status}
+                      />
+                    </div>
+                    <div className="student_details">
+                      <h3>{testimonial.name}</h3>
+                      <p>
+                        {testimonial.status}, {testimonial.year}
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+              ))}
+          </Marquee>
+        )}
 
-        <Marquee direction="right" speed={20}>
+        {/* <Marquee speed={20}>
           <Card>
             <p className="article">
               Joining the chemical engineering students association has been a
@@ -103,93 +138,7 @@ function Testimonials() {
               </div>
             </div>
           </Card>
-        </Marquee>
-        <Marquee speed={20}>
-          <Card>
-            <p className="article">
-              Joining the chemical engineering students association has been a
-              game-changer for me. The association has provided me with
-              invaluable opportunities for professional development, including
-              workshops on resume building, networking, and industry insights
-            </p>
-            <div className="student">
-              <div className="img_box">
-                <img src={Ezekiel} alt="Student" />
-              </div>
-              <div className="student_details">
-                <h3>Adu Gyamfi Sebastian</h3>
-                <p>Student, Year 3</p>
-              </div>
-            </div>
-          </Card>
-          <Card>
-            <p className="article">
-              Joining the chemical engineering students association has been a
-              game-changer for me. The association has provided me with
-              invaluable opportunities for
-            </p>
-            <div className="student">
-              <div className="img_box">
-                <img src={Student2} alt="Student" />
-              </div>
-              <div className="student_details">
-                <h3>Adu Gyamfi Sebastian</h3>
-                <p>Student, Year 3</p>
-              </div>
-            </div>
-          </Card>
-          <Card>
-            <p className="article">
-              Joining the chemical engineering students association has been a
-              game-changer for me. The association has provided me with
-              invaluable opportunities for professional development, including
-              workshops on resume building, networking, and industry insights
-            </p>
-            <div className="student">
-              <div className="img_box">
-                <img src={Student3} alt="Student" />
-              </div>
-              <div className="student_details">
-                <h3>Adu Gyamfi Sebastian</h3>
-                <p>Student, Year 3</p>
-              </div>
-            </div>
-          </Card>
-          <Card>
-            <p className="article">
-              Joining the chemical engineering students association has been a
-              game-changer for me. The association has provided me with
-              invaluable opportunities for professional development, including
-              workshops on resume building, networking, and industry insights
-            </p>
-            <div className="student">
-              <div className="img_box">
-                <img src={Student3} alt="Student" />
-              </div>
-              <div className="student_details">
-                <h3>Adu Gyamfi Sebastian</h3>
-                <p>Student, Year 3</p>
-              </div>
-            </div>
-          </Card>
-          <Card>
-            <p className="article">
-              Joining the chemical engineering students association has been a
-              game-changer for me. The association has provided me with
-              invaluable opportunities for professional development, including
-              workshops on resume building, networking, and industry insights
-            </p>
-            <div className="student">
-              <div className="img_box">
-                <img src={Student3} alt="Student" />
-              </div>
-              <div className="student_details">
-                <h3>Adu Gyamfi Sebastian</h3>
-                <p>Student, Year 3</p>
-              </div>
-            </div>
-          </Card>
-        </Marquee>
+        </Marquee> */}
       </Container>
     </Wrapper>
   );
@@ -237,7 +186,7 @@ const Card = styled.section`
     .student_details {
       align-self: flex-start;
       margin-block: auto;
-
+      text-transform: capitalize;
       h3 {
         padding-bottom: 1rem;
       }
@@ -281,6 +230,15 @@ const Container = styled.div`
       width: 25rem;
     }
   }
+`;
+
+const Spinner = styled.div`
+  width: 100%;
+  height: 100%;
+  margin: 5rem auto;
+  display: grid;
+  place-content: center;
+  color: ${({ theme }) => theme.foreground};
 `;
 
 const Wrapper = styled.div`

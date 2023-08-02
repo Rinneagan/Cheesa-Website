@@ -160,3 +160,16 @@
     eventCategory
 }
 
+// Testimonial Query
+
+*[_type == "testimonial"]{
+    name,
+    img_url{
+      asset->{
+        url
+      }
+    },
+    testimony,
+    year,
+    status
+}

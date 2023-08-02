@@ -164,3 +164,17 @@ export const events_query = `
     eventCategory
 }
 `;
+
+export const testimonial_query = `
+*[_type == "testimonial"]{
+    name,
+    img_url{
+      asset->{
+        url
+      }
+    },
+    testimony,
+    year,
+    status
+}
+`;

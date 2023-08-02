@@ -66,3 +66,13 @@ export type EventsFields = {
 };
 
 export type EventsResponse = EventsFields[];
+
+export type TestimonialFields = {
+  name: string;
+  img_url: SanityImageURL;
+  testimony: string;
+  year: string;
+  status: string;
+};
+
+export type TestimonialResponse = TestimonialFields[];
