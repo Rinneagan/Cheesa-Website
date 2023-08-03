@@ -29,7 +29,7 @@ function Testimonials() {
             <Oval color={theme.foreground} secondaryColor={theme.cheesaBlue} />
           </Spinner>
         ) : (
-          <Marquee direction="right" speed={20}>
+          <Marquee direction="right" speed={20} pauseOnClick={true}>
             {testimonials &&
               testimonials.map((testimonial) => (
                 <Card key={testimonial.name}>
