@@ -125,6 +125,15 @@ export const executives_query = `
         },
         name,
           portfolio,
+          },
+          sponsorship_committee[]{
+              img_url{
+            asset -> {
+              url
+            }
+        },
+        name,
+          portfolio,
           }
 }
 `;
