@@ -18,7 +18,10 @@ function Modal({ element, handleToggleModal }: ModalProps) {
       </Menu>
       <ContentBox>
         <ImageWrapper>
-          <img src={element.eventImage.asset.url} alt="" />
+          <img
+            src={element.eventImage.asset.url}
+            alt={`${element.eventName}'picture`}
+          />
         </ImageWrapper>
         <TextBox className="scrollbar">
           <Subheading>{element.eventName.toUpperCase()}</Subheading>
@@ -37,6 +40,7 @@ const Menu = styled.button`
   color: #333;
   right: 5%;
   top: 1%;
+  cursor: pointer;
   @media (min-width: ${BREAKPOINTS.LAPTOP}) {
     top: 5%;
   }
