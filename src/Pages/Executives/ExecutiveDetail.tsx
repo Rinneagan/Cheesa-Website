@@ -32,7 +32,7 @@ function ExecutiveDetail() {
       </Spinner>
     );
   if (status === "Error")
-    return <h1>There is an error fetching the executives wai</h1>;
+    return <h1>Couldn't fetch data, kindly refresh the page. </h1>;
   if (status === "Success") {
     const actualData = data[YEARS.indexOf(activeYear)][committee];
     return (
