@@ -39,10 +39,13 @@ function ExecutiveDetail() {
       <>
         <Subheading>{CommitteeTitle}</Subheading>
         <ExecutivesContainer>
-          {actualData &&
+          {actualData ? (
             actualData.map((item) => {
               return <ExecutiveCard {...item} key={item.name} />;
-            })}
+            })
+          ) : (
+            <h1>There's no data for this year.</h1>
+          )}
         </ExecutivesContainer>
       </>
     );
