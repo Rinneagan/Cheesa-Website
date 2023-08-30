@@ -8,7 +8,7 @@ function Squad() {
     {
       id: 1,
       img_url:
-        "https://pbs.twimg.com/profile_images/1649437595066040320/-SSL-EKI.jpg",
+        "https://ik.imagekit.io/kkldhhslb/concept.jpg?updatedAt=1693420532305",
       name: "Evans Elabo",
       role: "Software Engineer",
       company: "SlightlyTechie & InteliTech ",
@@ -137,6 +137,10 @@ const SquadWrapper = styled.div`
     border-radius: 16px;
     object-fit: cover;
     object-position: center;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      filter: grayscale(20);
+    }
   }
 
   @media (max-width: ${BREAKPOINTS.MOBILE}) {
