@@ -139,7 +139,7 @@ const SquadWrapper = styled.div`
     object-position: center;
     transition: all 0.3s ease-in-out;
     &:hover {
-      filter: grayscale(20);
+      filter: grayscale(40);
     }
   }
 
