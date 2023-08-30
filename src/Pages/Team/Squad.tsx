@@ -11,7 +11,7 @@ function Squad() {
         "https://pbs.twimg.com/profile_images/1649437595066040320/-SSL-EKI.jpg",
       name: "Evans Elabo",
       role: "Software Engineer",
-      company: "InteliTech ",
+      company: "SlightlyTechie & InteliTech ",
       about:
         "A Linguistics student who's not just fluent in languages but also holds a special talent for speaking volumes about anything and everything. A talented guy with insatiable curiosity. He does literally everything - from mobile app development to crafting stunning UI designs and building high performance web applications. ",
       socials: {
