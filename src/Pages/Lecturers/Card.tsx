@@ -24,7 +24,7 @@ const Card = ({ lecturer }: { lecturer: LecturerCard }) => {
 
 const CardWrapper = styled.div`
   padding: 1.5rem;
-  border-radius: 1rem;
+  border-radius: 16px;
   max-width: 30vw;
   width: 100%;
   background-color: ${({ theme }) =>

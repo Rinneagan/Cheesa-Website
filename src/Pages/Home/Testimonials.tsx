@@ -65,7 +65,7 @@ function Testimonials() {
 const Card = styled.section`
   padding: 1.5rem;
   display: flex;
-  border-radius: 0.8rem;
+  border-radius: 12.8px;
   aspect-ratio: 4/3;
   width: 22rem;
   height: 40rem;
