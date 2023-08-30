@@ -63,10 +63,10 @@ function Testimonials() {
 }
 
 const Card = styled.section`
+  position: relative;
   padding: 1.5rem;
   display: flex;
   border-radius: 12.8px;
-  -webkit-border-radius: 12.8px;
   aspect-ratio: 4/3;
   width: 22rem;
   height: 40rem;
@@ -75,9 +75,20 @@ const Card = styled.section`
   background-color: ${({ theme }) =>
     theme.mode === "light" ? theme.background : "#1E293B"};
   flex-direction: column;
-  outline: 1px solid
+  border: 1px solid
     ${({ theme }) => (theme.mode === "light" ? "#bbbbbb" : "#808080")};
   gap: 1rem;
+  &:focus::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 12.8px;
+    border: 1px solid
+      ${({ theme }) => (theme.mode === "light" ? "#bbbbbb" : "#808080")};
+  }
 
   .article {
     text-align: center;
