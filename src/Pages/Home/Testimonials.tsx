@@ -71,7 +71,6 @@ const Card = styled.section`
   width: 22rem;
   height: 40rem;
   margin: 1rem;
-  transform: translate3d(0, 0, 0);
   background-color: ${({ theme }) =>
     theme.mode === "light" ? theme.background : "#1E293B"};
   flex-direction: column;

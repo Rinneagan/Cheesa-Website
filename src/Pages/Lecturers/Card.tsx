@@ -29,13 +29,23 @@ const CardWrapper = styled.div`
   width: 100%;
   background-color: ${({ theme }) =>
     theme.mode === "light" ? theme.background : "#1E293B"};
-  outline: 1px solid
+  border: 1px solid
     ${({ theme }) => (theme.mode === "light" ? "#bbbbbb" : "#808080")};
   transition: 0.2s ease;
-  transform: translate3d(0, 0, 0);
   cursor: pointer;
   &:hover {
     background-color: #c2c2c229;
+  }
+  :focus::after {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 16px;
+    border: 1px solid
+      ${({ theme }) => (theme.mode === "light" ? "#bbbbbb" : "#808080")};
   }
 
   @media (max-width: ${BREAKPOINTS.MOBILE}) {
