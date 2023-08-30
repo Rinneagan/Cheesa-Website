@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import Squad from "./Squad";
-import { BREAKPOINTS, Mark } from "../../utils/ReusableStyles";
+import { BREAKPOINTS, Mark, MainHeading } from "../../utils/ReusableStyles";
 import Footer from "../Home/Footer";
 
 function Team() {
   return (
     <Wrapper>
-      <Heading>
+      <MainHeading className="heading-wai">
         Meet the <Mark>Team</Mark>
-      </Heading>
+      </MainHeading>
       <Desc>
         Cheesa Website development is led by a dedicated team studying and
         working part-time at <Mark className="company">SlightlyTechie</Mark> and
@@ -26,13 +26,9 @@ const Wrapper = styled.div`
   width: 100dvw;
   max-width: 1400px;
   margin: 0 auto;
-`;
-
-const Heading = styled.h1`
-  font-size: 2.8rem;
-  font-weight: 700;
-  text-align: center;
-  margin: 2.5rem 0 1rem 0;
+  .heading-wai {
+    text-align: center;
+  }
 `;
 
 const Desc = styled.p`
