@@ -28,7 +28,7 @@ function Squad() {
       role: "Software Developer",
       company: "SlightlyTechie & InteliTech",
       about:
-        "A chemical engineering student with a knack for software development and a passion for JavaScript, C# and Thermodynamics. He has a habit of adding 'wai' to the end of his sentences, and he enjoys playing video games and spending so much time on writing blog posts that he never publishes.",
+        "A chemical engineering student with a knack for software development and a passion for JavaScript. He has a habit of adding 'wai' to the end of his sentences, and he enjoys playing video games and spending so much time on writing blog posts that he never publishes.",
       socials: {
         twitter: "https://twitter.com/diabeneyy",
         github: "https://github.com/diabeney",
@@ -38,7 +38,7 @@ function Squad() {
     {
       id: 3,
       img_url:
-        "https://ik.imagekit.io/i7gyrkpch/joshuaa.jpg?updatedAt=1693414199580",
+        "https://ik.imagekit.io/i7gyrkpch/joshuaa.jpg?updatedAt=169341419958",
       name: "Joshua Richardson Owusu",
       role: "Data Analyst",
       company: "InteliTech",
