@@ -8,7 +8,7 @@ function Squad() {
     {
       id: 1,
       img_url:
-        "https://ik.imagekit.io/i7gyrkpch/paa_amoah.jpg?updatedAt=1693270701090",
+        "https://pbs.twimg.com/profile_images/1649437595066040320/-SSL-EKI.jpg",
       name: "Evans Elabo",
       role: "Software Engineer",
       company: "InteliTech",
