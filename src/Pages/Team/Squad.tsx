@@ -11,9 +11,9 @@ function Squad() {
         "https://pbs.twimg.com/profile_images/1649437595066040320/-SSL-EKI.jpg",
       name: "Evans Elabo",
       role: "Software Engineer",
-      company: "InteliTech",
+      company: "SlightlyTechie & InteliTech ",
       about:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut obcaecati magnam officiis beatae quis voluptatum repellat reiciendis doloremque, adipisci laudantium modi in perspiciati unde culpa fugit ad sint. Animi, cupiditate! Aut obcaecati magnam officiis beatae quis voluptatum repellat reiciendis doloremque, adipisci laudantium modi in perspiciatis unde culpa fugit ad sint.Animi, cupiditate!",
+        "A Linguistics student who's not just fluent in languages but also holds a special talent for speaking volumes about anything and everything. A talented guy with insatiable curiosity. He does literally everything - from mobile app development to crafting stunning UI designs and building high performance web applications. ",
       socials: {
         twitter: "https://twitter.com/evans_elabo",
         github: "https://github.com/ellaboevans",
@@ -23,31 +23,32 @@ function Squad() {
     {
       id: 2,
       img_url:
-        "https://ik.imagekit.io/i7gyrkpch/paa_amoah.jpg?updatedAt=1693270701090",
-      name: "Yaw Diabene",
-      role: "Software Engineer",
-      company: "SlightlyTechie",
+        "https://ik.imagekit.io/i7gyrkpch/addo.jpg?updatedAt=1693407716706",
+      name: "Diabene Yaw Addo",
+      role: "Software Developer",
+      company: "SlightlyTechie & InteliTech",
       about:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut obcaecati magnam officiis beatae quis voluptatum repellat reiciendis doloremque, adipisci laudantium modi in perspiciati unde culpa fugit ad sint. Animi, cupiditate! Aut obcaecati magnam officiis beatae quis voluptatum repellat reiciendis doloremque, adipisci laudantium modi in perspiciatis unde culpa fugit ad sint.Animi, cupiditate!",
+        "A chemical engineering student with a knack for software development and a passion for JavaScript, C# and Thermodynamics. He has a habit of adding 'wai' to the end of his sentences, and he enjoys playing video games and spending so much time on writing blog posts that he never publishes.",
       socials: {
-        twitter: "https://twitter.com/evans_elabo",
-        github: "https://github.com/ellaboevans",
-        linkedin: "https://linkedin.com/in/eelabo",
+        twitter: "https://twitter.com/diabeneyy",
+        github: "https://github.com/diabeney",
+        linkedin: "https://www.linkedin.com/in/diabeney/",
       },
     },
     {
       id: 3,
       img_url:
-        "https://ik.imagekit.io/i7gyrkpch/paa_amoah.jpg?updatedAt=1693270701090",
-      name: "Joshua Owusu Richard",
+        "https://ik.imagekit.io/i7gyrkpch/joshuaa.jpg?updatedAt=1693414199580",
+      name: "Joshua Richardson Owusu",
       role: "Data Analyst",
       company: "InteliTech",
       about:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut obcaecati magnam officiis beatae quis voluptatum repellat reiciendis doloremque, adipisci laudantium modi in perspiciati unde culpa fugit ad sint. Animi, cupiditate! Aut obcaecati magnam officiis beatae quis voluptatum repellat reiciendis doloremque, adipisci laudantium modi in perspiciatis unde culpa fugit ad sint.Animi, cupiditate!",
+        "Joshua (JRO) is a Chemical Engineering student with a unique blend of talents that make him the ultimate jack of all trades. From modeling of chemical processes to graphic designing, there's nothing he can't handle. But his true passion lies in the realm of data analysis. He is a natural leader who inspires his peers to strive for excellence. ",
       socials: {
-        twitter: "https://twitter.com/evans_elabo",
-        github: "https://github.com/ellaboevans",
-        linkedin: "https://linkedin.com/in/eelabo",
+        twitter: "https://twitter.com/the__JRO?s=09",
+        github: "https://github.com/jrowusu",
+        linkedin:
+          "https://www.linkedin.com/in/joshua-richardson-owusu-a332b41b7",
       },
     },
   ];
@@ -162,8 +163,7 @@ const SquadDetails = styled.div`
   }
   p {
     font-size: 1.1rem;
-    line-height: 1.5rem;
-    text-align: justify;
+    line-height: 1.8rem;
     letter-spacing: 0.6px;
   }
   @media (max-width: ${BREAKPOINTS.MOBILE}) {
