@@ -38,16 +38,17 @@ function Squad() {
     {
       id: 3,
       img_url:
-        "https://ik.imagekit.io/i7gyrkpch/paa_amoah.jpg?updatedAt=1693270701090",
+        "https://ik.imagekit.io/i7gyrkpch/joshuaa.jpg?updatedAt=1693413266862",
       name: "Joshua Owusu Richardson",
       role: "Data Analyst",
       company: "InteliTech",
       about:
         "Joshua (JRO) is a Chemical Engineering student with a unique blend of talents that make him the ultimate jack of all trades. From modeling of chemical processes to graphic designing, there's nothing he can't handle. But his true passion lies in the realm of data analysis. He is a natural leader who inspires his peers to strive for excellence. ",
       socials: {
-        twitter: "https://twitter.com/evans_elabo",
-        github: "https://github.com/ellaboevans",
-        linkedin: "https://linkedin.com/in/eelabo",
+        twitter: "https://twitter.com/the__JRO?s=09",
+        github: "https://github.com/jrowusu",
+        linkedin:
+          "https://www.linkedin.com/in/joshua-richardson-owusu-a332b41b7",
       },
     },
   ];
