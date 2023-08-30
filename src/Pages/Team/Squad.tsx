@@ -13,7 +13,7 @@ function Squad() {
       role: "Software Engineer",
       company: "InteliTech ",
       about:
-        "A Linguistics student who's not just fluent in languages but also holds a special talent for speaking volumes about anything and everything. A talented guy with insatiable curiosity. He does literally everything - from mobile app development to crafting stunning UI designs. ",
+        "A Linguistics student who's not just fluent in languages but also holds a special talent for speaking volumes about anything and everything. A talented guy with insatiable curiosity. He does literally everything - from mobile app development to crafting stunning UI designs and building high performance web applications. ",
       socials: {
         twitter: "https://twitter.com/evans_elabo",
         github: "https://github.com/ellaboevans",
@@ -39,7 +39,7 @@ function Squad() {
       id: 3,
       img_url:
         "https://ik.imagekit.io/i7gyrkpch/joshuaa.jpg?updatedAt=1693413266862",
-      name: "Joshua Owusu Richardson",
+      name: "Joshua Richardson Owusu",
       role: "Data Analyst",
       company: "InteliTech",
       about:
