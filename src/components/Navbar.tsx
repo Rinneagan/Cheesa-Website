@@ -203,6 +203,7 @@ const Logo = styled.section`
 const ButtonWrapper = styled.section`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   color: ${({ theme }) => theme.background};
   height: fit-content;
 
@@ -217,9 +218,11 @@ const ThemeMode = styled.button`
   aspect-ratio: 1/1;
   padding: 0.8rem;
   border-radius: 50%;
-  display: grid;
-  place-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: ${({ theme }) => theme.foreground};
+  cursor: pointer;
 
   @media (min-width: ${BREAKPOINTS.LAPTOP}) {
   }
