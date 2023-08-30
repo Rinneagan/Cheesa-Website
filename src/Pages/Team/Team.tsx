@@ -11,7 +11,8 @@ function Team() {
       </Heading>
       <Desc>
         Cheesa Website development is led by a dedicated team studying and
-        working part-time at <Mark>SlightlyTechie.</Mark>
+        working part-time at <Mark className="company">SlightlyTechie</Mark> and
+        <Mark className="company"> InteliTech. </Mark>
       </Desc>
       <Squad />
       <Footer />
@@ -42,6 +43,9 @@ const Desc = styled.p`
   line-height: 1.2;
   @media (max-width: ${BREAKPOINTS.MOBILE}) {
     padding: 0;
+  }
+  .company {
+    font-weight: bold;
   }
 `;
 
