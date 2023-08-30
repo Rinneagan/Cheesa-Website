@@ -31,8 +31,10 @@ function ExecutiveDetail() {
         <Oval color={theme.foreground} secondaryColor={theme.cheesaBlue} />
       </Spinner>
     );
+
   if (status === "Error")
     return <h1>Couldn't fetch data, kindly refresh the page wai. </h1>;
+
   if (status === "Success") {
     const actualData = data[YEARS.indexOf(activeYear)][committee];
     return (
@@ -44,7 +46,7 @@ function ExecutiveDetail() {
               return <ExecutiveCard {...item} key={item.name} />;
             })
           ) : (
-            <h1>There's no data for this year wai. </h1>
+            <h1>There's no data for {activeYear} set yet wai. </h1>
           )}
         </ExecutivesContainer>
       </>
