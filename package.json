@@ -19,6 +19,7 @@
     "react-loader-spinner": "^5.3.4",
     "react-router": "^6.11.0",
     "react-router-dom": "^6.11.0",
+    "react-social-icons": "^5.15.0",
     "styled-components": "^5.3.10",
     "swiper": "^10.0.4"
   },

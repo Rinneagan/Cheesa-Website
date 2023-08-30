@@ -11,7 +11,7 @@ import Gallery from "./Pages/Gallery/Gallery";
 import ExecutiveDetail from "./Pages/Executives/ExecutiveDetail";
 import ExecutivesIndex from "./Pages/Executives/ExecutivesIndex";
 import ScrollTotop from "./components/ScrollTotop";
-import Team from "./Pages/Team";
+import Team from "./Pages/Team/Team";
 
 function App() {
   const { theme } = useContext(ToggleTheme);

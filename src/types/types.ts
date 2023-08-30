@@ -76,3 +76,17 @@ export type TestimonialFields = {
 };
 
 export type TestimonialResponse = TestimonialFields[];
+
+export type SquadResponse = {
+  id: number;
+  img_url: string;
+  name: string;
+  role: string;
+  company: string;
+  about: string;
+  socials?: {
+    twitter: string;
+    github: string;
+    linkedin: string;
+  };
+}[];
