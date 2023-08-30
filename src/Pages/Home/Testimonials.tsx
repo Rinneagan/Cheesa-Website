@@ -29,7 +29,12 @@ function Testimonials() {
             <Oval color={theme.foreground} secondaryColor={theme.cheesaBlue} />
           </Spinner>
         ) : (
-          <Marquee direction="right" speed={20}>
+          <Marquee
+            direction="right"
+            speed={20}
+            pauseOnHover={true}
+            pauseOnClick={true}
+          >
             {testimonials &&
               testimonials.map((testimonial) => (
                 <Card key={testimonial.name}>
@@ -58,21 +63,34 @@ function Testimonials() {
 }
 
 const Card = styled.section`
+  position: relative;
   padding: 1.5rem;
   display: flex;
-  border-radius: 0.8rem;
-  aspect-ratio: 1/1;
-  width: 20rem;
+  border-radius: 12.8px;
+  aspect-ratio: 4/3;
+  width: 22rem;
+  height: 40rem;
   margin: 1rem;
   background-color: ${({ theme }) =>
     theme.mode === "light" ? theme.background : "#1E293B"};
   flex-direction: column;
-  outline: 1px solid
+  border: 1px solid
     ${({ theme }) => (theme.mode === "light" ? "#bbbbbb" : "#808080")};
   gap: 1rem;
+  &:focus::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 12.8px;
+    border: 1px solid
+      ${({ theme }) => (theme.mode === "light" ? "#bbbbbb" : "#808080")};
+  }
 
   .article {
-    text-align: left;
+    text-align: center;
     opacity: 0.8;
     line-height: 1.5;
   }

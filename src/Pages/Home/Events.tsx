@@ -101,7 +101,10 @@ function Events() {
               >
                 <Slide>
                   <EventImageContainer>
-                    <img src={event.eventImage.asset.url} alt="" />
+                    <img
+                      src={event.eventImage.asset.url}
+                      alt={`${event.eventName}'s picture`}
+                    />
                   </EventImageContainer>
                   <EventTag category={event.eventCategory}>
                     <div>
@@ -167,7 +170,7 @@ const Message = styled.div`
 
 const EventTag = styled.div<EventTagProps>`
   margin-block: auto;
-  font-family: "Inter";
+  font-family: "Raleway";
   h3 {
     background-color: ${({ category, theme }) => {
       if (category) {
@@ -236,13 +239,14 @@ const EventImageContainer = styled.div`
 
 const Slide = styled.div`
   aspect-ratio: 1/1;
+  height: 26rem;
   width: 100%;
   color: ${({ theme }) => theme.foreground};
   border-radius: 0.8rem;
   overflow: hidden;
   padding: 0.6rem;
   display: grid;
-  gap: 1rem;
+  gap: 0.5rem;
   grid-template-rows: 80% 20%;
   background-color: ${({ theme }) => theme.secondary};
 `;
