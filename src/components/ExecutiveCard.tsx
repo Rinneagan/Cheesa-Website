@@ -11,7 +11,7 @@ function ExecutiveCard({ name, portfolio, img_url }: DataProps) {
   return (
     <CardWrapper>
       <div>
-        <img src={img_url ? img_url.asset.url : ""} alt="Executive" />
+        <img src={img_url ? img_url.asset.url : ""} alt={`${name}'s picture`} />
       </div>
       <CardData>
         <h2>{name}</h2>

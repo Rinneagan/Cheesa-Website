@@ -32,17 +32,20 @@ function ExecutiveDetail() {
       </Spinner>
     );
   if (status === "Error")
-    return <h1>There is an error fetching the executives wai</h1>;
+    return <h1>Couldn't fetch data, kindly refresh the page. </h1>;
   if (status === "Success") {
     const actualData = data[YEARS.indexOf(activeYear)][committee];
     return (
       <>
         <Subheading>{CommitteeTitle}</Subheading>
         <ExecutivesContainer>
-          {actualData &&
+          {actualData ? (
             actualData.map((item) => {
               return <ExecutiveCard {...item} key={item.name} />;
-            })}
+            })
+          ) : (
+            <h1>There's no data for this year.</h1>
+          )}
         </ExecutivesContainer>
       </>
     );

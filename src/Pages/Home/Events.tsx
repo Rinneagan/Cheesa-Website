@@ -101,7 +101,10 @@ function Events() {
               >
                 <Slide>
                   <EventImageContainer>
-                    <img src={event.eventImage.asset.url} alt="" />
+                    <img
+                      src={event.eventImage.asset.url}
+                      alt={`${event.eventName}'s picture`}
+                    />
                   </EventImageContainer>
                   <EventTag category={event.eventCategory}>
                     <div>
