@@ -32,6 +32,7 @@ const CardWrapper = styled.div`
   outline: 1px solid
     ${({ theme }) => (theme.mode === "light" ? "#bbbbbb" : "#808080")};
   transition: 0.2s ease;
+  transform: translate3d(0, 0, 0);
   cursor: pointer;
   &:hover {
     background-color: #c2c2c229;
