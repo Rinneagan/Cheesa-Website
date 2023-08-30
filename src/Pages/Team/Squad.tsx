@@ -8,12 +8,12 @@ function Squad() {
     {
       id: 1,
       img_url:
-        "https://pbs.twimg.com/profile_images/1649437595066040320/-SSL-EKI.jpg",
+        "https://ik.imagekit.io/kkldhhslb/concept.jpg?updatedAt=1693420532305",
       name: "Evans Elabo",
       role: "Software Engineer",
-      company: "InteliTech ",
+      company: "SlightlyTechie & InteliTech ",
       about:
-        "A Linguistics student who's not just fluent in languages but also holds a special talent for speaking volumes about anything and everything. A talented guy with insatiable curiosity. He does literally everything - from mobile app development to crafting stunning UI designs and building high performance web applications. ",
+        "A Linguistics student who's not just fluent in languages but also holds a special talent for speaking volumes about anything and everything. A talented guy with insatiable curiosity. He does literally everything - from web and mobile app development to crafting stunning UI designs and building high performance web applications. ",
       socials: {
         twitter: "https://twitter.com/evans_elabo",
         github: "https://github.com/ellaboevans",
@@ -137,6 +137,10 @@ const SquadWrapper = styled.div`
     border-radius: 16px;
     object-fit: cover;
     object-position: center;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      filter: grayscale(40);
+    }
   }
 
   @media (max-width: ${BREAKPOINTS.MOBILE}) {
