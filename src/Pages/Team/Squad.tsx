@@ -38,7 +38,7 @@ function Squad() {
     {
       id: 3,
       img_url:
-        "https://ik.imagekit.io/i7gyrkpch/joshuaa.jpg?updatedAt=1693413266862",
+        "https://ik.imagekit.io/i7gyrkpch/joshuaa.jpg?updatedAt=1693414199580",
       name: "Joshua Richardson Owusu",
       role: "Data Analyst",
       company: "InteliTech",
