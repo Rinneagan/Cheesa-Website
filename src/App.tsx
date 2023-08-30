@@ -11,6 +11,7 @@ import Gallery from "./Pages/Gallery/Gallery";
 import ExecutiveDetail from "./Pages/Executives/ExecutiveDetail";
 import ExecutivesIndex from "./Pages/Executives/ExecutivesIndex";
 import ScrollTotop from "./components/ScrollTotop";
+import Team from "./Pages/Team";
 
 function App() {
   const { theme } = useContext(ToggleTheme);
@@ -26,6 +27,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/lecturers" element={<Lecturers />} />
+            <Route path="/team" element={<Team />} />
             <Route path="/executives" element={<ExecutivesLayout />}>
               <Route path=":year" element={<ExecutiveDetail />} />
               <Route index element={<ExecutivesIndex />} />

@@ -17,7 +17,7 @@ function Footer() {
     <Wrapper>
       <Container>
         <LinksWrapper>
-          <UsefulLinks>
+          <UsefulLinks className="team">
             <h3>Useful Links</h3>
             <ul>
               <li>
@@ -30,9 +30,7 @@ function Footer() {
                 <Link to="/executives">Executives</Link>
               </li>
               <li>
-                <a href="https://cheesa.netlify.app/" target="_blank">
-                  E-Library
-                </a>
+                <Link to="/team">Meet the team</Link>
               </li>
             </ul>
           </UsefulLinks>
