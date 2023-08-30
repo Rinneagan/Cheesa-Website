@@ -25,7 +25,7 @@ function Values() {
         <ImageBox>
           <motion.img
             style={{ scale }}
-            src="https://ik.imagekit.io/i7gyrkpch/_MG_7888.jpg?updatedAt=1690669862150"
+            src="https://ik.imagekit.io/i7gyrkpch/paa_amoah.jpg?updatedAt=1693270701090"
             alt="image"
           />
         </ImageBox>
@@ -117,6 +117,7 @@ const ImageBox = styled.div`
     width: 100%;
     object-fit: cover;
     object-position: top;
+    margin-top: 6rem;
   }
 
   @media (min-width: ${BREAKPOINTS.LAPTOP}) {

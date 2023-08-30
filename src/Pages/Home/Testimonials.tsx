@@ -52,93 +52,6 @@ function Testimonials() {
               ))}
           </Marquee>
         )}
-
-        {/* <Marquee speed={20}>
-          <Card>
-            <p className="article">
-              Joining the chemical engineering students association has been a
-              game-changer for me. The association has provided me with
-              invaluable opportunities for professional development, including
-              workshops on resume building, networking, and industry insights
-            </p>
-            <div className="student">
-              <div className="img_box">
-                <img src={Ezekiel} alt="Student" />
-              </div>
-              <div className="student_details">
-                <h3>Adu Gyamfi Sebastian</h3>
-                <p>Student, Year 3</p>
-              </div>
-            </div>
-          </Card>
-          <Card>
-            <p className="article">
-              Joining the chemical engineering students association has been a
-              game-changer for me. The association has provided me with
-              invaluable opportunities for
-            </p>
-            <div className="student">
-              <div className="img_box">
-                <img src={Student2} alt="Student" />
-              </div>
-              <div className="student_details">
-                <h3>Adu Gyamfi Sebastian</h3>
-                <p>Student, Year 3</p>
-              </div>
-            </div>
-          </Card>
-          <Card>
-            <p className="article">
-              Joining the chemical engineering students association has been a
-              game-changer for me. The association has provided me with
-              invaluable opportunities for professional development, including
-              workshops on resume building, networking, and industry insights
-            </p>
-            <div className="student">
-              <div className="img_box">
-                <img src={Student3} alt="Student" />
-              </div>
-              <div className="student_details">
-                <h3>Adu Gyamfi Sebastian</h3>
-                <p>Student, Year 3</p>
-              </div>
-            </div>
-          </Card>
-          <Card>
-            <p className="article">
-              Joining the chemical engineering students association has been a
-              game-changer for me. The association has provided me with
-              invaluable opportunities for professional development, including
-              workshops on resume building, networking, and industry insights
-            </p>
-            <div className="student">
-              <div className="img_box">
-                <img src={Student3} alt="Student" />
-              </div>
-              <div className="student_details">
-                <h3>Adu Gyamfi Sebastian</h3>
-                <p>Student, Year 3</p>
-              </div>
-            </div>
-          </Card>
-          <Card>
-            <p className="article">
-              Joining the chemical engineering students association has been a
-              game-changer for me. The association has provided me with
-              invaluable opportunities for professional development, including
-              workshops on resume building, networking, and industry insights
-            </p>
-            <div className="student">
-              <div className="img_box">
-                <img src={Student3} alt="Student" />
-              </div>
-              <div className="student_details">
-                <h3>Adu Gyamfi Sebastian</h3>
-                <p>Student, Year 3</p>
-              </div>
-            </div>
-          </Card>
-        </Marquee> */}
       </Container>
     </Wrapper>
   );
@@ -148,7 +61,7 @@ const Card = styled.section`
   padding: 1.5rem;
   display: flex;
   border-radius: 0.8rem;
-  aspect-ratio: 4/3;
+  aspect-ratio: 1/1;
   width: 20rem;
   margin: 1rem;
   background-color: ${({ theme }) =>

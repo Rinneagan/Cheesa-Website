@@ -68,16 +68,7 @@ function Responsibility() {
           <Card>
             <div>
               <img
-                src="https://ik.imagekit.io/i7gyrkpch/extrculrr_RB-DasN8G.jpg?updatedAt=1689078176332"
-                alt="Extra Curricular Activities"
-              />
-            </div>
-            <h3>Extra-curricular activities</h3>
-          </Card>
-          <Card>
-            <div>
-              <img
-                src="https://ik.imagekit.io/i7gyrkpch/_MG_0012_s-FNpxoaZ.jpg?updatedAt=1689078175487"
+                src="https://ik.imagekit.io/i7gyrkpch/233546246547_status_d305a84e89f84d5fbeb033c35f8ba382.jpg?updatedAt=1693270983917"
                 alt="Field Trips"
               />
             </div>
@@ -90,7 +81,7 @@ function Responsibility() {
                 alt="Sports"
               />
             </div>
-            <h3>Sports</h3>
+            <h3>Extra-Curricular activities</h3>
           </Card>
         </SliderWrapper>
       </SwiperContainer>

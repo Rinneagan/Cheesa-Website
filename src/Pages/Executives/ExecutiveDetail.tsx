@@ -33,6 +33,7 @@ function ExecutiveDetail() {
     );
   if (status === "Error")
     return <h1>There is an error fetching the executives wai</h1>;
+    
   if (status === "Success") {
     const actualData = data[YEARS.indexOf(activeYear)][committee];
     return (

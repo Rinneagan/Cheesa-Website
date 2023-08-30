@@ -189,6 +189,7 @@ const EventTag = styled.div<EventTagProps>`
     padding-block: 0.6rem;
     text-transform: uppercase;
     font-weight: 700;
+    font-family: inherit;
   }
 
   div {
