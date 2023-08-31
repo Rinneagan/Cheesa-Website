@@ -37,16 +37,13 @@ const Desc = styled.p`
   text-align: center;
   line-height: 1.2;
   @media (max-width: ${BREAKPOINTS.MOBILE}) {
-    padding: 0;
+    padding-inline: 1.8rem;
   }
   .company {
     font-weight: bold;
   }
   @media (min-width: ${BREAKPOINTS.TABLET}) {
-    padding: 0 10rem;
-  }
-  @media (min-width: ${BREAKPOINTS.TABLET}) {
-    padding: 0 20rem;
+    padding: 0 13.4rem;
   }
 `;
 
