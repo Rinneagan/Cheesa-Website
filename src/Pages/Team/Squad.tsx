@@ -77,7 +77,8 @@ function Squad() {
           <SquadDetails>
             <h1>{user.name}</h1>
             <h3>
-              {user.role} at<Mark> {user.company}</Mark>
+              {user.role} at
+              <Mark style={{ fontWeight: "bold" }}> {user.company}</Mark>
             </h3>
             <p>{user.about}</p>
             <IconWrapper>
@@ -124,8 +125,8 @@ const SquadWrapper = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  gap: 2rem;
-  margin: 5rem 0;
+  gap: 3rem;
+  margin: 5rem 0 6rem 0;
   &:nth-child(even) {
     flex-direction: row-reverse;
     background-color: ${({ theme }) => theme.forground};
@@ -137,7 +138,7 @@ const SquadWrapper = styled.div`
     border-radius: 16px;
     object-fit: cover;
     object-position: center;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.4s ease-in-out;
     &:hover {
       filter: grayscale(40);
     }
@@ -148,6 +149,7 @@ const SquadWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 2rem;
     &:nth-child(even) {
       flex-direction: column;
     }
