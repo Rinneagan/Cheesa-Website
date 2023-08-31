@@ -84,28 +84,31 @@ function Squad() {
             <IconWrapper>
               <motion.div whileHover={{ y: -6 }}>
                 <SocialIcon
+                  className="socials"
                   url={user.socials?.twitter}
-                  style={{ height: 25, width: 25, marginTop: "1.2rem" }}
+                  style={{ height: 25, width: 25, marginTop: "1rem" }}
                 />
               </motion.div>
               <motion.div whileHover={{ y: -6 }}>
                 <SocialIcon
+                  className="socials"
                   url={user.socials?.github}
                   style={{
                     height: 25,
                     width: 25,
-                    marginTop: "1.2rem",
+                    marginTop: "1rem",
                     marginLeft: "1rem",
                   }}
                 />
               </motion.div>
               <motion.div whileHover={{ y: -6 }}>
                 <SocialIcon
+                  className="socials"
                   url={user.socials?.linkedin}
                   style={{
                     height: 25,
                     width: 25,
-                    marginTop: "1.2rem",
+                    marginTop: "1rem",
                     marginLeft: "1rem",
                   }}
                 />
@@ -123,7 +126,6 @@ const SquadWrapper = styled.div`
   height: 100%;
   padding-inline: 3rem;
   display: flex;
-  align-items: flex-start;
   justify-content: center;
   gap: 3rem;
   margin: 5rem 0 6rem 0;
@@ -154,6 +156,15 @@ const SquadWrapper = styled.div`
       flex-direction: column;
     }
   }
+  @media (min-width: ${BREAKPOINTS.TABLET}) {
+    margin: 3rem 0 4rem 0;
+    padding-inline: 1rem;
+    gap: 1rem;
+  }
+
+  @media (min-width: ${BREAKPOINTS.TABLET}) {
+    align-items: flex-start;
+  }
 `;
 
 const SquadDetails = styled.div`
@@ -182,6 +193,10 @@ const SquadDetails = styled.div`
       text-align: center;
     }
   }
+
+  @media (min-width: ${BREAKPOINTS.TABLET}) {
+    width: 60%;
+  }
 `;
 
 const IconWrapper = styled.div`
@@ -189,6 +204,11 @@ const IconWrapper = styled.div`
   align-items: center;
   @media (max-width: ${BREAKPOINTS.MOBILE}) {
     justify-content: center;
+  }
+  .socials {
+    height: 25;
+    width: 25;
+    // marginTop: "rem"
   }
 `;
 export default Squad;

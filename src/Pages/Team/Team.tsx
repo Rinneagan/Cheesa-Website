@@ -43,6 +43,9 @@ const Desc = styled.p`
   .company {
     font-weight: bold;
   }
+  @media (min-width: ${BREAKPOINTS.TABLET}) {
+    padding: 0 10rem;
+  }
 `;
 
 export default Team;
