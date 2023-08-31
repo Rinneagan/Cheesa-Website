@@ -10,7 +10,7 @@ function Team() {
         Meet the <Mark>Team</Mark>
       </MainHeading>
       <Desc>
-        Cheesa Website development is led by a dedicated team studying and
+        CHEESA Website development is led by a dedicated team studying and
         working part-time at <Mark className="company">SlightlyTechie</Mark> and
         <Mark className="company"> InteliTech. </Mark>
       </Desc>
