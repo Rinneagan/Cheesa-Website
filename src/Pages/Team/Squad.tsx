@@ -205,10 +205,5 @@ const IconWrapper = styled.div`
   @media (max-width: ${BREAKPOINTS.MOBILE}) {
     justify-content: center;
   }
-  .socials {
-    height: 25;
-    width: 25;
-    // marginTop: "rem"
-  }
 `;
 export default Squad;
