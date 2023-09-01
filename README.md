@@ -27,7 +27,6 @@ The Chemical Engineering Student Association website is designed to provide chem
 - **Discussion Forum:** Engage in discussions with fellow students, ask questions, and share insights.
 - **Member Directory:** Explore profiles of association members and connect with them.
 - **Announcements:** Stay updated with the latest news and announcements from the association.
-- **User Authentication:** Register, log in, and manage your profile on the website.
 
 ## Installation
 
@@ -65,17 +64,17 @@ The Chemical Engineering Student Association website is licensed under the [MIT 
 
 We would like to express our gratitude to the following individuals and organizations for their contributions to the development of this project:
 
-- Diabene
-- JRO
-- 0xConcept
+- Diabene Yaw Addo (Diabene)
+- Joshua Richardson Owusu (JRO)
+- Evans Elabo (0xConcept)
 
 ## Social Media
 
 Stay connected with us on social media for the latest updates, news, and announcements:
 
-- Twitter: [@cheesaknust](https://twitter.com/cheesaknust)
+- Twitter: [@cheesa_knust19](https://twitter.com/cheesa_knust19)
 - Instagram: [@cheesaknust](https://www.instagram.com/cheesaknust)
-- Facebook: [Chemical Engineering Student Association](https://www.facebook.com/ChemicalEngineeringStudentAssociation)
+- Linkedin: [Chemical Engineering Student' Association](https://www.linkedin.com/in/ChemicalEngineeringStudentAssociation)
 
 ## Contact
 

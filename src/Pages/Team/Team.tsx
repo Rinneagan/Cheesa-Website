@@ -10,7 +10,7 @@ function Team() {
         Meet the <Mark>Team</Mark>
       </MainHeading>
       <Desc>
-        Cheesa Website development is led by a dedicated team studying and
+        CHEESA Website development is led by a dedicated team studying and
         working part-time at <Mark className="company">SlightlyTechie</Mark> and
         <Mark className="company"> InteliTech. </Mark>
       </Desc>
@@ -34,14 +34,16 @@ const Wrapper = styled.div`
 const Desc = styled.p`
   font-size: 1.1rem;
   font-weight: 400;
-  padding: 0 20rem;
   text-align: center;
   line-height: 1.2;
   @media (max-width: ${BREAKPOINTS.MOBILE}) {
-    padding: 0;
+    padding-inline: 1.8rem;
   }
   .company {
     font-weight: bold;
+  }
+  @media (min-width: ${BREAKPOINTS.TABLET}) {
+    padding: 0 13.4rem;
   }
 `;
 

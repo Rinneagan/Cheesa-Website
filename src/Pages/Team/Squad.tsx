@@ -13,7 +13,7 @@ function Squad() {
       role: "Software Engineer",
       company: "SlightlyTechie & InteliTech ",
       about:
-        "A Linguistics student who's not just fluent in languages but also holds a special talent for speaking volumes about anything and everything. A talented guy with insatiable curiosity. He does literally everything - from web and mobile app development to crafting stunning UI designs and building high performance web applications. ",
+        "A Linguistics student who's not just fluent in languages but also holds a special talent for speaking volumes about anything and everything. A talented guy with insatiable curiosity. He does literally everything - from mobile app development to crafting stunning UI designs and building high performance web applications. ",
       socials: {
         twitter: "https://twitter.com/evans_elabo",
         github: "https://github.com/ellaboevans",
@@ -77,34 +77,38 @@ function Squad() {
           <SquadDetails>
             <h1>{user.name}</h1>
             <h3>
-              {user.role} at<Mark> {user.company}</Mark>
+              {user.role} at
+              <Mark style={{ fontWeight: "bold" }}> {user.company}</Mark>
             </h3>
             <p>{user.about}</p>
             <IconWrapper>
               <motion.div whileHover={{ y: -6 }}>
                 <SocialIcon
+                  className="socials"
                   url={user.socials?.twitter}
-                  style={{ height: 25, width: 25, marginTop: "1.2rem" }}
+                  style={{ height: 25, width: 25, marginTop: "1rem" }}
                 />
               </motion.div>
               <motion.div whileHover={{ y: -6 }}>
                 <SocialIcon
+                  className="socials"
                   url={user.socials?.github}
                   style={{
                     height: 25,
                     width: 25,
-                    marginTop: "1.2rem",
+                    marginTop: "1rem",
                     marginLeft: "1rem",
                   }}
                 />
               </motion.div>
               <motion.div whileHover={{ y: -6 }}>
                 <SocialIcon
+                  className="socials"
                   url={user.socials?.linkedin}
                   style={{
                     height: 25,
                     width: 25,
-                    marginTop: "1.2rem",
+                    marginTop: "1rem",
                     marginLeft: "1rem",
                   }}
                 />
@@ -122,10 +126,9 @@ const SquadWrapper = styled.div`
   height: 100%;
   padding-inline: 3rem;
   display: flex;
-  align-items: flex-start;
   justify-content: center;
-  gap: 2rem;
-  margin: 5rem 0;
+  gap: 3rem;
+  margin: 5rem 0 6rem 0;
   &:nth-child(even) {
     flex-direction: row-reverse;
     background-color: ${({ theme }) => theme.forground};
@@ -137,7 +140,7 @@ const SquadWrapper = styled.div`
     border-radius: 16px;
     object-fit: cover;
     object-position: center;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.4s ease-in-out;
     &:hover {
       filter: grayscale(40);
     }
@@ -148,9 +151,19 @@ const SquadWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 2rem;
     &:nth-child(even) {
       flex-direction: column;
     }
+  }
+  @media (min-width: ${BREAKPOINTS.TABLET}) {
+    margin: 3rem 0 4rem 0;
+    padding-inline: 1rem;
+    gap: 1rem;
+  }
+
+  @media (min-width: ${BREAKPOINTS.TABLET}) {
+    align-items: flex-start;
   }
 `;
 
@@ -179,6 +192,10 @@ const SquadDetails = styled.div`
     p {
       text-align: center;
     }
+  }
+
+  @media (min-width: ${BREAKPOINTS.TABLET}) {
+    width: 60%;
   }
 `;
 
