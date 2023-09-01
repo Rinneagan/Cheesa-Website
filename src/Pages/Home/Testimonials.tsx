@@ -129,7 +129,13 @@ const TextBox = styled.div`
   padding: 1rem 0.4rem;
   line-height: 1.6;
   p {
-    font-size: 1.2rem;
+    font-size: 1rem;
+  }
+
+  @media screen {
+    p {
+      font-size: 1.2rem;
+    }
   }
 `;
 

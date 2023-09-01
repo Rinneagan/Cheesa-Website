@@ -110,7 +110,10 @@ function Events() {
                     <div>
                       <h3>{event.eventCategory}</h3>
                     </div>
-                    <p>{event.eventName}</p>
+                    <div>
+                      <p>{event.eventName}</p>
+                      <small>Read More</small>
+                    </div>
                   </EventTag>
                 </Slide>
               </SwiperSlide>
