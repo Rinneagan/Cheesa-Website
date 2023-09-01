@@ -117,6 +117,14 @@ body::-webkit-scrollbar-thumb {
   animation: spring 1000ms ease infinite;
 }
 
+.next {
+  color: red;
+}
+
+.prev {
+  color: green;
+}
+
 @keyframes spring {
   0% {
     transform: translateY(0%);

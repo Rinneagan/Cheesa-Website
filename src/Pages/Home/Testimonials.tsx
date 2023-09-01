@@ -1,4 +1,3 @@
-import Marquee from "react-fast-marquee";
 import styled from "styled-components";
 import { BREAKPOINTS, MainHeading, Mark } from "../../utils/ReusableStyles";
 import { motion } from "framer-motion";
@@ -8,12 +7,17 @@ import { testimonial_query } from "../../constants/page";
 import { useContext } from "react";
 import { ToggleTheme } from "../../components/ThemeWrapper";
 import { Oval } from "react-loader-spinner";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 function Testimonials() {
   const { data: testimonials, status } =
     useFetch<TestimonialResponse>(testimonial_query);
   const { theme } = useContext(ToggleTheme);
-
   return (
     <Wrapper>
       <Container>
@@ -29,114 +33,103 @@ function Testimonials() {
             <Oval color={theme.foreground} secondaryColor={theme.cheesaBlue} />
           </Spinner>
         ) : (
-          <Marquee
-            direction="right"
-            speed={20}
-            pauseOnHover={true}
-            pauseOnClick={true}
+          <Swiper
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            navigation
+            autoplay={true}
+            breakpoints={{
+              "@0.00": {
+                slidesPerView: 1,
+                spaceBetween: 10,
+              },
+              "@0.75": {
+                slidesPerView: 2,
+                spaceBetween: 50,
+              },
+            }}
           >
-            {testimonials &&
-              testimonials.map((testimonial) => (
-                <Card key={testimonial.name}>
-                  <p className="article">{testimonial.testimony}</p>
-                  <div className="student">
-                    <div className="img_box">
-                      <img
-                        src={testimonial.img_url.asset.url}
-                        alt={testimonial.status}
-                      />
+            {testimonials?.map((testimonial) => {
+              return (
+                <SwiperSlide key={testimonial.name}>
+                  <Slide>
+                    <TextBox>
+                      <p>{testimonial.testimony}</p>
+                    </TextBox>
+                    <div
+                      style={{
+                        display: "flex",
+                        gap: "1rem",
+                        alignItems: "center",
+                      }}
+                    >
+                      <UserImage>
+                        <img
+                          src={testimonial.img_url.asset.url}
+                          alt={`${testimonial.name}'s picture`}
+                        />
+                      </UserImage>
+                      <StudentDetails>
+                        <h1>{testimonial.name}</h1>
+                        <p>
+                          {testimonial.status}, {testimonial.year}
+                        </p>
+                      </StudentDetails>
                     </div>
-                    <div className="student_details">
-                      <h3>{testimonial.name}</h3>
-                      <p>
-                        {testimonial.status}, {testimonial.year}
-                      </p>
-                    </div>
-                  </div>
-                </Card>
-              ))}
-          </Marquee>
+                  </Slide>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
         )}
       </Container>
     </Wrapper>
   );
 }
 
-const Card = styled.section`
-  position: relative;
-  padding: 1.5rem;
+const StudentDetails = styled.section`
+  text-transform: capitalize;
+  h1 {
+    font-size: 1.2rem;
+    text-align: left !important;
+  }
+  p {
+    padding-block: 0.6rem;
+    color: ${({ theme }) => theme.accent};
+  }
+`;
+
+const UserImage = styled.div`
+  width: 5rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+`;
+
+const Slide = styled.section`
+  width: 100%;
+  height: fit-content;
+  color: ${({ theme }) => theme.foreground};
+  border-radius: 0.8rem;
+  overflow: hidden;
+  padding: 0.6rem;
   display: flex;
-  border-radius: 12.8px;
-  aspect-ratio: 4/3;
-  width: 22rem;
-  height: 40rem;
-  margin: 1rem;
-  background-color: ${({ theme }) =>
-    theme.mode === "light" ? theme.background : "#1E293B"};
   flex-direction: column;
-  border: 1px solid
-    ${({ theme }) => (theme.mode === "light" ? "#bbbbbb" : "#808080")};
-  gap: 1rem;
-  &:focus::before {
-    content: "";
-    position: absolute;
-    top: -3px;
-    left: -3px;
-    right: -3px;
-    bottom: -3px;
-    border-radius: 12.8px;
-    border: 1px solid
-      ${({ theme }) => (theme.mode === "light" ? "#bbbbbb" : "#808080")};
-  }
+  justify-content: space-between;
+  gap: 0.5rem;
+  background-color: ${({ theme }) => theme.secondary};
+`;
 
-  .article {
-    text-align: center;
-    opacity: 0.8;
-    line-height: 1.5;
-  }
-
-  .student {
-    display: flex;
-    gap: 1rem;
-    justify-content: flex-start;
-
-    .img_box {
-      aspect-ratio: 1/1;
-      width: 5rem;
-      border-radius: 50%;
-      overflow: hidden;
-
-      img {
-        object-fit: cover;
-        object-position: top;
-        width: 100%;
-        height: 100%;
-      }
-    }
-
-    .student_details {
-      align-self: flex-start;
-      margin-block: auto;
-      text-transform: capitalize;
-      h3 {
-        padding-bottom: 1rem;
-      }
-
-      p {
-        color: ${({ theme }) =>
-          theme.mode === "light" ? theme.cheesaBlue : "hsl(211, 100%, 65%)"};
-      }
-    }
-  }
-
-  @media (min-width: ${BREAKPOINTS.LAPTOP}) {
-    .article {
-      text-align: center;
-    }
-
-    .student {
-      justify-content: center;
-    }
+const TextBox = styled.div`
+  padding: 1rem 0.4rem;
+  line-height: 1.6;
+  p {
+    font-size: 1.2rem;
   }
 `;
 

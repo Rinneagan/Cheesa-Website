@@ -42,6 +42,7 @@ function ExecutivesLayout() {
             <Outlet context={{ data, status, YEARS }} />
           </OutletContainer>
         </ResourcesWrapper>
+        {/* <Footer /> */}
       </Wrapper>
     </SidebarHandlerContext.Provider>
   );
