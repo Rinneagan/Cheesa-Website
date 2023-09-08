@@ -139,7 +139,7 @@ const Spinner = styled.div`
   color: ${({ theme }) => theme.foreground};
 `;
 
-const ButtonWrapper = styled.div`
+export const ButtonWrapper = styled.div`
   div {
     margin-left: auto;
     width: fit-content;

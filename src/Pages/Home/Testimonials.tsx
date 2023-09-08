@@ -4,12 +4,14 @@ import { motion } from "framer-motion";
 import { useFetch } from "../../hooks/useFetch";
 import { TestimonialResponse } from "../../types/types";
 import { testimonial_query } from "../../constants/page";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ToggleTheme } from "../../components/ThemeWrapper";
 import { Oval } from "react-loader-spinner";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
-
+import SwiperNext from "../../components/SwiperNext";
+import SwiperPrevious from "../../components/SwiperPrevious";
+import { ButtonWrapper } from "./Events";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
@@ -17,6 +19,8 @@ import "swiper/css/scrollbar";
 function Testimonials() {
   const { data: testimonials, status } =
     useFetch<TestimonialResponse>(testimonial_query);
+  const [, setRerender] = useState(0);
+
   const { theme } = useContext(ToggleTheme);
   return (
     <Wrapper>
@@ -47,6 +51,7 @@ function Testimonials() {
                 spaceBetween: 50,
               },
             }}
+            onSlideChange={(swiper) => setRerender(swiper.activeIndex)} // dont remove this i beg
           >
             {testimonials?.map((testimonial) => {
               return (
@@ -79,6 +84,12 @@ function Testimonials() {
                 </SwiperSlide>
               );
             })}
+            <ButtonWrapper>
+              <div>
+                <SwiperPrevious />
+                <SwiperNext />
+              </div>
+            </ButtonWrapper>
           </Swiper>
         )}
       </Container>
