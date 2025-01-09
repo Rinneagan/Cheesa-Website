@@ -13,7 +13,7 @@ type sideBarContextProps = {
   YEARS: string[];
 };
 export const SidebarHandlerContext = createContext({} as sideBarContextProps);
-const YEARS = ["2024", "2023", "2022"];
+const YEARS = ["2025", "2024", "2023", "2022"];
 
 function ExecutivesLayout() {
   const [openSidebar, setOpenSidebar] = useState(false);
