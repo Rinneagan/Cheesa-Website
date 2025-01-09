@@ -13,11 +13,12 @@ type sideBarContextProps = {
   YEARS: string[];
 };
 export const SidebarHandlerContext = createContext({} as sideBarContextProps);
-const YEARS = ["2024", "2023", "2022"];
+const YEARS = ["2024", "2023", "2022", "2025"];
 
 function ExecutivesLayout() {
   const [openSidebar, setOpenSidebar] = useState(false);
   const { data, status } = useFetch<ExecutiveResponse>(executives_query);
+
   const toggleSideBar = () => {
     setOpenSidebar((isOpen) => !isOpen);
   };
@@ -31,11 +32,7 @@ function ExecutivesLayout() {
       <Wrapper>
         <ResourcesWrapper>
           <MenuWrapper onClick={toggleSideBar} style={menuStyles}>
-            {openSidebar ? (
-              <RiCloseLine size={32} color="inherit" />
-            ) : (
-              <RiMenuUnfoldLine size={32} color="inherit" />
-            )}
+            {openSidebar ? <RiCloseLine size={32} color="inherit" /> : <RiMenuUnfoldLine size={32} color="inherit" />}
           </MenuWrapper>
           <SideBar isActive={openSidebar} />
           <OutletContainer>

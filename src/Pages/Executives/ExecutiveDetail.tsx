@@ -21,9 +21,7 @@ function ExecutiveDetail() {
   const { data, status, YEARS } = useOutletContext<OutletContext>();
   const { theme } = useContext(ToggleTheme);
 
-  const CommitteeTitle = Committees.find(
-    (item) => item.toLocaleLowerCase().replaceAll(" ", "_") === committee
-  );
+  const CommitteeTitle = Committees.find((item) => item.toLocaleLowerCase().replaceAll(" ", "_") === committee);
 
   if (status === "Fetching")
     return (
@@ -32,8 +30,7 @@ function ExecutiveDetail() {
       </Spinner>
     );
 
-  if (status === "Error")
-    return <h1>Couldn't fetch data, kindly refresh the page. </h1>;
+  if (status === "Error") return <h1>Couldn't fetch data, kindly refresh the page. </h1>;
 
   if (status === "Success") {
     const actualData = data[YEARS.indexOf(activeYear)][committee];

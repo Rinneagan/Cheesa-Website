@@ -26,12 +26,7 @@ export default function SideBar({ isActive }: SidebarProps) {
   return (
     <SideBarWrapper style={sideBarStyles} className="scrollbar">
       {YEARS.map((year) => (
-        <Accordion
-          key={year}
-          handleOpenAccordion={toggleAccordion}
-          item={year}
-          isActive={accordionIndex === YEARS.indexOf(year)}
-        />
+        <Accordion key={year} handleOpenAccordion={toggleAccordion} item={year} isActive={accordionIndex === YEARS.indexOf(year)} />
       ))}
     </SideBarWrapper>
   );
@@ -47,11 +42,7 @@ const SideBarWrapper = styled(motion.section)`
   top: 3em;
   border-bottom: 1px solid ${({ theme }) => theme.secondary};
   background-color: inherit;
-  border-right: 1px solid
-    ${({ theme }) =>
-      theme.mode === "light"
-        ? "rgba(190, 190, 190, 0.842)"
-        : "rgba(190, 190, 190, 0.164)"};
+  border-right: 1px solid ${({ theme }) => (theme.mode === "light" ? "rgba(190, 190, 190, 0.842)" : "rgba(190, 190, 190, 0.164)")};
   @media (min-width: 50em) {
     position: sticky;
     top: 5em;
