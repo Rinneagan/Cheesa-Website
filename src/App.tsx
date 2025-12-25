@@ -1,6 +1,7 @@
 import styled, { ThemeProvider } from "styled-components";
 import { ToggleTheme } from "./components/ThemeWrapper";
 import { useContext } from "react";
+import ChatWidget from "./components/ChatWidget";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home/Home";
 import About from "./Pages/About/About";
@@ -33,6 +34,7 @@ function App() {
               <Route index element={<ExecutivesIndex />} />
             </Route>
           </Routes>
+          <ChatWidget />
         </Main>
       </ThemeProvider>
     </Router>
